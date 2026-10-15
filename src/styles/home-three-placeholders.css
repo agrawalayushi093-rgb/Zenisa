@@ -1,0 +1,5 @@
+/* Home 3 image-only placeholders. Home 4 keeps its original photographs. */
+.home-three .l3-slider{background-image:url('/images/placeholders/hero.svg')!important;background-position:center!important;background-size:cover!important}
+.home-three .product-image .bottle.bottle-photo{background-image:url('/images/placeholders/product.svg')!important;background-size:100% 100%!important;background-position:center!important}
+.home-three .l3-collection-photo,.home-three .l3-gender-photo,.home-three .l3-occasion-image,.home-three .l3-scent-image,.home-three .l3-marquee-group>a>span{background-image:url('/images/placeholders/category.svg')!important;background-size:100% 100%!important;background-position:center!important}
+.home-three .l3-exclusive{background-image:url('/images/placeholders/offer.svg')!important;background-position:center!important;background-size:cover!important}

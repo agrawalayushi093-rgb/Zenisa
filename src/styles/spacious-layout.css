@@ -1,0 +1,32 @@
+/* Spacious storefront and fixed product grids requested for client review. */
+body .container,body .home-three .container,body .l3-footer .container{width:min(1760px,calc(100% - 96px))}
+body .nav-inner{width:min(1760px,calc(100% - 96px))}
+body .l3-section{padding-top:95px;padding-bottom:95px}
+.home-three .l3-dark-section{padding-top:85px;padding-bottom:65px}
+.home-three .l3-heading{margin-bottom:46px}
+.home-three .l3-product-grid{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:38px 22px;align-items:stretch}
+.home-three .l3-product-grid .l3-slide{display:flex;min-width:0;width:auto;flex:none}
+body .home-three .l3-static-showcase .product-card{border:0;border-radius:0;background:transparent;color:#F7F3E9;padding:0;width:100%;display:flex;flex-direction:column}
+body .home-three .l3-static-showcase .product-image{aspect-ratio:4/5;border-radius:8px;overflow:hidden;background:#f4eddd;flex-shrink:0}
+body .home-three .l3-static-showcase .product-image .bottle-photo{width:100%;height:100%;background-size:500% 125%}
+body .home-three .l3-static-showcase .product-info{padding:18px 0 0;flex:1;text-align:left}
+body .home-three .l3-static-showcase .product-info h3{font-family:'Poppins',sans-serif;font-size:16px;font-weight:500;line-height:1.55;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;margin:0 0 8px;letter-spacing:.1px}
+body .home-three .l3-static-showcase .product-info>small{font-size:11px;color:#b5c6b1;line-height:1.7;min-height:22px}
+body .home-three .l3-static-showcase .product-bottom{align-items:stretch;font-size:18px;font-weight:500;gap:13px;margin-top:auto;padding-top:12px}
+body .home-three .l3-static-showcase .product-bottom>span{display:block;line-height:1.5}
+body .home-three .l3-static-showcase .product-bottom button{min-height:44px;height:auto;border-radius:4px;background:#D4AF37;border-color:#D4AF37;font-family:'Poppins',sans-serif;font-size:12px;font-weight:600;letter-spacing:.4px;text-transform:uppercase;gap:9px}
+body .home-three .l3-static-showcase .product-bottom button:hover{background:#e6c76d}
+body .home-three .l3-static-showcase .badge{font-size:9px;padding:6px 8px;top:10px;left:10px}
+body .home-three .l3-static-showcase .wish{top:8px;right:8px}
+.home-three .l3-static-showcase .l3-carousel-bottom{margin-top:42px}
+.home-three .l3-collection-grid{gap:28px}
+.home-three .l3-scent-grid{gap:42px}
+.home-three .l3-occasion-grid{gap:30px}
+body .reference-home .section{padding-top:45px;padding-bottom:35px}
+body .h2-section{padding-top:70px;padding-bottom:30px}
+@media(min-width:1800px){.home-three .l3-product-grid{gap:42px 25px}}
+@media(max-width:1300px){.home-three .l3-product-grid{grid-template-columns:repeat(4,minmax(0,1fr));gap:34px 20px}body .container,body .home-three .container,body .l3-footer .container,body .nav-inner{width:calc(100% - 64px)}}
+@media(max-width:1000px){.home-three .l3-product-grid{grid-template-columns:repeat(3,minmax(0,1fr))}body .l3-section{padding-top:70px;padding-bottom:70px}.home-three .l3-dark-section{padding-top:65px;padding-bottom:55px}.home-three .l3-collection-grid{gap:23px}.home-three .l3-scent-grid{gap:30px}}
+@media(max-width:600px){body .container,body .home-three .container,body .l3-footer .container{width:calc(100% - 32px)}body .nav-inner{width:calc(100% - 32px)}.home-three .l3-product-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:30px 14px}body .l3-section{padding-top:50px;padding-bottom:50px}.home-three .l3-dark-section{padding-top:48px;padding-bottom:40px}.home-three .l3-heading{margin-bottom:30px}body .home-three .l3-static-showcase .product-info{padding-top:12px}body .home-three .l3-static-showcase .product-info h3{font-size:13px}body .home-three .l3-static-showcase .product-info>small{font-size:9px;min-height:31px}body .home-three .l3-static-showcase .product-bottom{font-size:16px;gap:10px;padding-top:10px}body .home-three .l3-static-showcase .product-bottom button{min-height:41px;font-size:10px;letter-spacing:0;gap:5px}body .home-three .l3-static-showcase .badge{font-size:7px;padding:4px 5px;left:7px;top:8px}body .home-three .l3-static-showcase .wish{right:3px;top:3px}.home-three .l3-collection-grid{gap:15px}.home-three .l3-scent-grid{gap:27px 18px}.home-three .l3-occasion-grid{gap:22px}.home-three .l3-static-showcase .l3-carousel-bottom{margin-top:30px}body .reference-home .section{padding-top:32px;padding-bottom:25px}body .h2-section{padding-top:45px;padding-bottom:22px}}
+@media(min-width:1001px){.home-three .l3-product-grid{grid-template-columns:repeat(5,minmax(0,1fr))}}
+body .home-three .l3-static-showcase .product-bottom button,body .home-three .l3-static-showcase .product-image .wish{color:#062B1B} .home-three .l3-static-showcase{scroll-margin-top:95px}

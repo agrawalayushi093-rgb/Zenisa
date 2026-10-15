@@ -1,0 +1,2 @@
+const order=['Royal Oud','Bloom Essence','Mystic Noir','Golden Desire','Aqua Elite'];
+export default function Bottle({name='Mystic Noir',hero=false}){const found=order.indexOf(name);const extra={'Velvet Rose':1,'Desert Musk':3,'Midnight Bloom':1,'Cedar Mystique':2,'Citrus Muse':3,'Signature Duo':0};const index=found<0?(extra[name]??2):found;return <div className={`bottle bottle-photo ${hero?'hero-bottle':''}`} role="img" aria-label={`${name} — generated sample perfume visual`} style={{backgroundPosition:`${index*25}% center`}}/>}

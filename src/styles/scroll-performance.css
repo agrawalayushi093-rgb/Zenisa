@@ -1,0 +1,12 @@
+html{scroll-behavior:smooth;scroll-padding-top:105px}
+body .nav{transition:background-color .2s;box-shadow:none}
+body .nav.scrolled{box-shadow:0 3px 12px #0002}
+.l3-marquee{contain:paint}
+.l3-marquee-track{transform:translate3d(0,0,0);will-change:transform;backface-visibility:hidden}
+.l3-marquee.is-paused .l3-marquee-track{will-change:auto}
+@keyframes l3-gallery-scroll{from{transform:translate3d(0,0,0)}to{transform:translate3d(-50%,0,0)}}
+.l3-marquee-group>a>svg{filter:none}
+.l3-collection-photo{transition:none}
+.l3-collection:hover .l3-collection-photo{filter:none}
+.product-image,.l3-collection,.l3-scent-image,.l3-occasion-image{contain:paint}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.l3-marquee-track{will-change:auto;animation:none}}

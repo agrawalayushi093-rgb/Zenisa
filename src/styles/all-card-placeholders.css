@@ -1,0 +1,21 @@
+/* Keep the archived Home 4 design photographic; use dummy art on all other routes. */
+#main-content:not([data-original-images="true"]) .bottle-photo{background-image:url('/images/placeholders/product.svg')!important;background-size:100% 100%!important;background-position:center!important}
+#main-content:not([data-original-images="true"]) :is(.collection-photo,.occasion-photo,.scent-photo,.h2-category-visual,.h2-occasion-picture,.h2-scent-grid a>span,.instagram-grid a>span){background-image:url('/images/placeholders/category.svg')!important;background-size:100% 100%!important;background-position:center!important}
+.premium-occasions{background:linear-gradient(135deg,#e7ecdf,#f2eddf 55%,#e2e9df);border-top:1px solid #c2ad7555;border-bottom:1px solid #c2ad7555}
+.premium-occasion-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:30px}
+.premium-occasion-card{background:#fcf9ef;border:1px solid #c8b77e;border-radius:9px;overflow:hidden;color:#193d2b;box-shadow:0 8px 24px #193d2b08;transition:transform .25s,box-shadow .25s}
+.premium-occasion-card:hover{transform:translateY(-5px);color:#193d2b;box-shadow:0 14px 30px #193d2b14}
+.premium-occasion-art{position:relative;aspect-ratio:1.6;overflow:hidden;background:#062b1b}
+.premium-occasion-placeholder{position:absolute;inset:0;background:url('/images/placeholders/category.svg') center 40% / cover no-repeat;opacity:.48}
+.premium-occasion-art:after{content:'';position:absolute;inset:15px;border:1px solid #d5bd7b55;border-radius:3px;pointer-events:none}
+.premium-occasion-index{position:absolute;left:29px;top:29px;font-size:8px;letter-spacing:2px;color:#d8c590;z-index:2}
+.premium-occasion-icon{position:absolute;bottom:22px;right:25px;width:62px;height:62px;display:grid;place-items:center;border:1px solid #d8bd70;border-radius:50%;color:#e8cc82;background:#062b1bbd;z-index:2}
+.occasion-tone-1 .premium-occasion-art{background:#284237}.occasion-tone-2 .premium-occasion-art{background:#0f5c5c}.occasion-tone-3 .premium-occasion-art{background:#513b31}.occasion-tone-4 .premium-occasion-art{background:#64502d}.occasion-tone-5 .premium-occasion-art{background:#777452}
+.premium-occasion-copy{padding:26px 29px 23px}
+body .premium-occasion-copy>p{font-size:8px;letter-spacing:2px;color:#927335;margin:0 0 11px;font-weight:500}
+.premium-occasion-copy h3{font-size:42px;line-height:1.05;margin-bottom:13px;letter-spacing:-.7px}
+.premium-occasion-copy>span{font-size:12px;line-height:1.9;color:#737967;display:block;min-height:46px}
+.premium-occasion-copy>div{display:flex;align-items:center;justify-content:space-between;font-size:11px;margin-top:21px;padding-top:16px;border-top:1px solid #c9b78277;color:#264934}
+@media(max-width:1000px){.premium-occasion-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:24px}.premium-occasion-copy{padding:23px}.premium-occasion-copy h3{font-size:37px}}
+@media(max-width:540px){.premium-occasion-grid{grid-template-columns:1fr;gap:25px}.premium-occasion-art{aspect-ratio:1.7}.premium-occasion-copy{padding:24px}.premium-occasion-copy h3{font-size:39px}.premium-occasion-copy>span{min-height:0;font-size:12px}.premium-occasion-index{font-size:7px;top:25px;left:25px}.premium-occasion-icon{width:52px;height:52px;bottom:18px;right:22px}.premium-occasion-icon svg{width:29px}}
+@media(prefers-reduced-motion:reduce){.premium-occasion-card{transition:none}.premium-occasion-card:hover{transform:none}}

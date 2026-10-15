@@ -1,0 +1,128 @@
+/* Larger type and uncropped imagery across the storefront. */
+body .product-image,body .reference-home .product-image,body .home-two .product-image,body .home-three .l3-slide .product-image{aspect-ratio:3/5}
+body .product-image .bottle.bottle-photo{width:100%;height:100%;max-width:none;aspect-ratio:auto;margin:0}
+body{font-size:16px}
+body p{font-size:15px;line-height:1.8}
+body small{font-size:12px}
+body .container{width:min(1360px,calc(100% - 64px))}
+body .nav-inner{width:min(1440px,calc(100% - 64px));height:88px;gap:24px}
+body .nav nav{font-size:16px;gap:25px;font-weight:500}
+body .nav-actions{gap:17px}
+body .whatsapp-nav{font-size:13px;padding:12px 17px}
+body .announcement{font-size:11px;height:34px;gap:70px}
+body .announcement .sample-label{font-size:9px}
+body .logo{font-size:43px}
+body .logo>span{font-size:9px;letter-spacing:3px}
+body .button{font-size:14px;min-height:46px;padding:12px 24px}
+body .eyebrow{font-size:12px;line-height:1.6}
+body .text-link{font-size:13px}
+body .section,body .reference-home .section{padding-top:30px;padding-bottom:24px}
+body .section-heading,body .reference-home .section-heading{margin-bottom:23px}
+body .section-heading h2,body .reference-home .section-heading h2{font-size:clamp(34px,3.1vw,46px);line-height:1.12}
+body .section-heading .text-link,body .reference-home .section-heading .text-link{font-size:12px;top:10px}
+body .reference-hero-inner{min-height:460px}
+body .reference-hero h1{font-size:clamp(47px,4.5vw,70px);line-height:1.02}
+body .reference-hero .eyebrow{font-size:13px}
+body .reference-tagline{font-size:30px;margin:16px 0 23px}
+body .reference-hero .button{font-size:14px;padding:11px 26px;min-height:43px}
+body .hero-benefits{gap:23px;margin-top:28px}
+body .hero-benefits span{font-size:11px;line-height:1.5}
+body .hero-benefits svg{min-width:27px;width:27px}
+body .reference-hero-copy{max-width:670px}
+body .hero-poetry{font-size:30px}
+body .collection-grid,body .reference-home .collection-grid{gap:22px}
+body .collection,body .reference-home .collection{height:auto;aspect-ratio:3/4}
+body .collection-photo{background-size:400% 100%}
+body .collection:hover .collection-photo{transform:none}
+body .collection>div,body .reference-home .collection>div{left:22px;right:22px;bottom:23px}
+body .collection h3,body .reference-home .collection h3{font-size:37px}
+body .collection>div>span,body .reference-home .collection>div>span{font-size:13px}
+body .product-grid,body .reference-home .product-grid{grid-template-columns:repeat(4,minmax(0,1fr));gap:22px}
+body .product-card{padding-bottom:14px;border-radius:9px}
+body .product-image,body .reference-home .product-image{aspect-ratio:1/1.12}
+body .product-image .bottle{height:100%;max-width:100%}
+body .product-image:hover .bottle{transform:none}
+body .product-info,body .reference-home .product-info{padding:12px 14px 0}
+body .product-info h3,body .reference-home .product-info h3{font-size:18px;font-weight:500;line-height:1.4;margin-bottom:6px}
+body .product-info>small,body .reference-home .product-info>small{font-size:11px;line-height:1.7}
+body .product-bottom,body .reference-home .product-bottom{font-size:18px;gap:12px;margin-top:8px}
+body .product-bottom button,body .reference-home .product-bottom button{font-size:13px;height:42px;gap:9px}
+body .product-bottom button svg{width:17px;height:17px}
+body .badge{font-size:10px;padding:5px 8px;top:12px;left:12px}
+body .wish{top:10px;right:10px}
+body .wish svg{width:20px;height:20px}
+body .quick{font-size:12px;padding:10px}
+body .arrival-grid{grid-template-columns:repeat(4,minmax(0,1fr));gap:22px}
+body .arrival-promo{grid-column:1/-1;min-height:230px;padding:35px 45px;background-size:cover}
+body .arrival-promo>div{display:flex;align-items:center;gap:45px;max-width:750px}
+body .arrival-promo p{font-size:42px;margin:0}
+body .arrival-promo strong{font-size:36px}
+body .arrival-promo>div>span:not(.button){font-size:15px;margin:0;line-height:1.6}
+body .arrival-promo .button{font-size:13px;min-height:43px;padding:11px 21px}
+body .scent-grid,body .reference-home .scent-grid{gap:35px}
+body .scent-grid a>div,body .reference-home .scent-grid a>div{max-width:170px}
+body .scent-grid h4,body .reference-home .scent-grid h4{font-size:15px;margin-top:13px;line-height:1.5}
+body .reference-offer>.container{padding-top:35px;padding-bottom:30px;min-height:260px}
+body .reference-offer .eyebrow{font-size:14px}
+body .reference-offer h2{font-size:clamp(38px,4vw,55px)}
+body .offer-perks{margin:18px 0;gap:24px}
+body .offer-perks span{font-size:13px}
+body .reference-offer .button{font-size:14px;min-height:44px}
+body .reference-offer small{font-size:10px;margin-top:12px}
+body .occasion-grid,body .reference-home .occasion-grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:24px}
+body .occasion-image,body .reference-home .occasion-image{height:auto;aspect-ratio:1/1;background-size:600% 100%}
+body .occasion-grid a>span,body .reference-home .occasion-grid a>span{font-size:15px;margin-top:12px}
+body .experience-story{min-height:280px}
+body .experience-story h2{font-size:43px}
+body .experience-story p{font-size:14px}
+body .experience-story .button{font-size:13px;min-height:40px}
+body .reference-benefits .benefit-grid>div{padding:25px 12px}
+body .reference-benefits .benefit-grid p{font-size:12px;line-height:1.6}
+body .reference-benefits>small{font-size:10px}
+body .testimonial-card{padding:22px 18px;gap:14px}
+body .testimonial-card strong{font-size:14px}
+body .testimonial-card p{font-size:13px;line-height:1.7}
+body .testimonial-card small{font-size:10px}
+body .review-avatar{width:44px;height:44px;font-size:18px}
+body .instagram-grid{grid-template-columns:repeat(4,minmax(0,1fr));gap:15px}
+body .instagram-grid a{height:auto;aspect-ratio:3/4}
+body .reference-demo-note{font-size:11px;margin:15px 20px 20px}
+body .reference-footer{padding-top:40px}
+body .reference-footer-grid{gap:35px;padding-bottom:28px}
+body .reference-footer h4{font-size:15px;margin-bottom:13px}
+body .reference-footer-grid>div>a{font-size:13px;line-height:2}
+body .reference-footer .footer-tagline{font-size:23px;line-height:1.4}
+body .footer-newsletter p{font-size:12px;line-height:1.7}
+body .footer-newsletter input{font-size:13px;padding:14px}
+body .footer-newsletter button{font-size:13px;padding:0 23px}
+body .footer-newsletter small{font-size:11px;line-height:1.7}
+body .footer-service>span{font-size:11px}
+body .reference-footer .footer-bottom{font-size:11px;line-height:1.7}
+body .shop-heading h1,body .page-intro h1{font-size:clamp(43px,4.5vw,64px)}
+body .shop-heading p:not(.eyebrow),body .page-intro p:not(.eyebrow){font-size:14px}
+body .shop-layout{grid-template-columns:220px 1fr;gap:30px}
+body .shop-sidebar legend{font-size:16px}
+body .shop-sidebar fieldset label,body .shop-sidebar>label{font-size:13px}
+body .shop-sidebar>label input{font-size:13px;padding:12px}
+body .shop-sidebar .text-link{font-size:13px}
+body .shop-results .product-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
+body .listing-meta,body .sort-control,body .sort-control select{font-size:13px}
+body label,body input,body select,body textarea{font-size:14px}
+body .detail-copy h1{font-size:54px}
+body .detail-copy>h3{font-size:24px}
+body .detail-copy p,body .detail-scent,body details,body details p,body .breadcrumb{font-size:14px;line-height:1.8}
+body .notes-panel h3{font-size:17px}
+body .note-row strong{font-size:13px}
+body .note-row p{font-size:12px}
+body .cart-row h3{font-size:18px}
+body .cart-row p,body .cart-row>div:last-child{font-size:14px}
+body .cart-summary>p,body .cart-summary>small,body .cart-summary pre{font-size:13px;line-height:1.8}
+body .cart-summary>div{font-size:16px}
+body .demo-note{font-size:12px}
+body .dialog p,body .quick-layout p{font-size:14px}
+body .offer-dialog .eyebrow{font-size:29px}
+body .offer-dialog p:not(.eyebrow){font-size:14px}
+body .offer-dialog .text-link{font-size:14px}
+@media(max-width:1200px){body .nav nav{gap:17px;font-size:15px}body .nav-inner{gap:18px}body .nav-actions{gap:12px}body .whatsapp-nav{display:none}body .reference-footer-grid{grid-template-columns:1fr 1fr 1fr}body .footer-newsletter{grid-column:1/-1}body .reference-benefits .benefit-grid{grid-template-columns:repeat(2,minmax(0,1fr))}body .reference-benefits .benefit-grid>div{border:1px solid #d6bc8544}body .experience-row{grid-template-columns:1fr 1fr}}
+@media(max-width:1000px){body .nav nav{display:none}body .mobile-toggle{display:flex}body .product-grid,body .reference-home .product-grid{grid-template-columns:repeat(3,minmax(0,1fr))}body .shop-results .product-grid{grid-template-columns:repeat(2,minmax(0,1fr))}body .reference-hero-copy{margin-left:25px;max-width:570px}body .hero-benefits{grid-template-columns:repeat(2,1fr);max-width:360px}body .hero-benefits span{font-size:11px}body .hero-poetry{display:none}body .reference-home .collection-grid{grid-template-columns:repeat(2,minmax(0,1fr))}body .collection,body .reference-home .collection{aspect-ratio:3/4}body .arrival-grid{grid-template-columns:repeat(2,minmax(0,1fr))}body .experience-row{grid-template-columns:1fr}body .experience-story{min-height:300px;padding-left:48%}body .experience-story>div{width:100%}body .testimonial-cards{grid-template-columns:1fr}body .testimonial-card:nth-child(n+2){display:none}body .testimonial-card{display:flex}body .reference-benefits .benefit-grid{grid-template-columns:repeat(4,minmax(0,1fr))}body .reference-hero-inner{min-height:460px}body .scent-grid,body .reference-home .scent-grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media(max-width:600px){body .container{width:calc(100% - 28px)}body .nav-inner{width:calc(100% - 32px);height:76px}body .logo{font-size:36px}body .logo>span{font-size:8px}body .announcement{font-size:8px;height:30px;gap:8px}body .announcement .sample-label{display:none}body .reference-hero-inner{min-height:370px}body .reference-hero-copy{margin-left:8px;max-width:280px;padding-top:30px}body .reference-hero h1{font-size:38px}body .reference-tagline{font-size:22px;max-width:260px;line-height:1.2}body .reference-hero .eyebrow{font-size:10px;letter-spacing:2px}body .reference-hero .button{font-size:12px;padding:10px 21px;min-height:40px}body .hero-benefits{max-width:260px;gap:14px 13px}body .hero-benefits span{font-size:9px}body .hero-benefits svg{width:21px;min-width:21px}body .hero-shade{background:linear-gradient(90deg,#001c13ed,#001c1399 65%,#001c1333)}body .section-heading h2,body .reference-home .section-heading h2{font-size:32px}body .section,body .reference-home .section{padding-top:25px;padding-bottom:18px}body .section-heading,body .reference-home .section-heading{margin-bottom:18px}body .collection-grid,body .reference-home .collection-grid{gap:12px}body .collection>div,body .reference-home .collection>div{left:13px;right:13px;bottom:17px}body .collection h3,body .reference-home .collection h3{font-size:29px}body .collection>div>span,body .reference-home .collection>div>span{font-size:11px}body .product-grid,body .reference-home .product-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}body .product-grid>.product-card:last-child:nth-child(odd){display:block}body .product-info,body .reference-home .product-info{padding:10px 8px 0}body .product-info h3,body .reference-home .product-info h3{font-size:15px}body .product-info>small,body .reference-home .product-info>small{font-size:10px}body .product-bottom,body .reference-home .product-bottom{font-size:16px;gap:9px}body .product-bottom button,body .reference-home .product-bottom button{font-size:11px;height:39px;gap:6px}body .badge{font-size:8px;top:9px;left:8px;padding:4px 6px}body .wish{top:5px;right:4px}body .wish svg{width:17px;height:17px}body .quick{font-size:10px;padding:8px}body .arrival-grid{gap:12px}body .arrival-promo{padding:27px;min-height:210px}body .arrival-promo>div{display:block}body .arrival-promo p{font-size:35px}body .arrival-promo strong{font-size:30px}body .arrival-promo>div>span:not(.button){font-size:13px;margin:12px 0}body .arrival-promo .button{font-size:12px}body .scent-grid,body .reference-home .scent-grid{gap:22px 17px}body .scent-grid h4,body .reference-home .scent-grid h4{font-size:12px}body .scent-grid a>div,body .reference-home .scent-grid a>div{max-width:105px}body .reference-offer>.container{padding-top:28px;padding-bottom:25px;min-height:230px}body .reference-offer h2{font-size:36px}body .reference-offer .eyebrow{font-size:11px}body .offer-perks{gap:8px}body .offer-perks span{font-size:9px;padding-right:8px;gap:4px}body .reference-offer .button{font-size:12px}body .reference-offer small{font-size:9px}body .occasion-grid,body .reference-home .occasion-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:20px 12px}body .occasion-grid a>span,body .reference-home .occasion-grid a>span{font-size:12px}body .experience-story{min-height:265px;padding-left:45%}body .experience-story h2{font-size:34px}body .experience-story p{font-size:12px}body .experience-story .button{font-size:11px}body .reference-benefits .benefit-grid{grid-template-columns:repeat(2,minmax(0,1fr))}body .reference-benefits .benefit-grid p{font-size:12px}body .reference-benefits>small{font-size:10px}body .testimonial-card{padding:18px 14px}body .testimonial-card strong{font-size:13px}body .testimonial-card p{font-size:12px}body .testimonial-card small{font-size:10px}body .instagram-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}body .reference-footer-grid{grid-template-columns:1fr 1fr;gap:30px}body .reference-footer-grid>div:first-child{grid-column:1/-1}body .reference-footer h4{font-size:14px}body .reference-footer-grid>div>a{font-size:12px}body .footer-newsletter p,body .footer-newsletter input,body .footer-newsletter button{font-size:12px}body .footer-newsletter button{padding:0 18px}body .reference-footer .footer-bottom{font-size:10px}body .reference-demo-note{font-size:10px}body .shop-layout{display:block}body .shop-sidebar fieldset label{font-size:11px}body .shop-sidebar legend{font-size:13px}body .shop-sidebar .text-link{font-size:12px}body .detail-copy h1{font-size:44px}body .cart-row h3{font-size:16px}body .cart-row p{font-size:12px}body .cart-row>div:last-child{font-size:14px}body .reference-footer .footer-service{gap:14px}body .footer-service>span{font-size:10px}}

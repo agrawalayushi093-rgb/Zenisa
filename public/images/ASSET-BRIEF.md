@@ -1,0 +1,16 @@
+# Original generated concept assets
+
+Built-in ImageGen was used. PNG masters are retained beside optimized WebP assets. These are fictional Zenisa product and campaign visuals. They must not be presented as photos of actual stock.
+
+Final prompt set:
+
+- **zenisa-hero-v3**: Original photorealistic luxury fragrance website hero background, ultra-wide 3:1 aspect ratio. Deep dark emerald silk sweeping across the left half, unobstructed dark negative space for web text. Right half has an elegant emerald green square glass perfume bottle tilted 12 degrees clockwise, golden polished cap and ZENISA PERFUMES label, atop rugged oud wood with ivory vanilla orchids, green leaves and translucent amber. Cinematic golden light and realistic glass, flowers and satin. Entire bottle visible. No UI, headings, borders or watermark.
+- **zenisa-offer-v3**: Ultra-wide 3:1 cinematic luxury perfume promotional website banner. Deep emerald green and golden lighting. Left quarter has an emerald ZENISA perfume bottle among ivory orchids, green leaves and rugged wood. Right quarter has a black luxury gift box with gold satin ribbon and bow. Middle half has unobstructed dark emerald negative space. Rich photorealistic advertising photography, soft golden bokeh. No text except bottle label, no UI or watermark.
+- **zenisa-experience**: Luxury perfume campaign photograph in wide 2:1 landscape. Left half shows a fictional adult South Asian woman with warm brown skin, flowing brunette hair and closed eyes, holding an amber perfume bottle near her cheek, enjoying fragrance, in modest elegant evening attire. Warm golden cinematic light. Right half is dark emerald satin negative space. Original fictional model and perfume. No text, UI or watermark.
+- **zenisa-collections**: Four equal photographic panels: dark amber bottle with oud; pink bottle with roses; two green bottles with leaves; gold-ribbon gift box and bottles. Premium natural product photography. Gold ZENISA PERFUMES bottle labels only, no UI, borders or watermark.
+- **zenisa-products**: Five equally spaced upright square glass bottles on warm ivory, in dark amber, pink, emerald, gold and teal. Front-facing studio photography, complete caps and bases, soft shadows, ZENISA PERFUMES labels. No props or UI.
+- **zenisa-scents**: Six equal panels of sliced lemons and leaves, pink roses, oud chips, amber stones and spice, vanilla orchids and pods, turquoise ocean waves. Luxury macro ingredient photography, lush detail and coherent natural lighting. No borders, labels, UI or watermark.
+- **zenisa-hero**: Earlier emerald bottle with gold cap, oud wood, ivory orchids and leaves on the right half of a dark forest green cinematic setting; left half negative space. Retained for secondary-page promotion imagery.
+
+All visual details, ingredients and packaging are illustrative. Replace with the approved Zenisa photography and logo before commercial release.
+- **zenisa-occasions**: Six equal adjacent editorial photographic panels: coffee and plant, suited man at office laptop, black gym dumbbells and headphones, candlelit romantic couple, golden champagne glasses, ornate cream and gold wedding venue. Luxury golden color grading. No text, UI, labels, borders or watermark.

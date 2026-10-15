@@ -1,0 +1,52 @@
+/* Shared brand chrome: exactly the same green on the header and footer. */
+body .nav,body footer,body .reference-footer,body .l3-footer{background:#062B1B;background-image:none}
+.moving-announcement{display:flex;align-items:center;gap:13px;min-height:35px;background:#062B1B;color:#f1ead6;border-bottom:1px solid #bca05b55;overflow:hidden;padding:0 18px}
+.announcement-window{min-width:0;flex:1;overflow:hidden}
+.announcement-track{display:flex;width:max-content;animation:zenisa-announcements 45s linear infinite;will-change:transform}
+.announcement-group{display:flex;gap:60px;padding-right:60px;align-items:center}
+.announcement-group>span{display:flex;align-items:center;gap:11px;font-size:10px;white-space:nowrap;min-height:35px}
+.announcement-group svg{color:#d4af37;flex-shrink:0}
+.announcement-divider{margin-left:32px;color:#b4a16a}
+.announcement-demo{font-size:8px;color:#c7c9ac;white-space:nowrap}
+.moving-announcement>button{color:#e4ca87;width:28px;height:28px;display:grid;place-items:center;flex-shrink:0}
+.moving-announcement:hover .announcement-track,.moving-announcement:focus-within .announcement-track,.moving-announcement.is-paused .announcement-track{animation-play-state:paused}
+@keyframes zenisa-announcements{to{transform:translate3d(-50%,0,0)}}
+.l3-slider .l3-hero-copy{padding-left:30px;max-width:730px;min-height:600px;display:flex;flex-direction:column;justify-content:center}
+.l3-slider .l3-hero-copy h1{font-size:clamp(48px,5.5vw,84px)}
+.l3-slider .l3-gold-button{align-self:flex-start}
+.l3-slider .l3-hero-caption{align-items:center;width:100%;max-width:520px;gap:14px;margin-top:45px;min-height:42px}
+.l3-hero-pagination{display:flex;gap:3px;flex-shrink:0;margin-left:auto}
+.l3-hero-pagination>button{padding:10px 5px;min-width:20px;min-height:32px;display:grid;place-items:center}
+.l3-hero-pagination>button>span{display:block;width:6px;height:6px;border:1px solid #d1b360;border-radius:50%;background:transparent}
+.l3-hero-pagination>button[aria-pressed=true]>span{background:#dfbd62}
+.l3-hero-pause{display:grid;place-items:center;padding:9px;color:#d6bc74}
+.l3-hero-arrow{position:absolute;z-index:3;top:50%;transform:translateY(-50%);width:37px;height:37px;border:1px solid #d3b76488;background:#062b1b70;color:#efd49a;border-radius:50%;display:grid;place-items:center}
+.l3-hero-previous{left:17px}.l3-hero-next{right:17px}
+.l3-hero-her .l3-hero-shade{background:linear-gradient(90deg,#062b1be8,#062b1bc9 38%,#062b1b22)}
+.l3-hero-gifting .l3-hero-shade{background:linear-gradient(90deg,#062b1bf0,#062b1b99 55%,#062b1b22)}
+.l3-him-her{padding:80px 0}
+.l3-for-him{background:#e9ede3}
+.l3-for-her{background:#f3e7df}
+.l3-him-her-layout{display:grid;grid-template-columns:.9fr 2.1fr;gap:30px;align-items:stretch}
+.l3-gender-campaign{position:relative;min-height:440px;border-radius:120px 120px 6px 6px;overflow:hidden;color:#fff5d9;background:#123d2a}
+.l3-gender-photo{position:absolute;inset:0;background:url('/images/zenisa-collections.webp') no-repeat;background-size:400% 100%}
+.l3-gender-campaign:after{content:'';position:absolute;inset:35% 0 0;background:linear-gradient(transparent,#062b1bf5)}
+.l3-gender-caption{position:absolute;z-index:1;left:30px;right:30px;bottom:30px}
+body .l3-gender-caption>small{font-size:8px;letter-spacing:2px;color:#e6d09a}
+.l3-gender-caption h3{font-size:44px;white-space:pre-line;line-height:.98;margin:14px 0 25px}
+.l3-gender-caption>span{display:flex;align-items:center;justify-content:space-between;border-top:1px solid #d9c48c66;padding-top:15px;font-size:12px}
+.l3-gender-products{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px;align-items:stretch}
+body .home-three .l3-gender-products .product-card{display:flex;flex-direction:column;padding-bottom:15px;background:#fbf8ef;border:1px solid #d8c8a6;border-radius:7px;overflow:hidden;color:#2D2D2D}
+body .home-three .l3-gender-products .product-image{aspect-ratio:4/5;background:#f4eddd;flex-shrink:0}
+body .home-three .l3-gender-products .product-image .bottle-photo{width:100%;height:100%;background-size:500% 125%}
+body .home-three .l3-gender-products .product-info{padding:17px 14px 0;flex:1}
+body .home-three .l3-gender-products .product-info h3{font-size:18px}
+body .home-three .l3-gender-products .product-info>small{font-size:10px}
+body .home-three .l3-gender-products .product-bottom{font-size:18px;margin-top:auto;padding-top:15px}
+body .home-three .l3-gender-products .product-bottom button{font-size:12px;min-height:42px}
+body .home-three .l3-gender-products .badge{font-size:8px;left:10px;top:10px}
+.l3-gender-more{text-align:center;margin-top:32px}
+@media(max-width:1100px){.l3-him-her-layout{grid-template-columns:.8fr 2.2fr;gap:20px}.l3-gender-products{gap:15px}.l3-gender-caption{left:20px;right:20px;bottom:25px}.l3-gender-caption h3{font-size:36px}body .home-three .l3-gender-products .product-info h3{font-size:16px}body .home-three .l3-gender-products .product-bottom button{font-size:10px}.l3-slider .l3-hero-copy{max-width:650px}}
+@media(max-width:800px){.l3-him-her{padding:55px 0}.l3-him-her-layout{grid-template-columns:1fr}.l3-gender-campaign{min-height:300px;border-radius:7px;background:#062b1b}.l3-gender-photo{width:40%;right:auto}.l3-gender-campaign:after{background:linear-gradient(90deg,transparent,#062b1b);inset:0}.l3-gender-caption{left:48%;right:30px;bottom:35px}.l3-gender-caption h3{font-size:40px}.l3-gender-products{gap:18px}.l3-slider .l3-hero-copy{min-height:550px;padding-left:20px;max-width:600px}.l3-slider .l3-hero-copy h1{font-size:64px}.l3-hero-arrow{width:29px;height:29px}.l3-hero-previous{left:6px}.l3-hero-next{right:6px}.announcement-group{gap:35px;padding-right:35px}.announcement-demo{display:none}}
+@media(max-width:540px){.moving-announcement{padding:0 8px;gap:6px;min-height:32px}.announcement-group>span{font-size:9px;min-height:32px;gap:8px}.announcement-divider{margin-left:10px}.announcement-group{gap:25px;padding-right:25px}.announcement-group svg{width:12px}.moving-announcement>button{width:24px;height:28px}.l3-slider .l3-hero-copy{min-height:530px;padding:55px 12px 35px}.l3-slider .l3-hero-copy h1{font-size:clamp(43px,12vw,59px);letter-spacing:-1.5px}.l3-slider .l3-hero-copy .l3-kicker{font-size:7px;letter-spacing:1.5px;max-width:270px}.l3-slider .l3-hero-copy>p:not(.l3-kicker){font-size:12px;max-width:280px}.l3-slider .l3-hero-caption{flex-wrap:wrap;gap:8px;margin-top:33px;padding-top:12px;letter-spacing:1px}.l3-slider .l3-hero-caption>span{width:100%}.l3-hero-pagination{margin-left:0}.l3-hero-arrow{width:24px;height:24px;top:45%}.l3-hero-arrow svg{width:15px}.l3-hero-previous{left:3px}.l3-hero-next{right:3px}.l3-him-her{padding:42px 0}.l3-gender-campaign{min-height:250px}.l3-gender-caption{left:45%;right:20px;bottom:25px}.l3-gender-caption h3{font-size:32px}body .l3-gender-caption>small{font-size:6px;letter-spacing:1px}.l3-gender-caption>span{font-size:10px}.l3-gender-products{grid-template-columns:repeat(2,minmax(0,1fr));gap:18px 12px}body .home-three .l3-gender-products .product-info{padding:12px 9px 0}body .home-three .l3-gender-products .product-info h3{font-size:15px}body .home-three .l3-gender-products .product-info>small{font-size:9px}body .home-three .l3-gender-products .product-bottom{font-size:16px}body .home-three .l3-gender-products .product-bottom button{font-size:10px;min-height:38px}.l3-gender-more{margin-top:25px}.l3-gender-more .l3-gold-button{font-size:11px}}
+@media(prefers-reduced-motion:reduce){.announcement-track{animation:none;will-change:auto}.announcement-window{overflow-x:auto}.announcement-group[aria-hidden=true]{display:none}}
