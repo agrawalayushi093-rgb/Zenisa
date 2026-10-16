@@ -1,0 +1,3 @@
+import {useEffect,useState} from 'react';
+import {useAdmin} from './AdminApp';
+export default function useAdminData(path,revision=0){const {api}=useAdmin();const [data,setData]=useState(null),[loading,setLoading]=useState(true),[error,setError]=useState('');useEffect(()=>{const controller=new AbortController();setLoading(true);setError('');api(path,{signal:controller.signal}).then(value=>{if(!controller.signal.aborted)setData(value)}).catch(error=>{if(!controller.signal.aborted){setError(error.message);setData(null)}}).finally(()=>{if(!controller.signal.aborted)setLoading(false)});return()=>controller.abort()},[api,path,revision]);return {data,loading,error}}

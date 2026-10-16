@@ -17,3 +17,5 @@ import './styles/home-enhancements.css';
 import './styles/home-four.css';
 import './styles/home-three-placeholders.css';
 import './styles/all-card-placeholders.css';
+
+import './styles/home-four-sequence.css';

@@ -1,0 +1,85 @@
+/* Approved homepage section palette. Keep light/dark section boundaries full width. */
+.home-four{--l4-section-light:#C5D0BD;--l4-section-dark:#062B1B;background:var(--l4-section-light)}
+body .moving-announcement{background:#C5D0BD;color:#062B1B;border-color:#a6b59a}
+body .announcement-group svg,body .announcement-divider{color:#385137}
+body .nav,body .nav.scrolled,body .l4-footer{background:#062B1B}
+.home-four>#collections,.home-four>#scents,.home-four .l4-occasion-section,.home-four .l4-discovery,.home-four .l4-why,.home-four .l4-instagram{background:#C5D0BD}
+.home-four .l4-dark-section,.home-four .l4-him-her,.home-four .google-reviews,.home-four .l4-offer-banner{background:#062B1B}
+.home-four .l4-him-her{color:#F7F3E9}
+.home-four .l4-him-her>.container>.l4-heading h2{color:#F7F3E9}
+body .home-four .l4-him-her>.container>.l4-heading .l4-kicker{color:#dec37a}
+body .home-four .l4-him-her>.container>.l4-heading .l4-section-copy{color:#c2cfbd}
+body .home-four #collections>.l4-heading .l4-section-copy,body .home-four #scents>.l4-heading .l4-section-copy,body .home-four .l4-occasion-section .l4-section-copy,body .home-four .l4-discovery .l4-section-copy{color:#465441}
+body .home-four .l4-discovery .l4-kicker,body .home-four #collections>.l4-heading .l4-kicker,body .home-four #scents>.l4-heading .l4-kicker,body .home-four .l4-occasion-section .l4-kicker,body .home-four .l4-why .l4-kicker{color:#69551e}
+body .home-four .l4-why .l4-benefit-grid p,body .home-four .l4-why .l4-fine-print,body .home-four .l4-instagram .l4-fine-print{color:#465441}
+.l4-offer-banner{color:#F7F3E9;overflow:hidden;position:relative;border-block:1px solid #d4af3733}
+.l4-offer-banner-inner{display:grid;grid-template-columns:1.4fr 1fr;align-items:center;gap:65px;padding-block:70px}
+body .l4-offer-banner .l4-kicker{color:#d9bc70;font-size:10px}
+.l4-offer-banner h2{font-size:clamp(40px,4.6vw,68px);line-height:1.05;font-weight:500;letter-spacing:-1px;color:#F7F3E9;margin:0}
+.l4-offer-banner h2 em{color:#e4c777;font-weight:400}
+body .l4-offer-banner-copy>p:not(.l4-kicker){font-size:14px;line-height:1.9;max-width:540px;color:#cbd6c3;margin:23px 0 14px}
+.l4-offer-banner-copy>small{display:block;color:#b6c7ad;font-size:11px;line-height:1.9;max-width:540px}
+.l4-offer-banner-copy>.l4-gold-button{margin-top:26px}
+.l4-offer-banner-art{position:relative;min-height:300px;display:flex;align-items:center;justify-content:center;flex-direction:column}
+.l4-offer-art-ring{position:absolute;width:280px;height:280px;border:1px solid #d4af374d;border-radius:50%;inset:50% auto auto 50%;transform:translate(-50%,-50%)}
+.l4-offer-art-ring:before{content:'';position:absolute;inset:15px;border:1px solid #d4af372b;border-radius:50%}
+.l4-offer-banner-art>svg{position:absolute;top:32px;right:25%;width:40px;height:40px;color:#d4af37}
+.l4-offer-art-size{position:relative;color:#e7ce8c;font:500 clamp(85px,9vw,130px)/1 'Cormorant Garamond',serif;letter-spacing:-5px}
+.l4-offer-art-size>small{font:400 16px Poppins,sans-serif;letter-spacing:3px;margin-left:10px}
+.l4-offer-art-caption{position:relative;margin-top:20px;font-size:9px;letter-spacing:2px;color:#c8ba8d;text-align:center}
+.l4-discovery-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:24px}
+.l4-discovery-card{border:1px solid #8b9b7c;border-radius:140px 140px 6px 6px;overflow:hidden;background:#d4ddcc}
+.l4-discovery-art{position:relative;aspect-ratio:4/4.5;background:#b2c0a7;display:grid;place-items:center;overflow:hidden}
+.l4-discovery-art>img{width:100%;height:100%;object-fit:cover;opacity:.32}
+.l4-discovery-portrait{position:absolute;inset:25% 10% 0;display:grid;place-items:center;color:#6f8263}
+.l4-discovery-portrait>svg{width:100%;height:100%;opacity:.65}
+.l4-discovery-tag{position:absolute;bottom:15px;left:10px;right:10px;text-align:center;font-size:7px;letter-spacing:1.6px;color:#34472a}
+.l4-discovery-copy{text-align:center;padding:24px 15px 27px}
+.l4-discovery-copy>span{font-size:8px;letter-spacing:2px;color:#556044}
+.l4-discovery-copy h3{font-size:clamp(27px,2.6vw,38px);font-weight:500;line-height:1.1;margin:10px 0;color:#18341e}
+body .l4-discovery-copy p{font-size:10px;line-height:1.8;margin:0;color:#55634c}
+.l4-discovery-brands .l4-discovery-card{border-radius:6px}
+.l4-discovery-brands .l4-discovery-art{aspect-ratio:4/3.5;background:#d0dac6}
+.l4-brand-emblem{width:80%;aspect-ratio:1;max-width:210px;border:1px solid #8c9c7b;outline:1px solid #a5b197;outline-offset:-9px;display:flex;flex-direction:column;justify-content:center;align-items:center;border-radius:50%}
+.l4-brand-emblem>span{font-size:6px;letter-spacing:1.5px;color:#52623f}
+.l4-brand-emblem>strong{font:400 clamp(65px,7vw,90px)/1.3 'Cormorant Garamond',serif;color:#51633e}
+body .l4-discovery-note{font-size:11px;line-height:1.9;text-align:center;color:#465441;max-width:650px;margin:25px auto 0}
+.l4-discovery-more{text-align:center;margin-top:24px}
+.l4-discovery-button{display:inline-flex;align-items:center;justify-content:center;gap:20px;border:1px solid #526c47;padding:14px 25px;min-height:48px;font-size:12px;color:#173c24}
+.l4-discovery-button:hover{background:#062B1B;color:#F7F3E9}
+@media(max-width:950px){.l4-offer-banner-inner{gap:30px;grid-template-columns:1.5fr 1fr}.l4-offer-art-ring{width:230px;height:230px}.l4-discovery-grid{gap:16px}.l4-brand-emblem>span{font-size:5px;letter-spacing:.6px}.l4-discovery-copy{padding:20px 10px}.l4-discovery-tag{font-size:6px;letter-spacing:.7px}}
+@media(max-width:700px){.l4-offer-banner-inner{grid-template-columns:1fr;padding-block:50px;gap:20px}.l4-offer-banner-art{min-height:230px;grid-row:2}.l4-offer-banner-copy{text-align:center}.l4-offer-banner-copy>p,.l4-offer-banner-copy>small{margin-left:auto;margin-right:auto}.l4-offer-banner-art>svg{right:calc(50% - 100px);top:13px}.l4-offer-art-size{font-size:100px}.l4-offer-banner h2{font-size:clamp(36px,8vw,52px)}.l4-discovery-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:20px 14px}.l4-discovery-copy h3{font-size:28px}.l4-discovery-card{border-radius:90px 90px 5px 5px}.l4-discovery-copy>span{font-size:7px}.l4-discovery-copy p{font-size:9px}.l4-discovery-art{aspect-ratio:4/5}.l4-brand-emblem>strong{font-size:65px}.l4-brand-emblem>span{font-size:5px;letter-spacing:.3px}.l4-discovery-brands .l4-discovery-art{aspect-ratio:1}.l4-discovery-tag{font-size:5px;bottom:12px}.l4-discovery-brands .l4-discovery-tag{bottom:7px}}
+
+/* Latest section colours for the homepage review. */
+.home-four .l4-discovery-brands{background:#C5D0BD}
+.home-four .l4-why{background:#062B1B;color:#F7F3E9}
+.home-four .l4-why .l4-heading h2,.home-four .l4-why .l4-benefit-grid h3{color:#F7F3E9}
+body .home-four .l4-why .l4-kicker{color:#dec37a}
+body .home-four .l4-why .l4-benefit-grid p,body .home-four .l4-why .l4-fine-print{color:#c2cfbd}
+.home-four .google-reviews{background:#C5D0BD;color:#062B1B}
+.home-four .google-reviews h2{color:#062B1B}
+.home-four .google-reviews .eyebrow{color:#69551e}
+.home-four .google-reviews .google-reviews-intro,.home-four .google-review-attribution{color:#465441}
+.home-four .google-reviews-empty{border-color:#899b7c;color:#3e5135}
+.home-four .google-review-card{background:#d4ddcc;color:#173c24;border-color:#899b7c}
+.home-four .google-review-person a,.home-four .google-review-card>a,.home-four .google-reviews-header>a{color:#173c24}
+.home-four .google-review-card .google-stars,.home-four .google-rating strong{color:#755b16}
+.home-four .google-logo{color:#1f1f1f}
+.home-four .l4-instagram{background:#FFFFFF}
+[data-preview-disabled=true]{cursor:default}
+.nav-actions>button:disabled{cursor:default;opacity:.55}
+.home-four .product-bottom>button:disabled{cursor:default;opacity:.75}
+
+/* Larger, bold action labels across the active storefront. */
+body .home-four .l4-gold-button,body .home-four .l4-outline-button,body .home-four .l4-discovery-button,body .home-four .button,body .nav .whatsapp-nav,body .home-four .l4-instagram-toolbar>button,body .l4-footer button,body .home-four .l4-slide .product-bottom button,body .home-four .l4-gender-products .product-bottom button{font-size:clamp(14px,1.15vw,17px);font-weight:700;line-height:1.45;letter-spacing:.15px;min-height:46px}
+body .home-four .l4-collection>div>span,body .home-four .l4-gender-caption>span{font-size:clamp(13px,1.05vw,16px);font-weight:700;line-height:1.5;gap:10px}
+body .home-four .l4-collection>div>span>svg,body .home-four .l4-gender-caption>span>svg{flex-shrink:0}
+body .home-four .l4-instagram-toolbar>a{font-size:clamp(14px,1.1vw,17px);font-weight:700}
+body .home-four .l4-scent-grid h3{margin-top:22px}
+@media(max-width:540px){body .home-four .l4-gold-button,body .home-four .l4-outline-button,body .home-four .l4-discovery-button{padding:12px 18px;gap:12px;max-width:100%;white-space:normal;text-align:center}body .home-four .l4-slide .product-bottom button,body .home-four .l4-gender-products .product-bottom button{font-size:14px;padding-inline:8px;white-space:normal}body .home-four .l4-collection>div>span{font-size:13px;white-space:normal}body .home-four .l4-scent-grid h3{margin-top:16px}}
+
+/* Clear scent names and emerald image rings. */
+body .home-four .l4-scent-image{border:4px solid #062B1B;outline:none;box-shadow:none}
+body .home-four .l4-scent-grid h3{font-family:'Poppins',sans-serif;font-size:clamp(16px,1.45vw,24px);font-weight:700;line-height:1.45;letter-spacing:0;color:#062B1B;margin-top:22px}
+body .home-four .l4-scent-grid>a:hover h3,body .home-four .l4-scent-grid>a:focus-visible h3{color:#062B1B}
+@media(max-width:540px){body .home-four .l4-scent-grid h3{font-size:16px;margin-top:16px}body .home-four .l4-scent-image{border-width:3px}}
