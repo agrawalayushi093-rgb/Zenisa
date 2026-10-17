@@ -142,3 +142,14 @@ Celebrity and brand sections use clearly labelled design placeholders from src/d
 `src/data/siteMode.js` currently sets homepageOnly=true. Public secondary routes and the offer popup are disabled, and direct secondary URLs redirect to the homepage. Homepage links to shop/products/cart/contact/policies are rendered without hrefs while preserving the visual design. Same-page section navigation remains active. Search and Add to Cart controls are temporarily disabled. Admin access is preserved independently. Set this one flag to false to restore the existing public pages and navigation; their source has not been deleted.
 
 Latest colours: Brands #C5D0BD, Why Choose Zenisa #062B1B, Customer Reviews #C5D0BD, Instagram Gallery #FFFFFF.
+
+## Responsive layout and smooth navigation
+
+The final responsive stylesheet is src/styles/responsive.css. Best sellers use 5 desktop, 3 tablet and 2 phone columns; collection, scent, gender, occasion and discovery layouts reflow independently. Button labels remain large and bold. Small-screen header spacing, footer wordmark clipping and newsletter width are fixed. Colours, section order, decorative removals and homepage-only review mode are retained.
+
+Section navigation uses native smooth scrolling with a measured sticky-header offset and supports repeated clicks on the same anchor. First page loads and reduced-motion preferences avoid animated jumps. There is no wheel/touch interception or scroll-jacking. Hero assets warm/decode during browser idle time (except on data-saving connections); off-screen hero, announcement and gallery animations pause. Actual scrolling remains controlled by the browser/device.
+
+Verified in the in-app browser at 320, 375, 390, 768, 1024, 1440 and 1920px widths: no horizontal page overflow, clipped header/footer wordmark or overflowing CTA labels. These are viewport checks, not a claim of testing every physical device. Section anchor placement was checked against the actual sticky header.
+
+Additional responsive checks passed at 844×390 (landscape), 1280×800 and 2560×1440. Mobile navigation was opened at 390×844; selecting a section closed the dialog and restored normal scrolling. Anchor targets sit 16px below the measured sticky header.
+

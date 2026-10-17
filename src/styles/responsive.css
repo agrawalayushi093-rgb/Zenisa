@@ -1,0 +1,284 @@
+/* Final storefront breakpoints. Native scrolling is retained for touch, wheel and trackpad. */
+:root{--zenisa-header-height:88px;--zenisa-page-gutter:clamp(16px,3vw,48px)}
+html{scroll-behavior:smooth;scroll-padding-top:calc(var(--zenisa-header-height) + 16px)}
+body .home-four .container,body .l4-footer .container,body .nav-inner{width:min(1760px,calc(100% - 2 * var(--zenisa-page-gutter)))}
+.home-four,.l4-footer{width:100%;min-width:0}
+body .home-four .l4-section{padding-block:clamp(48px,6vw,96px)}
+.home-four .l4-dark-section{padding-block:clamp(48px,6vw,85px)}
+.home-four .l4-heading{margin-bottom:clamp(28px,3.5vw,46px)}
+.home-four .l4-heading h2,.home-four .google-reviews h2{font-size:clamp(32px,3.7vw,57px);line-height:1.12;text-wrap:balance;overflow-wrap:break-word}
+.home-four .l4-product-grid{grid-template-columns:repeat(5,minmax(0,1fr));gap:30px clamp(14px,1.3vw,25px)}
+.home-four .l4-product-grid>*,.home-four .l4-gender-products>*,.home-four .l4-collection-grid>*,.home-four .l4-discovery-grid>*,.l4-footer-links>*,.l4-footer-invitation>*{min-width:0}
+body .home-four .l4-static-showcase .product-info h3{white-space:normal;overflow:visible;text-overflow:clip;overflow-wrap:break-word;font-size:clamp(14px,1.15vw,18px);line-height:1.45;min-height:2.9em}
+body .home-four .l4-static-showcase .product-info>small{min-height:2.8em;line-height:1.5}
+body .home-four .l4-gender-products .product-info h3{white-space:normal;overflow-wrap:break-word;font-size:clamp(20px,1.7vw,28px);line-height:1.1;min-height:2.2em}
+body .home-four .product-bottom button{min-height:46px;height:auto;white-space:normal}
+.home-four .l4-scent-grid h3{min-height:2.9em;overflow-wrap:break-word}
+.l4-slider .l4-hero-copy{max-width:min(730px,100%)}
+.l4-slider .l4-hero-copy h1{overflow-wrap:break-word}
+.l4-offer-banner-copy,.l4-offer-banner-art,.l4-gender-caption,.l4-occasion>div{min-width:0}
+.l4-offer-banner h2{overflow-wrap:break-word}
+.l4-footer-wordmark{font-size:clamp(58px,19vw,340px);letter-spacing:.025em;white-space:nowrap;max-width:100%}
+.l4-footer form>div>input{flex:1;min-width:0;width:0}
+.l4-footer form button{min-width:44px;min-height:44px;flex-shrink:0}
+.l4-footer-bottom{flex-wrap:wrap;line-height:1.8}
+body .nav-inner{gap:clamp(12px,2vw,28px)}
+.nav-inner>a:first-child{min-width:0;flex-shrink:0}
+.nav-actions{flex-shrink:0}
+.nav .icon-button,.nav .cart-icon,.nav .mobile-toggle{min-width:44px;min-height:44px;align-items:center;justify-content:center}
+.moving-announcement.is-paused .announcement-track{will-change:auto}
+.home-four .l4-marquee-group>a>svg{filter:none}
+@media(max-width:1199px){.home-four .l4-product-grid{grid-template-columns:repeat(3,minmax(0,1fr))}.home-four .l4-collection-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:24px}.home-four .l4-scent-grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:25px}.home-four .l4-scent-image{max-width:210px;margin-inline:auto}.home-four .l4-him-her-layout{grid-template-columns:1fr}.home-four .l4-gender-campaign{min-height:300px;border-radius:8px}.home-four .l4-gender-photo{width:43%;right:auto}.home-four .l4-gender-campaign:after{inset:0;background:linear-gradient(90deg,transparent,#062b1b 48%)}.home-four .l4-gender-caption{left:48%;right:28px;bottom:32px}.home-four .l4-gender-products{grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}.l4-footer-invitation{gap:40px}.l4-footer-links{gap:28px}}
+@media(max-width:1100px){body .nav nav{display:none}body .mobile-toggle{display:flex}body .nav .whatsapp-nav{display:none}}
+@media(max-width:800px){.l4-footer-invitation{grid-template-columns:1fr;gap:28px}.l4-footer-links{grid-template-columns:repeat(2,minmax(0,1fr));gap:30px}.l4-footer-brand{grid-column:1/-1}.home-four .l4-discovery-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.home-four .l4-occasion-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}.home-four .l4-occasion{flex-direction:column}.home-four .l4-occasion-image{flex-basis:auto;aspect-ratio:4/3;min-height:0}.home-four .l4-occasion>div{padding:24px}.home-four .l4-occasion p{min-height:3.8em}.home-four .l4-him-her{padding-block:55px}}
+@media(max-width:699px){.home-four .l4-product-grid,.home-four .l4-gender-products{grid-template-columns:repeat(2,minmax(0,1fr));gap:26px 14px}body .home-four .l4-static-showcase .product-info h3{font-size:15px}.home-four .l4-benefit-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:26px 14px}.home-four .l4-gender-campaign{min-height:270px}.home-four .l4-gender-caption{left:47%;right:18px;bottom:24px}.home-four .l4-gender-caption h3{font-size:clamp(28px,7vw,38px)}.home-four .l4-scent-grid{gap:22px 14px}.home-four .l4-scent-grid h3{font-size:16px}.l4-offer-banner-inner{padding-block:48px}.home-four .l4-offer-banner-copy .l4-gold-button,.home-four .l4-gender-more .l4-gold-button{max-width:100%;white-space:normal}.home-four .l4-instagram-toolbar{flex-wrap:wrap}.l4-footer{padding-top:48px}.l4-footer-invitation h2{font-size:clamp(36px,9vw,48px)}}
+@media(max-width:540px){body .nav-inner{height:76px;gap:12px}.nav-actions{gap:4px}.home-four .l4-collection-grid{gap:14px}.home-four .l4-collection{border-radius:90px 90px 5px 5px}.home-four .l4-collection h3{font-size:clamp(26px,7vw,36px)}.home-four .l4-collection>div{left:12px;right:12px;bottom:15px}.home-four .l4-collection>div>span{font-size:13px;gap:6px;line-height:1.4}.home-four .l4-collection>div>span>svg{width:14px}.home-four .l4-occasion-grid{grid-template-columns:1fr}.home-four .l4-occasion{flex-direction:row}.home-four .l4-occasion-image{flex-basis:40%;aspect-ratio:auto}.home-four .l4-occasion>div{padding:20px 16px}.home-four .l4-occasion h3{font-size:32px}.home-four .l4-occasion p{font-size:12px;min-height:0}.home-four .l4-benefit-grid>div{border-right:0;padding-inline:4px}.home-four .l4-benefit-grid h3{font-size:24px}.home-four .l4-discovery-copy h3{font-size:26px}.home-four .l4-slider .l4-hero-shade{background:linear-gradient(90deg,#032317ed,#032317aa 75%,#03231766)}body .dialog-backdrop{padding:16px;backdrop-filter:none}.dialog{padding:36px 22px;max-height:calc(100dvh - 32px);overscroll-behavior:contain}.mobile-menu>a{font-size:28px;min-height:48px}.l4-footer-wordmark{font-size:19vw;letter-spacing:.025em}}
+@media(max-width:360px){.nav-actions>button[aria-label="Search fragrances"]{display:none}body .nav .logo{font-size:32px}.home-four .l4-scent-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.home-four .l4-gender-caption{left:45%;right:12px}.home-four .l4-gender-caption>small{letter-spacing:.8px}.home-four .l4-gender-caption>span{font-size:13px;gap:5px}body .home-four .l4-gender-products .product-info{padding-inline:9px}.home-four .l4-heading h2{font-size:31px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.l4-marquee-track,.announcement-track{animation:none;will-change:auto}}
+
+.dialog .dialog-close{width:44px;height:44px}
+
+
+/* Keep section geometry stable while scrolling and simplify product rasterisation. */
+.l4-slider>.l4-hero-slide-stack{display:grid}
+.l4-hero-slide-stack>.l4-hero-copy{grid-area:1/1;visibility:hidden;pointer-events:none}
+.l4-hero-slide-stack>.l4-hero-copy.is-current{visibility:visible;pointer-events:auto}
+body .home-four .product-image .bottle.bottle-photo{mix-blend-mode:normal;filter:none;transform:none;transition:none;will-change:auto}
+body .home-four .product-image:hover .bottle.bottle-photo{transform:none}
+.home-four .l4-static-showcase .product-image{isolation:isolate}
+.home-four .google-reviews-empty{min-height:136px;display:flex;flex-direction:column;justify-content:center;align-items:center}
+@media(max-width:600px){.home-four .google-reviews-empty{min-height:168px}}
+
+/* Compact product details without reserving empty lines beneath short names. */
+body .home-four .product-card .product-info{display:flex;flex-direction:column;justify-content:flex-start;gap:8px}
+body .home-four .product-card .product-info>a{order:0;margin:0;min-height:0}
+body .home-four .product-card .product-info h3{min-height:0;margin:0;line-height:1.3}
+body .home-four .product-card .product-info>small{order:1;min-height:0;margin:0;line-height:1.5}
+body .home-four .product-card .product-info .product-bottom{order:2;margin-top:2px;padding-top:0;gap:12px}
+
+body .shop-results .product-grid{grid-template-columns:repeat(4,minmax(0,1fr));gap:28px 20px}
+.shop-results{min-width:0}
+.shop-pagination{display:flex;justify-content:center;align-items:center;flex-wrap:wrap;gap:10px;margin:40px 0 16px}
+.shop-pagination button{min-width:44px;min-height:44px;padding:10px 16px;border:1px solid #062B1B;border-radius:4px;background:transparent;color:#062B1B;font-weight:700;font-size:15px}
+.shop-pagination button[aria-current="page"]{background:#062B1B;color:#F7F3E9}
+.shop-pagination button:disabled{opacity:.4;cursor:default}
+.shop-pagination button:focus-visible{outline:3px solid #D4AF37;outline-offset:3px}
+@media(max-width:1100px){body .shop-results .product-grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media(max-width:800px){body .shop-layout{grid-template-columns:1fr}body .shop-results .product-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:24px 14px}}
+
+/* Classic occasion edits: framed photography and quiet ivory captions. */
+.home-four .l4-occasion-grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:28px}
+.home-four .l4-occasion{display:flex;flex-direction:column;min-height:0;padding:10px;border:1px solid #9a8753;border-radius:2px;background:#F7F3E9;color:#062B1B}
+.home-four .l4-occasion-image{flex:none;width:100%;aspect-ratio:3/2;min-height:0;border-radius:0;background-size:600% 100%}
+.home-four .l4-occasion>div{position:relative;align-self:stretch;padding:25px 20px 23px;text-align:center;border:1px solid #d4af374d;border-top:0}
+body .home-four .l4-occasion small{display:none}
+.home-four .l4-occasion h3{font-family:'Cormorant Garamond',serif;font-size:clamp(30px,2.7vw,42px);font-weight:600;line-height:1.1;margin:0 0 10px}
+body .home-four .l4-occasion p{font-size:13px;line-height:1.7;min-height:0;margin:0;color:#526050}
+.home-four .l4-occasion-arrow{margin:18px auto 0;width:36px;height:36px;border-radius:0;border-color:#aa8d42;color:#062B1B}
+.home-four .l4-occasion:hover .l4-occasion-arrow{background:#062B1B;color:#F7F3E9}
+.home-four .l4-occasion:focus-visible{outline:3px solid #062B1B;outline-offset:4px}
+@media(max-width:800px){.home-four .l4-occasion-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}.home-four .l4-occasion>div{padding:20px 12px}.home-four .l4-occasion-image{flex:none;aspect-ratio:3/2}}
+@media(max-width:480px){.home-four .l4-occasion-grid{gap:16px 12px}.home-four .l4-occasion{padding:6px}.home-four .l4-occasion h3{font-size:28px}body .home-four .l4-occasion p{font-size:11px;line-height:1.6}.home-four .l4-occasion>div{padding:17px 8px}.home-four .l4-occasion-arrow{margin-top:14px;width:32px;height:32px}}
+
+/* Alternating large and small occasion portraits. */
+@media(min-width:801px){
+ .home-four .l4-occasion-grid{grid-template-columns:repeat(4,minmax(0,1fr));grid-template-rows:repeat(4,170px);gap:22px}
+ .home-four .l4-occasion{position:relative;padding:8px;display:block;isolation:isolate}
+ .home-four .l4-occasion-0{grid-column:1/3;grid-row:1/3}
+ .home-four .l4-occasion-1{grid-column:3;grid-row:1/3}
+ .home-four .l4-occasion-2{grid-column:4;grid-row:1/3}
+ .home-four .l4-occasion-3{grid-column:1;grid-row:3/5}
+ .home-four .l4-occasion-4{grid-column:2;grid-row:3/5}
+ .home-four .l4-occasion-5{grid-column:3/5;grid-row:3/5}
+ .home-four .l4-occasion-image{height:100%;aspect-ratio:auto}
+ .home-four .l4-occasion>div{position:absolute;inset:auto 8px 8px;padding:48px 18px 22px;border:0;text-align:left;background:linear-gradient(transparent,rgba(6,43,27,.96));color:#F7F3E9}
+ .home-four .l4-occasion h3{font-size:clamp(30px,2.8vw,44px);margin-bottom:8px}
+ body .home-four .l4-occasion p{color:#f7f3e9;font-size:12px;max-width:300px}
+ .home-four .l4-occasion-arrow{position:absolute;right:18px;bottom:22px;margin:0;color:#F7F3E9;border-color:#D4AF37}
+ .home-four .l4-occasion>div{padding-right:65px}
+ .home-four .l4-occasion-0 h3,.home-four .l4-occasion-5 h3{font-size:clamp(40px,4vw,60px)}
+}
+@media(min-width:801px) and (max-width:1100px){.home-four .l4-occasion-grid{grid-template-rows:repeat(4,155px);gap:16px}.home-four .l4-occasion>div{padding:45px 12px 60px}.home-four .l4-occasion-arrow{right:12px;bottom:14px}}
+@media(max-width:800px){.home-four .l4-occasion-0,.home-four .l4-occasion-5{grid-column:1/-1}.home-four .l4-occasion-0 .l4-occasion-image,.home-four .l4-occasion-5 .l4-occasion-image{aspect-ratio:2/1}}
+
+.category-box-nav{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));background:#C5D0BD;border-bottom:1px solid #062b1b33}
+.category-box-nav>a{display:flex;align-items:center;justify-content:center;min-height:88px;padding:20px 12px;border-right:1px solid #062b1b33;color:#062B1B;font-family:'Poppins',sans-serif;font-size:clamp(14px,1.1vw,18px);font-weight:700;letter-spacing:2px;text-transform:uppercase;text-align:center;transition:background .2s,color .2s}
+.category-box-nav>a:last-child{border-right:0}
+.category-box-nav>a:hover{background:#062B1B;color:#D4AF37}
+.category-box-nav>a:focus-visible{outline:3px solid #D4AF37;outline-offset:-5px}
+.best-ten{background:#C5D0BD;padding:42px var(--zenisa-page-gutter)}
+.best-ten-inner{max-width:840px;margin:auto}
+.best-ten h2{font-family:'Poppins',sans-serif;font-size:clamp(19px,2vw,27px);text-align:center;font-weight:600;color:#062B1B;margin:0;text-transform:uppercase;letter-spacing:1px}
+.best-ten-note{text-align:center;font-size:11px;color:#465441;margin:10px 0 22px}
+.best-ten ol{list-style:none;padding:0;margin:0;display:grid;gap:10px}
+.best-ten li>a{display:flex;align-items:center;gap:14px;min-height:76px;padding:9px 18px;background:#F7F3E9;border:1px solid #062b1b26;border-radius:7px;color:#062B1B}
+.best-ten li:first-child>a{border-color:#D4AF37}
+.best-ten-rank{font-size:15px;font-weight:700;width:25px;flex-shrink:0;color:#8a7132}
+.best-ten-image{width:54px;height:58px;overflow:hidden;border-radius:4px;flex-shrink:0;background:#efe3cd}
+body .best-ten-image .bottle.bottle-photo{width:100%;height:100%;margin:0;max-width:none;background-image:url('/images/zenisa-products.webp');background-size:500% 100%;mix-blend-mode:normal;transform:none}
+.best-ten-copy{display:flex;flex-direction:column;gap:5px;min-width:0}
+.best-ten-copy strong{font-size:14px;font-weight:600}
+.best-ten-copy small{font-size:11px;color:#5b6757}
+.best-ten li>a:hover{border-color:#a58a36}
+.best-ten li>a:focus-visible{outline:3px solid #D4AF37;outline-offset:2px}
+body .home-four #scents .l4-scent-grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;max-width:1120px;margin:auto}
+.home-four .l4-scent-grid>a{position:relative;display:block;aspect-ratio:4/5;overflow:hidden;border-radius:10px;background:#062B1B;text-align:left}
+body .home-four .l4-scent-grid .l4-scent-image{position:absolute;inset:0;width:100%;height:100%;max-width:none;margin:0;border:0;border-radius:0;aspect-ratio:auto}
+.scent-card-caption{position:absolute;inset:auto 0 0;padding:65px 22px 24px;background:linear-gradient(transparent,#062b1bbf);color:#fff}
+body .home-four .l4-scent-grid h3{font-family:'Poppins',sans-serif;font-size:clamp(20px,2vw,28px);font-weight:500;line-height:1.15;min-height:0;margin:0 0 8px;color:#fff;text-transform:uppercase}
+body .home-four .scent-card-caption p{font-size:12px;line-height:1.5;color:#f7f3e9;margin:0 0 13px}
+.scent-card-caption>span{display:flex;align-items:center;gap:8px;font-size:12px;font-weight:600;color:#e9ce81}
+@media(max-width:700px){body .home-four #scents .l4-scent-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.scent-card-caption{padding:45px 12px 17px}body .home-four .l4-scent-grid h3{font-size:17px}body .home-four .scent-card-caption p{font-size:10px}.best-ten li>a{padding:9px 12px;gap:10px}}
+@media(max-width:600px){.category-box-nav{grid-template-columns:repeat(2,minmax(0,1fr))}.category-box-nav>a{min-height:60px;padding:14px 10px;font-size:13px;letter-spacing:1px}.category-box-nav>a:nth-child(2){border-right:0}.category-box-nav>a:last-child{grid-column:1/-1}.category-box-nav>a:nth-child(-n+2){border-bottom:1px solid #062b1b33}}
+
+/* Compact discovery sections: keep headings and card groups together. */
+body .home-four #collections,body .home-four #scents,body .home-four #occasions>.l4-section{padding-block:32px}
+.home-four #collections>.l4-heading,.home-four #scents>.l4-heading,.home-four #occasions .l4-heading{margin-bottom:22px}
+.home-four #collections .l4-heading h2,.home-four #scents .l4-heading h2,.home-four #occasions .l4-heading h2{font-size:clamp(28px,3vw,42px)}
+.home-four #collections .l4-section-copy,.home-four #scents .l4-section-copy,.home-four #occasions .l4-section-copy{margin-top:10px;font-size:13px}
+.home-four #collections .l4-collection-grid{grid-template-columns:repeat(4,minmax(0,1fr));gap:18px;max-width:1240px;margin:auto}
+.home-four #collections .l4-collection{aspect-ratio:auto;height:clamp(220px,38svh,340px);border-radius:90px 90px 5px 5px}
+.home-four #collections .l4-collection h3{font-size:clamp(27px,2.5vw,38px);margin-bottom:10px}
+.home-four #collections .l4-collection>div{left:16px;right:16px;bottom:18px}
+.home-four #collections .l4-collection>div>p{display:none}
+.home-four #collections .l4-collection>div>span{font-size:12px}
+body .home-four #scents .l4-scent-grid{max-width:1020px;gap:14px}
+.home-four #scents .l4-scent-grid>a{aspect-ratio:auto;height:clamp(175px,calc((100svh - 280px)/2),250px)}
+.home-four #scents .scent-card-caption{padding:40px 16px 16px}
+body .home-four #scents .l4-scent-grid h3{font-size:clamp(17px,1.5vw,23px);margin-bottom:5px}
+body .home-four #scents .scent-card-caption p{font-size:11px;margin-bottom:8px}
+@media(min-width:801px){.home-four #occasions .l4-occasion-grid{max-width:1240px;margin:auto;grid-template-rows:repeat(4,clamp(85px,calc((100svh - 310px)/4),125px));gap:16px}.home-four #occasions .l4-occasion h3{font-size:30px}.home-four #occasions .l4-occasion-0 h3,.home-four #occasions .l4-occasion-5 h3{font-size:40px}.home-four #occasions .l4-occasion>div{padding-top:35px;padding-bottom:16px}.home-four #occasions .l4-occasion p{font-size:11px}}
+@media(max-width:800px){
+ .home-four #collections .l4-collection-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;max-width:580px}
+ .home-four #collections .l4-collection{height:clamp(165px,26svh,225px);border-radius:55px 55px 4px 4px}
+ .home-four #collections .l4-collection-index{display:none}
+ .home-four #collections .l4-collection>div{left:12px;right:12px;bottom:12px}
+ .home-four #collections .l4-collection>div>span{font-size:11px;gap:5px}
+ .home-four #occasions .l4-occasion-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+ .home-four #occasions .l4-occasion{grid-column:auto;position:relative;display:block;padding:5px;height:clamp(155px,23svh,210px)}
+ .home-four #occasions .l4-occasion-image{height:100%;aspect-ratio:auto}
+ .home-four #occasions .l4-occasion>div{position:absolute;inset:auto 5px 5px;background:linear-gradient(transparent,#062b1bf2);border:0;padding:32px 12px 12px;text-align:left;color:#F7F3E9}
+ .home-four #occasions .l4-occasion h3{font-size:28px;margin:0}
+ .home-four #occasions .l4-occasion p,.home-four #occasions .l4-occasion-arrow{display:none}
+}
+@media(max-width:700px){body .home-four #collections,body .home-four #scents,body .home-four #occasions>.l4-section{padding-block:26px}.home-four #scents .l4-scent-grid>a{height:clamp(145px,22svh,195px)}.home-four #scents .scent-card-caption{padding:32px 10px 12px}body .home-four #scents .l4-scent-grid h3{font-size:16px}body .home-four #scents .scent-card-caption p{font-size:10px;margin-bottom:0}.home-four #scents .scent-card-caption>span{display:none}}
+
+/* A little more presence while retaining the compact section layout. */
+.home-four #collections .l4-collection{height:clamp(250px,43svh,380px)}
+.home-four #scents .l4-scent-grid>a{height:clamp(200px,calc((100svh - 240px)/2),285px)}
+body .home-four #scents .l4-scent-grid{max-width:1140px;gap:18px}
+@media(min-width:801px){.home-four #occasions .l4-occasion-grid{grid-template-rows:repeat(4,clamp(100px,calc((100svh - 250px)/4),145px));gap:18px}}
+@media(max-width:800px){.home-four #collections .l4-collection{height:clamp(190px,29svh,250px)}.home-four #occasions .l4-occasion{height:clamp(180px,26svh,235px)}}
+@media(max-width:700px){.home-four #scents .l4-scent-grid>a{height:clamp(170px,25svh,220px)}}
+
+/* Slightly larger discovery cards. */
+body .home-four>#collections{background:#C5D0BD}
+body .home-four #collections .l4-heading h2{color:#062B1B}
+body .home-four #collections>.l4-heading .l4-section-copy{color:#465441}
+.home-four #collections .l4-collection{height:clamp(280px,47svh,415px)}
+.home-four #scents .l4-scent-grid>a{height:clamp(225px,calc((100svh - 200px)/2),315px)}
+body .home-four #scents .l4-scent-grid{max-width:1220px;gap:20px}
+@media(min-width:801px){.home-four #occasions .l4-occasion-grid{grid-template-rows:repeat(4,clamp(112px,calc((100svh - 210px)/4),160px))}}
+@media(max-width:800px){.home-four #collections .l4-collection{height:clamp(210px,32svh,275px)}.home-four #occasions .l4-occasion{height:clamp(200px,29svh,260px)}}
+@media(max-width:700px){.home-four #scents .l4-scent-grid>a{height:clamp(190px,28svh,245px)}}
+
+.all-products-slider{background:#062B1B;color:#F7F3E9}
+.all-products-frame{position:relative;padding-inline:44px}
+.all-products-track{display:flex;gap:20px;overflow-x:auto;scroll-snap-type:x proximity;scrollbar-width:thin;scrollbar-color:#D4AF37 #062B1B;padding-bottom:14px}
+.home-four .all-products-track>.product-card{flex:0 0 calc((100% - 80px)/5);min-width:0;scroll-snap-align:start}
+.all-products-track .product-image{aspect-ratio:4/5}
+.all-products-arrow{position:absolute;top:38%;width:38px;height:44px;display:grid;place-items:center;background:transparent;color:#D4AF37;border:1px solid #D4AF37;border-radius:50%;z-index:1}
+.all-products-arrow.previous{left:0}.all-products-arrow.next{right:0}
+.all-products-arrow:focus-visible,.all-products-track:focus-visible{outline:3px solid #D4AF37;outline-offset:3px}
+@media(max-width:1100px){.home-four .all-products-track>.product-card{flex-basis:calc((100% - 40px)/3)}}
+@media(max-width:700px){.all-products-frame{padding-inline:0}.home-four .all-products-track>.product-card{flex-basis:calc((100% - 14px)/2)}.all-products-track{gap:14px}.all-products-arrow{top:auto;bottom:-57px;width:40px;height:40px}.all-products-slider .l4-carousel-bottom{padding-top:12px}.all-products-slider .l4-carousel-bottom>a{margin-inline:44px;font-size:13px;padding-inline:13px}}
+
+/* Reference-style ten-fragrance ranking list. */
+.best-ten{background:#ffeddf;padding-block:32px 38px}
+.best-ten-inner{max-width:1090px}
+.best-ten ol{gap:14px}
+.best-ten li>a{min-height:83px;padding:7px 20px;gap:18px;border:1px solid #dedede;border-radius:12px;background:#fff;box-shadow:0 2px 5px #062b1b04}
+.best-ten li:first-child>a{background:#fffdf4;border-color:#ecb126}
+.best-ten-rank{width:24px;color:#888;font-family:Arial,sans-serif;font-size:18px;text-align:center}
+.best-ten-image{width:66px;height:66px;border-radius:7px;border:1px solid #d8cdbc}
+.best-ten-copy{gap:7px}
+.best-ten-copy strong{font-family:'Barlow Condensed','Arial Narrow',sans-serif;font-size:16px;line-height:1.25;font-weight:700;letter-spacing:.7px;color:#092d39}
+.best-ten-copy small{font-family:'Barlow Condensed','Arial Narrow',sans-serif;font-size:13px;line-height:1.3;font-weight:700;letter-spacing:.7px;color:#777}
+.best-ten-copy small>span{color:#ff7900;font-family:Arial,sans-serif;font-size:20px;line-height:0;vertical-align:-1px;margin-right:4px}
+.best-ten-medal{position:relative;display:inline-block;font-size:27px;line-height:1}
+.best-ten-medal>b{position:absolute;top:6px;left:0;width:100%;font-size:10px;color:#b77800;line-height:1;background:#ffd250;border-radius:50%}
+@media(max-width:600px){.best-ten li>a{min-height:78px;padding:7px 10px;gap:10px}.best-ten-image{width:56px;height:60px}.best-ten-copy strong{font-size:14px;letter-spacing:.35px}.best-ten-copy small{font-size:11px;letter-spacing:.3px}.best-ten-rank{width:22px;flex-shrink:0}.best-ten ol{gap:11px}}
+
+/* Full-height collection presentation and reference scent typography. */
+@media(min-width:801px){body .home-four #collections{min-height:calc(100svh - var(--zenisa-header-height));display:flex;flex-direction:column;justify-content:center;padding-block:64px}.home-four #collections .l4-collection-grid{width:100%}}
+body .home-four #scents .l4-heading h2{font-family:'Montserrat','Poppins',sans-serif;font-weight:400;font-size:clamp(34px,4.1vw,72px);line-height:1.1;text-transform:uppercase;letter-spacing:1px;color:#382b22}
+body .home-four #scents .l4-heading .l4-section-copy{font-family:'Montserrat','Poppins',sans-serif;font-size:clamp(13px,1.2vw,20px);font-weight:400;letter-spacing:.6px;color:#887b6f}
+body .home-four #scents .l4-scent-grid h3{font-family:'Montserrat','Poppins',sans-serif;font-weight:400;font-size:clamp(25px,2.35vw,40px);line-height:1.12;letter-spacing:0}
+body .home-four #scents .scent-card-caption p{font-family:'Montserrat','Poppins',sans-serif;font-weight:500;font-size:clamp(12px,.95vw,16px);line-height:1.5}
+.home-four #scents .scent-card-caption>span{font-family:'Montserrat','Poppins',sans-serif;font-size:clamp(13px,1vw,16px);font-weight:400;letter-spacing:.4px}
+@media(max-width:700px){body .home-four #scents .l4-scent-grid h3{font-size:clamp(17px,4vw,25px)}body .home-four #scents .scent-card-caption p{font-size:11px}}
+
+/* Quiet luxury finish for the all-products carousel. */
+.all-products-track{scrollbar-width:none;-ms-overflow-style:none;padding-bottom:0;gap:22px}
+.all-products-track::-webkit-scrollbar{display:none;width:0;height:0}
+body .home-four .all-products-slider .product-card{background:#F7F3E9;border:1px solid #d4af374d;border-radius:9px;overflow:hidden;color:#062B1B}
+body .home-four .all-products-slider .product-image{border-radius:0;aspect-ratio:4/5}
+body .home-four .all-products-slider .product-info{padding:18px 16px 16px;text-align:center;gap:8px}
+body .home-four .all-products-slider .product-info h3{font-family:'Cormorant Garamond',serif;font-size:clamp(23px,1.8vw,30px);font-weight:600;line-height:1.15;white-space:normal;overflow:visible}
+body .home-four .all-products-slider .product-info>small{font-size:10px;line-height:1.6;color:#66705f;min-height:0}
+body .home-four .all-products-slider .product-bottom{font-size:19px;font-weight:600;gap:12px}
+body .home-four .all-products-slider .product-bottom button{background:linear-gradient(100deg,#e7ce83,#d4af37);border-color:#b99a3c;color:#062B1B;font-size:14px;font-weight:700;letter-spacing:.3px;min-height:44px;border-radius:3px}
+body .home-four .all-products-slider .wish{background:#f7f3e9de;color:#062B1B;border-radius:50%}
+.all-products-arrow{width:40px;height:40px;background:#062B1B;border-color:#a78e49;color:#e7ce83;transition:background .2s,color .2s}
+.all-products-arrow:hover{background:#D4AF37;color:#062B1B}
+.all-products-slider .l4-carousel-bottom .l4-outline-button{border-color:#a78e49;color:#e7ce83;letter-spacing:.5px}
+@media(max-width:700px){.all-products-track{gap:14px}body .home-four .all-products-slider .product-info{padding:14px 10px}body .home-four .all-products-slider .product-info h3{font-size:23px}body .home-four .all-products-slider .product-bottom button{font-size:12px}}
+
+/* Equal occasion tiles, matching the simple photographic reference. */
+.home-four #occasions .l4-occasion-grid{grid-template-columns:repeat(3,minmax(0,1fr));grid-template-rows:none;max-width:1240px;gap:14px;margin:auto}
+.home-four #occasions .l4-occasion{grid-column:auto;grid-row:auto;position:relative;display:block;height:auto;aspect-ratio:4/3;padding:0;border:0;border-radius:10px;overflow:hidden}
+.home-four #occasions .l4-occasion-image{height:100%;width:100%;aspect-ratio:auto}
+.home-four #occasions .l4-occasion>div{position:absolute;inset:auto 0 0;padding:50px 22px 22px;border:0;text-align:left;background:linear-gradient(transparent,#0009);color:white}
+body .home-four #occasions .l4-occasion h3{font-family:'Montserrat','Poppins',sans-serif;font-weight:400;font-size:clamp(22px,2vw,32px);margin:0;line-height:1.2}
+.home-four #occasions .l4-occasion p,.home-four #occasions .l4-occasion small,.home-four #occasions .l4-occasion-arrow{display:none}
+.home-four #occasions .l4-heading h2{font-family:'Montserrat','Poppins',sans-serif;font-weight:400;text-transform:uppercase;font-size:clamp(30px,3vw,46px)}
+@media(max-width:700px){.home-four #occasions .l4-occasion-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.home-four #occasions .l4-occasion{aspect-ratio:1/1}.home-four #occasions .l4-occasion>div{padding:35px 12px 15px}body .home-four #occasions .l4-occasion h3{font-size:21px}}
+
+/* Image-first product cards with compact editorial details. */
+body .home-four .all-products-slider .product-card{background:transparent;border:0;border-radius:0;overflow:visible;color:#F7F3E9}
+body .home-four .all-products-slider .product-image{border-radius:8px;aspect-ratio:4/5}
+body .home-four .all-products-slider .product-info{padding:16px 0 0;text-align:left;gap:9px}
+body .home-four .all-products-slider .product-info h3{font-family:'Barlow Condensed','Poppins',sans-serif;font-size:20px;line-height:1.3;font-weight:700;letter-spacing:.3px}
+body .home-four .all-products-slider .product-info>small{display:flex;flex-wrap:wrap;gap:6px;color:#F7F3E9}
+.all-products-slider .product-info>small>span{background:#ffffff1a;border-radius:3px;padding:4px 7px;font-family:'Barlow Condensed',sans-serif;font-size:12px;line-height:1.2;letter-spacing:.7px;font-weight:700;text-transform:uppercase}
+body .home-four .all-products-slider .product-bottom{font-family:'Poppins',sans-serif;font-size:19px;font-weight:700}
+body .home-four .all-products-slider .product-bottom button{background:#F7F3E9;border-color:#F7F3E9;border-radius:4px;color:#062B1B;font-size:14px;font-weight:700;min-height:44px}
+body .home-four .all-products-slider .product-bottom button:hover{background:#D4AF37;border-color:#D4AF37}
+body .home-four .all-products-slider .badge{background:#F7F3E9;color:#062B1B;border-radius:3px;font-size:10px;font-weight:700}
+@media(max-width:700px){body .home-four .all-products-slider .product-info h3{font-size:18px}body .home-four .all-products-slider .product-bottom button{font-size:12px}}
+
+/* Refined, readable product typography with the signature gold action. */
+body .home-four .all-products-slider .product-info h3{font-family:'Poppins',sans-serif;font-size:clamp(17px,1.3vw,21px);font-weight:500;line-height:1.4;letter-spacing:0}
+.all-products-slider .product-info>small>span{font-family:'Poppins',sans-serif;font-size:10px;font-weight:500;letter-spacing:.4px;line-height:1.4;padding:4px 7px}
+body .home-four .all-products-slider .product-bottom{font-family:'Poppins',sans-serif;font-size:20px;font-weight:600}
+body .home-four .all-products-slider .product-bottom button{background:linear-gradient(110deg,#e7cb77,#D4AF37);border:1px solid #c5a036;color:#062B1B;font-family:'Poppins',sans-serif;font-size:15px;font-weight:700;letter-spacing:.2px;min-height:46px}
+body .home-four .all-products-slider .product-bottom button:hover{background:#e7cb77;border-color:#e7cb77}
+@media(max-width:700px){body .home-four .all-products-slider .product-info h3{font-size:16px}.all-products-slider .product-info>small>span{font-size:9px;padding:4px 6px}body .home-four .all-products-slider .product-bottom button{font-size:13px}}
+
+.best-ten{background:#C5D0BD}
+
+/* Mobile header: left menu, centred wordmark, right shopping actions. */
+@media(max-width:1100px){
+ body .nav-inner{position:relative;display:grid;grid-template-columns:minmax(0,1fr) auto minmax(0,1fr);gap:8px}
+ .nav-inner>a:first-child{grid-column:2;grid-row:1;justify-self:center}
+ .nav-inner>.nav-actions{grid-column:3;grid-row:1;justify-self:end;gap:2px}
+ body .nav .mobile-toggle{position:absolute;left:0;top:50%;transform:translateY(-50%);margin:0}
+ body .nav .logo{font-size:clamp(29px,5vw,38px)}
+ body .nav .logo>span{font-size:7px;letter-spacing:2px}
+ body .nav .nav-actions>.icon-button,body .nav .nav-actions>.cart-icon{min-width:40px;min-height:44px}
+}
+@media(max-width:360px){body .nav .nav-actions>button[aria-label="Search fragrances"]{display:flex}body .nav .nav-actions>.icon-button,body .nav .nav-actions>.cart-icon{min-width:34px}body .nav .logo{font-size:28px}}
+
+.category-box-nav{grid-template-columns:repeat(4,minmax(0,1fr))}
+@media(max-width:600px){.category-box-nav{grid-template-columns:repeat(2,minmax(0,1fr))}.category-box-nav>a:last-child{grid-column:auto}}
+@media(max-width:1100px){.nav-inner>.nav-actions{position:static}}

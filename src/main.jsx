@@ -19,3 +19,7 @@ import './styles/home-three-placeholders.css';
 import './styles/all-card-placeholders.css';
 
 import './styles/home-four-sequence.css';
+
+import './styles/responsive.css';
+
+
