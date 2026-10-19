@@ -493,3 +493,6 @@ body .home-four .l4-heading h2,body .home-four #collections .l4-heading h2,body 
 .pdp-thumbnails{grid-column:1;grid-row:1;flex-direction:column;gap:8px;margin:0;max-height:650px;overflow-y:auto;scrollbar-width:thin}
 .pdp-thumbnails>button{width:70px;height:74px;flex-shrink:0}
 @media(max-width:600px){.pdp-gallery{grid-template-columns:52px minmax(0,1fr);gap:8px}.pdp-thumbnails{max-height:370px;gap:7px}.pdp-thumbnails>button{width:49px;height:53px;padding:2px}}
+
+.pdp-enquire{background:#147a43;border-color:#147a43;color:#FFFFFF}
+.pdp-enquire:hover{background:#106538;border-color:#106538}
