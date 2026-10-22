@@ -1,0 +1,2 @@
+import {HttpError} from './validation.js';
+export function validateFaq(body){const question=typeof body?.question==='string'?body.question.trim():'';const answer=typeof body?.answer==='string'?body.answer.trim():'';if(!question||question.length>500)throw new HttpError(400,'Question is required and must be 500 characters or fewer.');if(!answer||answer.length>10000)throw new HttpError(400,'Answer is required and must be 10,000 characters or fewer.');return {question,answer}}

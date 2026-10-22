@@ -153,3 +153,44 @@ Verified in the in-app browser at 320, 375, 390, 768, 1024, 1440 and 1920px widt
 
 Additional responsive checks passed at 844×390 (landscape), 1280×800 and 2560×1440. Mobile navigation was opened at 390×844; selecting a section closed the dialog and restored normal scrolling. Anchor targets sit 16px below the measured sticky header.
 
+
+### Policy content management
+- Admin pages: `/admin/policies/shipping-policy`, `/admin/policies/return-exchange-policy`, `/admin/policies/privacy`, `/admin/policies/terms`, `/admin/policies/refund-policy`.
+- Run `npm run db:setup` to create `policy_pages`; it inserts no content. Existing records are preserved.
+- Use the visual editor for headings, bold, italic and lists. Save & Publish creates or updates the matching MySQL row as allowlisted HTML. Delete removes the content; the public URL stays available with an unpublished message.
+- Public pages read `/api/store/policies/:slug`. Writes and admin reads use the existing authenticated, origin-checked `/api/admin/policies/:slug` API. Content is sanitized on write and read; scripts, inline event handlers, arbitrary styles, embeds and unsafe links are removed. The HTML source toggle is read-only.
+- Content limit: 18 KB before sanitization. No initial legal policies are supplied. The database is the source of truth for these five public pages.
+- Local backend runs on port 3001 with MySQL on port 3307. Vercel frontend hosting alone cannot provide this Express/MySQL API; production requires a deployed API/database and `/api` routing to it. Never put database credentials in the frontend.
+
+### Shipping Policy — CKEditor 5
+Shipping Policy uses the official, lazy-loaded CKEditor 5 React integration with free editing features, image uploads, tables, typography, lists, code blocks and find/replace. The HTML source checkbox is removed. No word/character cap is imposed in the editor. API requests retain operational limits (50 MB HTML JSON, 12 MB upload JSON); uploaded images must be PNG/JPEG/WebP/GIF under 8 MB and are stored in `public/uploads/policies/`, with a protected upload endpoint and public image-serving URL. Back up that folder alongside MySQL; it is excluded from Git.
+
+`shipping_policy` is a dedicated table with HTML content and timestamps. `npm run db:setup` creates it and migrates any existing Shipping Policy row from `policy_pages` without adding sample text; existing rows in other tables are preserved. Both policy tables use LONGTEXT.
+
+CKEditor licensing: the local integration defaults to CKEditor's GPL mode. This does not relicense this project. Before commercial/non-GPL distribution, obtain the appropriate CKEditor self-hosted licence and set `VITE_CKEDITOR_LICENSE_KEY` in the frontend environment, or ensure the project complies with GPL requirements. Premium licensed plugins are not included. See https://ckeditor.com/docs/ckeditor5/latest/getting-started/installation/self-hosted/react/react-default-npm.html.
+
+### All policy editors and dedicated tables
+All five admin policy pages now use the same CKEditor 5 features, image upload adapter and HTML sanitization. Each public page reads only its dedicated table:
+- Shipping Policy: `shipping_policy`
+- Return & Exchange Policy: `return_exchange_policy`
+- Privacy Policy: `privacy_policy`
+- Terms & Condition: `terms_condition`
+- Refund Policy: `refund_policy`
+Each table stores one policy at `id=1`, HTML content and timestamps. `npm run db:setup` migrates legacy `policy_pages` content transactionally to its matching dedicated table, preserving already-existing destination content and inserting no samples. Save/edit/delete APIs and public URLs remain unchanged.
+
+### FAQs management
+- Admin: `/admin/faqs` (existing authenticated admin session). Add FAQ opens Question and Answer fields; the list supports search, pagination, edit and confirmed delete.
+- Database: `faqs` table (`id`, `question`, `answer`, timestamps). `npm run db:setup` creates the table without seed questions or answers.
+- Public `/faqs` reads current records from `/api/store/faqs` and displays accessible expandable answers. Empty and unavailable states are explicit. Text is rendered as text, preserving paragraphs without executing HTML.
+- Admin endpoints: GET/POST `/api/admin/faqs`, PUT/DELETE `/api/admin/faqs/:id`. Existing authentication and same-origin checks protect all mutations. Question: 500 characters; answer: 10,000 characters. JSON body is bounded at 128 KB.
+
+### Subcategory images
+- Add/Edit Subcategory now accepts an optional PNG, JPEG, WebP or GIF image up to 8 MB and shows its preview. The admin list displays the saved thumbnail.
+- Files are saved under `public/uploads/subcategories/<name-slug>-<record-id>/<name-slug>-<unique-version>.<extension>`. The readable name follows the subcategory; the ID prevents collisions across parent categories and the version avoids browser cache conflicts.
+- `subcategories.image_path` stores the relative path; API responses include `image_url`. `npm run db:setup` adds the nullable column to existing tables without removing records.
+- Photo replacement writes a new file and commits its database path before removing the previous file. Failed database changes roll back the new image and retain the previous photo. Name changes move the retained photo to the new named folder. Record deletion removes its photo and empty folder; nonempty folders and unrelated files are never recursively deleted.
+- Admin writes use the existing authentication and origin protection. Images are type/signature checked. Public image requests are confined to the subcategory upload root.
+- Upload folders are excluded from Git; back them up with MySQL. Production needs persistent writable image storage and the deployed API, not just the Vercel static frontend.
+
+### Public Category page
+`/category` replaces the old collection listing; `/collections` redirects there. Navbar/footer point to `/category`. `/api/store/categories` returns active database categories with only their active subcategories and image URLs. The page groups image cards under category names, uses a placeholder when no image is uploaded, and has loading, empty and retry states. Card links search the current mock product catalogue by subcategory name; database product-to-subcategory assignment is not yet implemented.

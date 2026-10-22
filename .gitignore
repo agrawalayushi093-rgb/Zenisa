@@ -7,3 +7,6 @@ server/ADMIN-ACCESS.txt
 .env
 
 server/.mysql-data/
+
+/public/uploads/policies/
+/public/uploads/subcategories/

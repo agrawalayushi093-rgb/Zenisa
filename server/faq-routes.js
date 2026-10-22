@@ -1,0 +1,10 @@
+import {Router} from 'express';
+import {pool} from './db.js';
+import {id,listParams,HttpError} from './validation.js';
+import {validateFaq} from './faq-content.js';
+export const faqAdmin=Router(),faqPublic=Router();
+faqPublic.get('/faqs',async(req,res)=>{res.set('Cache-Control','no-store');const [data]=await pool.execute('SELECT id,question,answer FROM faqs ORDER BY id');res.json({data})});
+faqAdmin.get('/faqs',async(req,res)=>{res.set('Cache-Control','no-store');const p=listParams(req.query),where=p.search?' WHERE question LIKE ? OR answer LIKE ?':'',args=p.search?[`%${p.search}%`,`%${p.search}%`]:[];const [count]=await pool.execute(`SELECT COUNT(*) AS total FROM faqs${where}`,args);const [data]=await pool.execute(`SELECT id,question,answer,updated_at FROM faqs${where} ORDER BY id DESC LIMIT ${p.limit} OFFSET ${p.offset}`,args);res.json({data,total:Number(count[0].total),page:p.page,limit:p.limit})});
+faqAdmin.post('/faqs',async(req,res)=>{const data=validateFaq(req.body);const [result]=await pool.execute('INSERT INTO faqs (question,answer) VALUES (?,?)',[data.question,data.answer]);res.status(201).json({id:result.insertId,message:'FAQ added.'})});
+faqAdmin.put('/faqs/:id',async(req,res)=>{const recordId=id(req.params.id),data=validateFaq(req.body);const [existing]=await pool.execute('SELECT id FROM faqs WHERE id=?',[recordId]);if(!existing.length)throw new HttpError(404,'FAQ not found.');await pool.execute('UPDATE faqs SET question=?,answer=? WHERE id=?',[data.question,data.answer,recordId]);res.json({message:'FAQ updated.'})});
+faqAdmin.delete('/faqs/:id',async(req,res)=>{const [result]=await pool.execute('DELETE FROM faqs WHERE id=?',[id(req.params.id)]);if(!result.affectedRows)throw new HttpError(404,'FAQ not found.');res.json({message:'FAQ deleted.'})});

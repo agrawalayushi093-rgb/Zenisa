@@ -1,3 +1,7 @@
+import Category from './pages/Category';
+import Faqs from './pages/Faqs';
+import PolicyPage from './pages/PolicyPage';
+import FooterInformation from './pages/FooterInformation';
 import {homepageOnly} from './data/siteMode';
 import Checkout from './pages/Checkout';
 import Offers from './pages/Offers';
@@ -20,7 +24,7 @@ import {StoreProvider} from './context/Store';
 function RouteEffects(){
   const location=useLocation(),previous=useRef(null);
   useEffect(()=>{
-    document.title=`${location.pathname==='/'?'The House of Luxury Aromas':location.pathname.split('/')[1].replace(/^./,c=>c.toUpperCase())} | ZENISA PERFUMES`;
+    document.title=`${location.pathname==='/'?'The House of Luxury Aromas':['/collections','/category'].includes(location.pathname)?'Category':location.pathname.split('/')[1].replace(/^./,c=>c.toUpperCase())} | ZENISA PERFUMES`;
     const first=previous.current===null,changedPage=previous.current!==location.pathname;
     previous.current=location.pathname;
     const reduced=matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -35,4 +39,4 @@ function RouteEffects(){
   return null;
 }
 
-export default function App(){const location=useLocation();if(location.pathname==='/admin'||location.pathname.startsWith('/admin/'))return <AdminApp/>;return <MotionConfig reducedMotion="user"><CommerceProvider><StoreProvider><a className="skip-link" href="#main-content">Skip to content</a><RouteEffects/><Navbar/><div id="main-content" data-original-images={location.pathname==='/'?'true':undefined}><Routes><Route path="/" element={<Home/>}/>{/* Secondary pages are temporarily disabled for homepage review; source is preserved. */}{!homepageOnly&&<><Route path="/shop" element={<Shop/>}/><Route path="/collections" element={<Collections/>}/><Route path="/collections/:collection" element={<Shop/>}/><Route path="/product/:id" element={<ProductDetails key={location.pathname}/>}/><Route path="/cart" element={<Cart/>}/><Route path="/checkout" element={<Checkout/>}/><Route path="/offers" element={<Offers/>}/><Route path="/about" element={<About/>}/><Route path="/contact" element={<Contact/>}/><Route path="/privacy" element={<Policy type="privacy"/>}/><Route path="/terms" element={<Policy type="terms"/>}/></>}<Route path="*" element={homepageOnly?<Navigate to="/" replace/>:<NotFound/>}/></Routes></div>{location.pathname==='/'?<HomeFourFooter/>:<Footer/>}{!homepageOnly&&<OfferPopup/>}</StoreProvider></CommerceProvider></MotionConfig>}
+export default function App(){const location=useLocation();if(location.pathname==='/admin'||location.pathname.startsWith('/admin/'))return <AdminApp/>;return <MotionConfig reducedMotion="user"><CommerceProvider><StoreProvider><a className="skip-link" href="#main-content">Skip to content</a><RouteEffects/><Navbar/><div id="main-content" data-original-images={location.pathname==='/'?'true':undefined}><Routes><Route path="/" element={<Home/>}/>{/* Secondary pages are temporarily disabled for homepage review; source is preserved. */}{!homepageOnly&&<><Route path="/shop" element={<Shop/>}/><Route path="/category" element={<Category/>}/><Route path="/collections" element={<Navigate to={'/category'+location.search} replace/>}/><Route path="/collections/:collection" element={<Shop/>}/><Route path="/product/:id" element={<ProductDetails key={location.pathname}/>}/><Route path="/cart" element={<Cart/>}/><Route path="/checkout" element={<Checkout/>}/><Route path="/offers" element={<Offers/>}/><Route path="/about" element={<About/>}/><Route path="/contact" element={<Contact/>}/>{['track-order','blogs'].map(page=><Route key={page} path={'/'+page} element={<FooterInformation page={page}/>}/>)}{['shipping-policy','return-exchange-policy','refund-policy'].map(slug=><Route key={slug} path={'/'+slug} element={<PolicyPage slug={slug}/>}/>)}<Route path="/faqs" element={<Faqs/>}/><Route path="/privacy" element={<PolicyPage slug="privacy"/>}/><Route path="/terms" element={<PolicyPage slug="terms"/>}/></>}<Route path="*" element={homepageOnly?<Navigate to="/" replace/>:<NotFound/>}/></Routes></div>{location.pathname==='/'?<HomeFourFooter/>:<Footer/>}{!homepageOnly&&<OfferPopup/>}</StoreProvider></CommerceProvider></MotionConfig>}

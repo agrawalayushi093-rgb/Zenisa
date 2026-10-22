@@ -499,3 +499,54 @@ body .home-four .l4-heading h2,body .home-four #collections .l4-heading h2,body 
 
 .product-mrp{font-family:'Poppins',sans-serif;font-size:12px;font-weight:400;color:#7c806e;margin-left:10px;vertical-align:middle;text-decoration-thickness:1px}
 .pdp-price .product-mrp{font-size:17px}
+
+.zenisa-contact-page{background:#F7F3E9;padding:36px var(--zenisa-page-gutter) 50px}
+.zenisa-contact-panel{max-width:1120px;margin:auto;padding:clamp(30px,5.5vw,88px);background:#062B1B;color:#F7F3E9;border-radius:46px;box-shadow:0 18px 45px #062b1b12}
+.contact-kicker{font-family:'Poppins',sans-serif;font-size:12px;font-weight:600;letter-spacing:3px;color:#c5d0bd;margin:0 0 15px}
+.zenisa-contact-panel h1{font:400 clamp(44px,4vw,64px)/1.1 'Cormorant Garamond',serif;margin:0 0 44px}
+.contact-fields{display:grid;grid-template-columns:1fr 1fr;gap:24px}.contact-full{grid-column:1/-1}.contact-fields>label{min-width:0}
+.zenisa-contact-panel input,.zenisa-contact-panel textarea{width:100%;padding:17px 23px;border:1px solid #c5d0bd4d;border-radius:14px;background:#ffffff08;color:#F7F3E9;font-family:'Poppins',sans-serif;font-size:16px;line-height:1.5;margin:0;min-height:56px}
+.zenisa-contact-panel textarea{resize:vertical;min-height:125px}
+.zenisa-contact-panel :is(input,textarea)::placeholder{color:#c5d0bd;opacity:1}
+.zenisa-contact-panel :is(input,textarea):focus-visible{outline:2px solid #D4AF37;outline-offset:3px}
+.zenisa-contact-panel form>button{margin-top:40px;min-width:160px;min-height:54px;border:0;border-radius:30px;background:#D4AF37;color:#062B1B;font-size:16px;font-weight:700;text-transform:uppercase;letter-spacing:1px;padding:14px 28px}
+.contact-demo-status{color:#c5d0bd;font-size:10px;line-height:1.6;margin:14px 0 0}
+body .dialog.zenisa-promo-dialog{padding:0;width:min(500px,100%);max-width:500px;border-radius:20px;background:#fffdf8;overflow:visible;color:#062B1B}
+.zenisa-promo-dialog>.dialog-close{display:none}
+.promo-dismiss{position:absolute;z-index:2;top:-17px;right:-10px;display:flex;align-items:center;gap:16px;max-width:calc(100% + 10px);background:#b74935;color:white;border:2px solid white;border-radius:28px;padding:9px 12px;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.4px}.promo-dismiss>span{font-size:23px;line-height:1}
+.promo-head{padding:34px 25px 30px;border-radius:20px 20px 0 0;background:radial-gradient(circle,#c5d0bd1a 1.5px,transparent 2px) 0 0/18px 18px,#062B1B;color:#fff}
+.promo-wait{display:inline-flex;align-items:center;gap:8px;padding:7px 12px;background:#ffffff1a;border-radius:22px;font-size:11px;font-weight:600}.promo-wait i{width:7px;height:7px;background:#D4AF37;border-radius:50%}
+.promo-head>p{font-size:11px;color:#D4AF37;margin:20px 0 7px}.promo-head h2{font-family:'Poppins',sans-serif;font-weight:600;font-size:clamp(20px,3vw,25px);line-height:1.4;margin:0}.promo-head h2 em{color:#D4AF37;font-style:normal}.promo-head>small{display:block;color:#C5D0BD;font-size:9px;margin-top:14px}
+.promo-body{padding:24px}.promo-body>p{text-align:center;font-size:13px;margin:0 0 20px;letter-spacing:.4px}.promo-actions{display:grid;gap:12px}.promo-actions>a{display:flex;align-items:center;gap:18px;padding:16px 18px;border:1px solid #062b1b26;border-radius:14px;font-size:14px;font-weight:600;line-height:1.5;min-height:61px}.promo-actions>a>svg{flex-shrink:0;color:#9d7d26}.promo-actions>a:hover{background:#f1ecda;border-color:#D4AF37}
+@media(max-width:600px){.zenisa-contact-page{padding:24px 16px 35px}.zenisa-contact-panel{border-radius:28px;padding:30px 23px}.contact-fields{grid-template-columns:1fr;gap:18px}.zenisa-contact-panel h1{margin-bottom:28px}.contact-kicker{font-size:9px;letter-spacing:2px}.zenisa-contact-panel input,.zenisa-contact-panel textarea{font-size:14px;padding:14px 16px}.zenisa-contact-panel form>button{margin-top:26px}.promo-body{padding:20px}.promo-actions>a{font-size:12px;padding:13px;gap:12px}.promo-dismiss{right:0;font-size:9px}.promo-head{padding:30px 22px 24px}}
+@media(max-height:740px){body .dialog.zenisa-promo-dialog{max-height:calc(100dvh - 54px);overflow-y:auto;overflow-x:hidden}.promo-dismiss{position:sticky;top:0;margin-left:auto;right:0;max-width:100%;border-radius:18px 18px 0 0;width:100%;justify-content:center}.promo-head{border-radius:0}.promo-head{padding-block:18px}.promo-body{padding-block:18px}.promo-actions{gap:8px}.promo-actions>a{padding-block:11px;min-height:50px}}
+
+/* Airier spacing in the homepage product carousel. */
+.home-four .all-products-track{gap:28px;align-items:stretch;padding-bottom:4px}
+.home-four .all-products-track>.product-card{flex-basis:calc((100% - 112px)/5)}
+body .home-four .all-products-slider .product-info{padding:22px 4px 4px;gap:12px}
+body .home-four .all-products-slider .product-info h3{line-height:1.45;margin:0}
+body .home-four .all-products-slider .product-info>small{gap:7px;line-height:1.5}
+body .home-four .all-products-slider .product-info .product-bottom{margin-top:4px;padding-top:4px;gap:18px}
+body .home-four .all-products-slider .product-bottom>span{line-height:1.5}
+body .home-four .all-products-slider .product-bottom button{min-height:48px;padding:13px 12px}
+@media(max-width:1100px){.home-four .all-products-track>.product-card{flex-basis:calc((100% - 56px)/3)}}
+@media(max-width:700px){.home-four .all-products-track{gap:18px}.home-four .all-products-track>.product-card{flex-basis:calc((100% - 18px)/2)}body .home-four .all-products-slider .product-info{padding:17px 2px 2px;gap:10px}body .home-four .all-products-slider .product-info .product-bottom{margin-top:2px;padding-top:2px;gap:14px}body .home-four .all-products-slider .product-bottom button{padding:12px 8px;min-height:46px}}
+
+/* Database-driven category groups and photographic subcategory cards. */
+.category-page{width:min(1500px,calc(100% - 2 * var(--zenisa-page-gutter)));padding-block:35px 65px;min-height:50vh}
+.category-page-heading{text-align:center;margin-bottom:44px}.category-page-heading .eyebrow{font-size:9px;letter-spacing:2.5px;color:#947a34}.category-page-heading h1{font:500 clamp(42px,4vw,65px)/1.1 'Cormorant Garamond',serif;color:#062B1B;margin:12px 0}.category-page-heading>p:last-child{font-size:13px;color:#6d765f}
+.category-group{padding:34px 0 42px;border-top:1px solid #b9c3aa}.category-group-heading{margin-bottom:24px}.category-group-heading h2{font:500 clamp(32px,3vw,46px)/1.15 'Cormorant Garamond',serif;color:#062B1B;margin:0}.category-group-heading p{font-size:13px;line-height:1.8;color:#6d765f;max-width:750px;margin-top:10px;white-space:pre-wrap}
+.category-subgrid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:28px 22px}.subcategory-card{min-width:0;display:block;background:#fffdf5;border:1px solid #c4cbb5;border-radius:8px;overflow:hidden;color:#062B1B}.subcategory-card-image{aspect-ratio:4/3;background:#e7e9de;overflow:hidden}.subcategory-card-image img{display:block;width:100%;height:100%;object-fit:cover}.subcategory-card-copy{padding:18px 20px;display:grid;grid-template-columns:1fr auto;align-items:center;gap:10px;min-width:0}.subcategory-card-copy h3{font:500 clamp(22px,1.8vw,29px)/1.2 'Cormorant Garamond',serif;margin:0;overflow-wrap:anywhere}.subcategory-card-copy>svg{color:#9b8039}.subcategory-card-copy p{grid-column:1/-1;font-size:11px;line-height:1.7;color:#70775f;margin:0;overflow-wrap:anywhere}.subcategory-card:hover{border-color:#aa8d43}.subcategory-card:focus-visible{outline:3px solid #D4AF37;outline-offset:4px}.category-group-empty,.category-page-empty{font-size:14px;color:#6d765f;line-height:1.8;padding-block:20px}.category-page-empty{text-align:center;padding-block:50px}
+@media(max-width:1050px){.category-subgrid{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media(max-width:700px){.category-subgrid{grid-template-columns:repeat(2,minmax(0,1fr));gap:18px 12px}.subcategory-card-copy{padding:15px 12px}.subcategory-card-copy h3{font-size:24px}.category-page-heading{margin-bottom:28px}.category-group{padding-block:25px}.category-page{padding-block:26px 40px}}
+
+.home-db-category-photo{display:block;width:100%;height:100%;object-fit:cover}
+.home-category-state{min-height:130px;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;color:#465441;gap:16px;font-size:14px;line-height:1.7}
+.home-category-state .l4-outline-button{color:#062B1B;border-color:#062B1B}
+.home-four #scents .scent-card-caption h3{overflow-wrap:anywhere}
+
+/* Centre gender cards, including incomplete rows. */
+.home-four #collections .l4-collection-grid{display:flex;flex-wrap:wrap;justify-content:center;gap:18px}
+.home-four #collections .l4-collection-grid>.l4-collection{flex:0 1 calc((100% - 54px)/4);min-width:0}
+@media(max-width:800px){.home-four #collections .l4-collection-grid{gap:14px}.home-four #collections .l4-collection-grid>.l4-collection{flex-basis:calc((100% - 14px)/2)}}

@@ -1,8 +1,9 @@
+import {imageUrl} from './subcategory-images.js';
 import {Router} from 'express';
 import {pool} from './db.js';
 import {id,listParams,validateRecord,HttpError} from './validation.js';
 export const adminRoutes=Router();
-const normal=row=>({...row,is_active:!!row.is_active,...('parent_active'in row?{parent_active:!!row.parent_active}:{})});
+const normal=row=>({...row,...('image_path'in row?{image_url:imageUrl(row.image_path)}:{}),is_active:!!row.is_active,...('parent_active'in row?{parent_active:!!row.parent_active}:{})});
 adminRoutes.get('/dashboard',async(req,res)=>{const [[categories],[subcategories],[recentCategories],[recentSubcategories]]=await Promise.all([pool.execute('SELECT COUNT(*) AS total, COALESCE(SUM(is_active=1),0) AS active, COALESCE(SUM(is_active=0),0) AS inactive FROM categories'),pool.execute('SELECT COUNT(*) AS total, COALESCE(SUM(is_active=1),0) AS active, COALESCE(SUM(is_active=0),0) AS inactive FROM subcategories'),pool.execute('SELECT id,name,is_active,updated_at FROM categories ORDER BY updated_at DESC,id DESC LIMIT 5'),pool.execute('SELECT s.id,s.name,s.is_active,s.updated_at,c.name AS category_name FROM subcategories s JOIN categories c ON c.id=s.category_id ORDER BY s.updated_at DESC,s.id DESC LIMIT 5')]);res.json({categories:categories[0],subcategories:subcategories[0],recentCategories:recentCategories.map(normal),recentSubcategories:recentSubcategories.map(normal),database:'connected'})});
 adminRoutes.get('/category-options',async(req,res)=>{const [rows]=await pool.execute('SELECT id,name,is_active FROM categories ORDER BY name');res.json({data:rows.map(normal)})});
 for(const [resource,table,child] of [['categories','categories',false],['subcategories','subcategories',true]]){
