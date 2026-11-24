@@ -5,14 +5,83 @@ import {validateProductContent} from './product-content.js';
 import {validateVariants} from './product-variants.js';
 import {storeSubcategoryImage,removeSubcategoryImage,imagePath} from './subcategory-images.js';
 import {fileURLToPath} from 'node:url';
+import fs from 'node:fs';
+import path from 'node:path';
 const photoRoot=fileURLToPath(new URL('../public/uploads/products/',import.meta.url));
+const websiteRoot=fileURLToPath(new URL('../public/images/Website/',import.meta.url));
+const distWebsiteRoot=fileURLToPath(new URL('../dist/images/Website/',import.meta.url));
+const fallbackHero=fileURLToPath(new URL('../public/images/zenisa-hero-product-bottle-v1.jpg',import.meta.url));
+
+const folderToWebsiteMap={
+  'azz-the-most-loved':'Azz the most Loved',
+  'zoya-flora':'Jolie Flora',
+  'amber-elixir':'ALTHAIRES GOLD',
+  'bleu-empire':'Bleu CHNL FRESH',
+  'cherry-secret':'Rasa & Seduction',
+  'aventus-apex':'PR Invictor',
+  'cafe-kamra':'Coffee Qahwa',
+  'club-shadow':'Black Obsession',
+  'sauvage-drift':'DR Savage Intense',
+  'heel-girl':'Good Lady',
+  'rouge-glow':'The Goddess',
+  'bin-shekh':'Bin Shekh',
+  'royal-valley':'Royal Valley',
+  'althaire-gold':'ALTHAIRES GOLD',
+  'althaires-gold':'ALTHAIRES GOLD',
+  'millionair':'Millionair',
+  'tygor-intense':'Tygor Intense',
+  'nomade-mystique':'Nomade Mystique',
+  'loui-imaginor':'loui Imaginor',
+  'loui-citrus-swim':'Loui Citrus Swim',
+  'qaaf':'Qaaf',
+  'd-cool-aqua':'D- Cool Aqua'
+};
 import {Router} from 'express';
 import {pool} from './db.js';
 import {id,HttpError} from './validation.js';
 export const productAdmin=Router(),productImagePublic=Router();
 productImagePublic.get('/products',async(req,res)=>{res.set('Cache-Control','no-store');const [subcategories]=await pool.execute('SELECT s.id,s.name,s.slug,c.slug AS category_slug,c.name AS category_name FROM subcategories s JOIN categories c ON c.id=s.category_id WHERE s.is_active=1 AND c.is_active=1');const [categories]=await pool.execute('SELECT id,name,slug FROM categories WHERE is_active=1');res.json({data:await commerceCatalogue(),subcategories,categories})});
 productImagePublic.get('/products/:id',async(req,res)=>{const [rows]=await pool.execute('SELECT p.*,s.name AS subcategory_name,c.name AS category_name FROM products p JOIN subcategories s ON s.id=p.subcategory_id JOIN categories c ON c.id=s.category_id WHERE p.id=? AND p.is_active=1 AND EXISTS (SELECT 1 FROM product_category_assignments a JOIN categories ac ON ac.id=a.category_id JOIN subcategories sc ON sc.id=a.subcategory_id WHERE a.product_id=p.id AND ac.is_active=1 AND sc.is_active=1)',[id(req.params.id)]);if(!rows.length)throw new HttpError(404,'Product not found.');res.set('Cache-Control','no-store');res.json({product:{...rows[0],assignments:await readAssignments(pool,rows[0].id),variants:await readVariants(pool,rows[0].id),content:Object.fromEntries(contentFields.map(key=>[key,rows[0][key]||'']))}})});
-productImagePublic.get('/product-images/:folder/:file',(req,res,next)=>{let target;try{target=imagePath(req.params.folder+'/'+req.params.file,photoRoot)}catch{return next(new HttpError(404,'Image not found.'))}res.set('X-Content-Type-Options','nosniff');res.sendFile(target,error=>{if(error)next(new HttpError(404,'Image not found.'))})});
+productImagePublic.get('/product-images/:folder/:file',(req,res,next)=>{
+  try{
+    const target=imagePath(req.params.folder+'/'+req.params.file,photoRoot);
+    if(fs.existsSync(target)){
+      res.set('X-Content-Type-Options','nosniff');
+      res.set('Cache-Control','public, max-age=604800');
+      return res.sendFile(target);
+    }
+  }catch{}
+
+  const cleanFolder=req.params.folder.replace(/-\d+$/,'').toLowerCase();
+  const websiteFolder=folderToWebsiteMap[cleanFolder];
+  if(websiteFolder){
+    for(const root of [websiteRoot,distWebsiteRoot]){
+      const candidate=path.join(root,websiteFolder,'1.png');
+      if(fs.existsSync(candidate)){
+        res.set('X-Content-Type-Options','nosniff');
+        res.set('Cache-Control','public, max-age=604800');
+        return res.sendFile(candidate);
+      }
+    }
+  }
+
+  for(const root of [websiteRoot,distWebsiteRoot]){
+    const candidate=path.join(root,'Azz the most Loved','1.png');
+    if(fs.existsSync(candidate)){
+      res.set('X-Content-Type-Options','nosniff');
+      res.set('Cache-Control','public, max-age=604800');
+      return res.sendFile(candidate);
+    }
+  }
+
+  if(fs.existsSync(fallbackHero)){
+    res.set('X-Content-Type-Options','nosniff');
+    res.set('Cache-Control','public, max-age=604800');
+    return res.sendFile(fallbackHero);
+  }
+
+  next(new HttpError(404,'Image not found.'));
+});
 export function validateProduct(body){
  const name=typeof body.name==='string'?body.name.trim():'';
  const description=typeof body.description==='string'?body.description.trim():'';
