@@ -1,0 +1,419 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Basic Meta -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#090909">
+
+    <!-- Primary SEO -->
+    <title>Zenisa Perfumes | Luxury Fragrances Coming Soon</title>
+
+    <meta name="description" content="Discover Zenisa Perfumes, a world of luxury, elegance and captivating fragrances. Experience extraordinary scents and timeless sophistication. Coming Soon.">
+
+    <meta name="keywords" content="Zenisa Perfumes, Zenisa, Luxury Perfumes, Premium Perfumes, Luxury Fragrances, Premium Fragrances, Signature Perfumes, Elegant Fragrances">
+
+    <meta name="author" content="Zenisa Perfumes">
+    <meta name="robots" content="index, follow, max-image-preview:large">
+    <meta name="googlebot" content="index, follow">
+
+    <!-- Canonical URL: Update with your actual domain -->
+    <link rel="canonical" href="https://zenisaperfumes.in/">
+
+    <!-- Website Icons: Add your actual favicon files -->
+    <link rel="icon" type="image/png" href="/favicon.png">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
+    <!-- Open Graph SEO -->
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Zenisa Perfumes">
+    <meta property="og:title" content="Zenisa Perfumes | Luxury Fragrances">
+    <meta property="og:description" content="A new world of luxury, elegance and unforgettable fragrances is coming. Discover Zenisa Perfumes.">
+    <meta property="og:url" content="https://zenisaperfumes.in/">
+    <meta property="og:locale" content="en_IN">
+    <meta property="og:image" content="https://zenisaperfumes.in/images/zenisa-social.jpg">
+    <meta property="og:image:alt" content="Zenisa Perfumes - Luxury Fragrance Brand">
+
+    <!-- Twitter Card SEO -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Zenisa Perfumes | Coming Soon">
+    <meta name="twitter:description" content="Experience luxury, elegance and unforgettable fragrances with Zenisa Perfumes. Coming Soon.">
+    <meta name="twitter:image" content="https://zenisaperfumes.in/images/zenisa-social.jpg">
+
+    <!-- Fonts Preconnect -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+    <!-- Structured Data: Brand -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Brand",
+        "name": "Zenisa Perfumes",
+        "description": "Zenisa Perfumes represents luxury, elegance and captivating fragrances.",
+        "slogan": "Make Every Moment Memorable."
+    }
+    </script>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --gold: #c8a96e;
+            --gold-light: #e8d3a1;
+            --black: #090909;
+            --white: #ffffff;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background: var(--black);
+            color: var(--white);
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        .hero {
+            min-height: 100vh;
+            min-height: 100svh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            padding: 40px 20px;
+            overflow: hidden;
+
+            background:
+                radial-gradient(
+                    ellipse at 50% 45%,
+                    rgba(200,169,110,0.13),
+                    transparent 55%
+                ),
+                linear-gradient(
+                    135deg,
+                    #090909,
+                    #17130e 50%,
+                    #090909
+                );
+        }
+
+        .hero::before,
+        .hero::after {
+            content: "";
+            position: absolute;
+            width: 450px;
+            height: 450px;
+            border: 1px solid rgba(200,169,110,0.12);
+            border-radius: 50%;
+            animation: rotate 25s linear infinite;
+            pointer-events: none;
+        }
+
+        .hero::after {
+            width: 650px;
+            height: 650px;
+            animation-direction: reverse;
+        }
+
+        @keyframes rotate {
+            from {
+                transform: rotate(0deg);
+            }
+
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        .content {
+            width: 100%;
+            max-width: 850px;
+            text-align: center;
+            position: relative;
+            z-index: 2;
+            animation: fadeUp 1.5s ease forwards;
+        }
+
+        @keyframes fadeUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .brand-icon {
+            width: 75px;
+            height: 75px;
+            border: 1px solid var(--gold);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 25px;
+            color: var(--gold);
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 38px;
+            border-radius: 50%;
+        }
+
+        .brand-name {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(42px, 8vw, 76px);
+            font-weight: 500;
+            letter-spacing: 12px;
+            text-transform: uppercase;
+            color: var(--gold-light);
+            margin-left: 12px;
+        }
+
+        .brand-subtitle {
+            font-size: 10px;
+            letter-spacing: 8px;
+            color: #aaa;
+            text-transform: uppercase;
+            margin-top: 10px;
+        }
+
+        .divider {
+            width: 75px;
+            height: 1px;
+            background: var(--gold);
+            margin: 45px auto;
+        }
+
+        .coming-soon {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(38px, 7vw, 65px);
+            font-weight: 400;
+            letter-spacing: 5px;
+            text-transform: uppercase;
+            color: var(--white);
+            margin-bottom: 18px;
+        }
+
+        .description {
+            font-size: 13px;
+            font-weight: 300;
+            line-height: 2;
+            letter-spacing: 2px;
+            color: #b7b7b7;
+            max-width: 550px;
+            margin: 0 auto;
+        }
+
+        .tagline {
+            color: var(--gold);
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 25px;
+            font-style: italic;
+            margin-top: 35px;
+            letter-spacing: 1px;
+        }
+
+        .notify {
+            display: flex;
+            justify-content: center;
+            max-width: 430px;
+            margin: 40px auto 0;
+            border-bottom: 1px solid rgba(200,169,110,0.6);
+        }
+
+        .notify input {
+            width: 100%;
+            background: transparent;
+            border: none;
+            outline: none;
+            padding: 15px 5px;
+            color: white;
+            font-family: inherit;
+            font-size: 12px;
+            letter-spacing: 1px;
+        }
+
+        .notify input::placeholder {
+            color: #777;
+        }
+
+        .notify button {
+            border: none;
+            background: transparent;
+            color: var(--gold);
+            font-size: 11px;
+            letter-spacing: 2px;
+            cursor: pointer;
+            padding: 0 10px;
+            white-space: nowrap;
+            transition: 0.3s;
+        }
+
+        .notify button:hover {
+            color: white;
+        }
+
+        .footer {
+            position: absolute;
+            bottom: 25px;
+            left: 0;
+            width: 100%;
+            text-align: center;
+            font-size: 10px;
+            letter-spacing: 2px;
+            color: #777;
+            z-index: 2;
+        }
+
+        .footer span {
+            color: var(--gold);
+        }
+
+        @media(max-width: 576px) {
+
+            .brand-name {
+                letter-spacing: 7px;
+                margin-left: 7px;
+            }
+
+            .brand-subtitle {
+                letter-spacing: 5px;
+            }
+
+            .coming-soon {
+                letter-spacing: 3px;
+            }
+
+            .description {
+                font-size: 11px;
+                letter-spacing: 1px;
+            }
+
+            .hero::before {
+                width: 300px;
+                height: 300px;
+            }
+
+            .hero::after {
+                width: 450px;
+                height: 450px;
+            }
+
+            .footer {
+                font-size: 9px;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            *,
+            *::before,
+            *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                scroll-behavior: auto !important;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <main class="hero">
+
+        <section class="content" aria-labelledby="brand-heading">
+
+            <div class="brand-icon" aria-hidden="true">Z</div>
+
+            <h1 class="brand-name" id="brand-heading">
+                Zenisa
+            </h1>
+
+            <p class="brand-subtitle">
+                Perfumes
+            </p>
+
+            <div class="divider" aria-hidden="true"></div>
+
+            <h2 class="coming-soon">
+                Luxury Fragrances Coming Soon
+            </h2>
+
+            <p class="description">
+                A new world of luxury, elegance and unforgettable fragrances
+                is about to unfold. Something extraordinary is on its way.
+            </p>
+
+            <p class="tagline">
+                "Make Every Moment Memorable."
+            </p>
+
+            <form class="notify" onsubmit="notifyUser(event)">
+
+                <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    placeholder="Enter your email address"
+                    aria-label="Your email address"
+                    autocomplete="email"
+                    required
+                >
+
+                <button type="submit">
+                    NOTIFY ME →
+                </button>
+
+            </form>
+
+        </section>
+
+        <footer class="footer">
+            © <span id="year"></span> ZENISA PERFUMES. ALL RIGHTS RESERVED.
+        </footer>
+
+    </main>
+
+    <script>
+
+        // Dynamic Copyright Year
+        document.getElementById("year").textContent =
+            new Date().getFullYear();
+
+        // Email Notification
+        function notifyUser(event) {
+
+            event.preventDefault();
+
+            const email = document.getElementById("email").value.trim();
+
+            const subject = encodeURIComponent(
+                "Notify me when Zenisa Perfumes launches"
+            );
+
+            const body = encodeURIComponent(
+                "Please notify me when Zenisa Perfumes launches.\n\nEmail: " + email
+            );
+
+            window.location.href =
+                "mailto:hello@zenisaperfumes.in?subject=" +
+                subject + "&body=" + body;
+
+        }
+
+    </script>
+
+</body>
+</html>

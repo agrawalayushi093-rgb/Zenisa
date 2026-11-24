@@ -273,3 +273,104 @@ body .zenisa-admin .admin-record-form fieldset>h3{margin:26px 0 12px;font-size:2
 body .zenisa-admin .admin-product-fields>.admin-checkbox-line{grid-column:1/-1;align-items:flex-start;gap:12px;margin:12px 0 22px}
 body .zenisa-admin .admin-checkbox-line>span{color:var(--admin-ink);line-height:1.7}
 body .zenisa-admin .admin-checkbox-line>span>small{display:block;margin-top:4px;color:var(--admin-muted)}
+
+/* Live / Coming Soon Status Banner */
+.admin-status-banner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  padding: 24px;
+  border-radius: 12px;
+  margin-bottom: 28px;
+  border: 1px solid #dce3d7;
+  transition: all 0.2s ease;
+}
+.admin-status-banner.is-live {
+  background: linear-gradient(135deg, #f0f7f3 0%, #e2efe7 100%);
+  border-color: #a4ceb5;
+}
+.admin-status-banner.is-coming-soon {
+  background: linear-gradient(135deg, #fff9f0 0%, #faedd8 100%);
+  border-color: #e5c490;
+}
+.admin-status-indicator {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+.admin-status-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  display: inline-block;
+}
+.admin-status-dot.live {
+  background: #1e824c;
+  box-shadow: 0 0 0 3px rgba(30, 130, 76, 0.2);
+}
+.admin-status-dot.coming-soon {
+  background: #d35400;
+  box-shadow: 0 0 0 3px rgba(211, 84, 0, 0.2);
+}
+.admin-status-badge {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: #1e824c;
+}
+.admin-status-banner.is-coming-soon .admin-status-badge {
+  color: #d35400;
+}
+.admin-status-info h2 {
+  font-size: 20px;
+  font-weight: 600;
+  margin: 0 0 6px;
+  color: #16241d;
+}
+.admin-status-info p {
+  margin: 0;
+  font-size: 14px;
+  color: #55695e;
+}
+.admin-status-toggle-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 20px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  border: none;
+  white-space: nowrap;
+  transition: all 0.15s ease;
+}
+.admin-status-toggle-btn.disable {
+  background: #fbf0ee;
+  color: #c0392b;
+  border: 1px solid #e8b2a8;
+}
+.admin-status-toggle-btn.disable:hover {
+  background: #f8ded9;
+}
+.admin-status-toggle-btn.enable {
+  background: #1e824c;
+  color: #ffffff;
+}
+.admin-status-toggle-btn.enable:hover {
+  background: #16693d;
+}
+.admin-status-toggle-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+@media (max-width: 760px) {
+  .admin-status-banner {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+

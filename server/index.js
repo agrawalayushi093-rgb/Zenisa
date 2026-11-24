@@ -22,7 +22,7 @@ import {pool} from './db.js';
 import {adminRoutes} from './routes.js';
 import {configured,verifyPassword,setSession,clearSession,requireAdmin,checkOrigin,loginRateLimit,session} from './auth.js';
 import {HttpError} from './validation.js';
-import {commerceAdmin,commercePublic} from './commerce-routes.js';
+import {commerceAdmin,commercePublic,getSiteStatus} from './commerce-routes.js';
 export const app=express();
 app.disable('x-powered-by');
 app.use('/api/admin',(req,res,next)=>{res.set('Cache-Control','no-store');res.set('X-Content-Type-Options','nosniff');next()});
@@ -44,10 +44,17 @@ app.use('/api/store',instagramPublic,announcementPublic,headerPublic,offerSelect
 app.use('/api/admin',requireAdmin,instagramAdmin,announcementAdmin,headerAdmin,offerAdmin,orderAdmin,contactAdmin,productAdmin,subcategoryAdmin,faqAdmin,policyImageAdmin,policyAdmin,commerceAdmin,adminRoutes);
 app.use('/api',(req,res)=>res.status(404).json({message:'API endpoint not found.'}));
 const distDir=fileURLToPath(new URL('../dist',import.meta.url));
+const comingSoonFile=fileURLToPath(new URL('./coming-soon.html',import.meta.url));
 if(fs.existsSync(distDir)){
  app.use(express.static(distDir));
- app.get(/.*/,(req,res,next)=>{
+ app.get(/.*/,async(req,res,next)=>{
   if(req.path.startsWith('/api'))return next();
+  if(req.path==='/admin'||req.path.startsWith('/admin/'))return res.sendFile(path.join(distDir,'index.html'));
+  if(session(req))return res.sendFile(path.join(distDir,'index.html'));
+  const isLive=await getSiteStatus();
+  if(!isLive&&fs.existsSync(comingSoonFile)){
+   return res.sendFile(comingSoonFile);
+  }
   res.sendFile(path.join(distDir,'index.html'));
  });
 }

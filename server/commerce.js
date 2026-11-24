@@ -4,6 +4,7 @@ import {priceFor} from '../src/data/products.js';
 import {HttpError} from './validation.js';
 
 export const defaultSettings=()=>({
+  isLive:true,
   whatsappNumber:'',shippingFee:null,
   free50:{active:false,productIds:[],repeat:true},
   bundle20:{active:false,productIds:[],repeat:true},
@@ -12,6 +13,7 @@ export const defaultSettings=()=>({
 export function validateSettings(body,catalogue=[]){
   if(!body||typeof body!=='object')throw new HttpError(400,'Invalid settings.');
   const result=defaultSettings();
+  result.isLive=typeof body.isLive==='boolean'?body.isLive:true;
   const number=String(body.whatsappNumber||'').trim();
   if(number&&!/^[1-9]\d{7,14}$/.test(number))throw new HttpError(400,'Use a country-code WhatsApp number, digits only (8–15 digits).');
   result.whatsappNumber=number;
