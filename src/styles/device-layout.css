@@ -1,0 +1,56 @@
+/* Cross-device layout and touch refinements. */
+html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
+body{min-width:0}
+#root,#main-content{min-width:0}
+.product-card,.product-info,.pdp-information,.pdp-gallery,.zenisa-footer-grid>section{min-width:0}
+.zenisa-footer dd{min-width:0;overflow-wrap:anywhere}
+.pdp-thumbnails,.all-products-track,.cart-drawer-items,.search-drawer{-webkit-overflow-scrolling:touch}
+@media(max-width:1050px){body .zenisa-header-shell .nav-inner{width:calc(100% - 40px)}body .zenisa-header-shell .nav-left>nav{gap:10px;font-size:13px}}
+@media(max-width:800px){
+ body .zenisa-header-shell .nav-inner{width:calc(100% - 24px);column-gap:6px;min-height:74px}
+ body .zenisa-header-shell .nav-left{gap:0}
+ body .zenisa-header-shell .nav-left>.icon-button{width:40px;height:44px;padding:8px}
+ body .zenisa-header-shell .nav-inner>.nav-actions{gap:0;min-width:0}
+ body .zenisa-header-shell .nav-actions>.header-whatsapp,body .zenisa-header-shell .nav-actions>.cart-icon{width:40px;min-width:40px;height:44px;padding:8px;display:flex;align-items:center;justify-content:center}
+ body .zenisa-header-shell .nav .logo{font-size:28px;letter-spacing:0}
+ body .zenisa-header-shell .logo>span{font-size:6px;letter-spacing:1.5px}
+ body .zenisa-header-shell .header-logo-image{width:112px!important;max-width:112px;max-height:54px!important}
+ body .zenisa-pdp .pdp-information{width:100%;min-width:0}
+ body .zenisa-pdp .pdp-gallery{position:static}
+ body .product-card .product-info h3{overflow-wrap:anywhere}
+}
+@media(max-width:600px){
+ body .shop-page .container,body .zenisa-pdp.container{width:calc(100% - 28px)}
+ body .shop-page .shop-results .product-grid{gap:24px 12px}
+ body .product-card .product-info h3{font-size:14px;line-height:1.5;letter-spacing:0}
+ body .product-card .product-bottom{display:flex;flex-direction:column;align-items:stretch;gap:10px}
+ body .product-card .product-bottom>span{font-size:15px;line-height:1.7;min-width:0}
+ body .product-card .product-bottom>button{width:100%;min-height:44px;font-size:12px}
+ body .product-card .product-bottom .product-mrp{font-size:12px}
+ body .product-card .product-bottom .product-discount{font-size:9px;padding:3px 5px;margin-inline:3px}
+ body .zenisa-footer-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:28px 20px}
+ body .zenisa-footer-grid>.zenisa-footer-contact,body .zenisa-footer-grid>.zenisa-footer-subscribe{grid-column:1/-1}
+ body .zenisa-footer dl>div{grid-template-columns:105px minmax(0,1fr);gap:10px}
+ body .zenisa-footer-subscribe form{display:flex;max-width:100%;min-width:0}
+ body .zenisa-footer-subscribe input{min-width:0;width:100%}
+ body .zenisa-footer-grid>section>a{min-height:36px;display:flex;align-items:center}
+ body input,body select,body textarea{font-size:16px}
+ body .zenisa-pdp .pdp-purchase-row{display:grid;grid-template-columns:100px minmax(0,1fr) 44px;gap:8px}
+ body .zenisa-pdp .pdp-quantity{min-width:0;width:100%}
+ body .zenisa-pdp .pdp-quantity input{font-size:16px;min-width:0;width:28px;padding:0}
+ body .zenisa-pdp .pdp-quantity button{width:32px;min-width:0;padding:5px}
+ body .zenisa-pdp .pdp-wishlist{width:44px;min-width:0}
+ body .zenisa-pdp .pdp-add{min-width:0;padding:10px 5px}
+ body .dialog.cart-drawer{height:calc(100vh - 16px);height:calc(100dvh - 16px)}
+ body .cart-drawer-footer{padding-bottom:calc(10px + env(safe-area-inset-bottom,0px))}
+ body .cart-drawer-item{grid-template-columns:68px minmax(0,1fr) 20px;gap:9px}
+ body .cart-drawer-item img{width:68px;height:88px}
+ body .cart-item-size{font-size:9px;margin-left:4px;padding:7px}
+ body .cart-drawer-quantity{gap:4px}
+ body .cart-drawer-quantity button{width:23px}
+}
+@media(hover:none){body .product-card:hover .product-photo{filter:none}a,button{touch-action:manipulation}}
+/* Dedicated women's banner retains the correct bottle proportions. */
+body .home-four .l4-slider.l4-hero-her{background-size:cover;background-position:center}
+body .home-four .l4-hero-her .l4-hero-shade{background:linear-gradient(90deg,#062b1b38,transparent 65%)}
+@media(max-width:800px){body .home-four .l4-slider.l4-hero-her{background-size:cover;background-position:76% center}body .home-four .l4-hero-her .l4-hero-shade{background:linear-gradient(90deg,#062b1be8,#062b1b75)}}

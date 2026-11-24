@@ -1,0 +1,30 @@
+{
+  "tool": "built-in image_gen",
+  "jobs": [
+    {
+      "key": "him",
+      "refs": [
+        "zenisa-hero.webp",
+        "Website/Bin Shekh/1.png"
+      ],
+      "prompt": "Use case: precise-object-edit / compositing. Keep the edit target's photographic environment, light, branding, layout and visual style. Replace every square Zenisa bottle and gold cap with the actual Zenisa product bottle silhouette from the supporting reference: broad flared heavy glass base, gently waisted body, rounded shoulders, gold neck ring and tall BLACK textured cylindrical cap. Bottle must look like the supplied product, not a rectangular gold-cap bottle. All bottles fully visible with realistic shadows. No 'Inspired by' inset, competitor bottle or extra promotional text from the product reference. No website titles, CTA, watermark. Image 1 is the edit target. Image 2 supplies the Bin Shekh bottle, amber liquid, front label and black cap. Keep image 1's dark green botanical and oud wood environment, ivory orchids, gold silk and golden lighting. Replace the right-hand bottle with this Bin Shekh product. Keep generous empty dark green space on the LEFT for HTML text. Output an ultra-wide 3:1 landscape hero banner; position the product on the right and preserve the premium scene."
+    },
+    {
+      "key": "collections",
+      "refs": [
+        "zenisa-collections.webp",
+        "Website/Bin Shekh/1.png",
+        "Website/Jolie Flora/1.png"
+      ],
+      "prompt": "Use case: precise-object-edit / compositing. Keep the edit target's photographic environment, light, branding, layout and visual style. Replace every square Zenisa bottle and gold cap with the actual Zenisa product bottle silhouette from the supporting reference: broad flared heavy glass base, gently waisted body, rounded shoulders, gold neck ring and tall BLACK textured cylindrical cap. Bottle must look like the supplied product, not a rectangular gold-cap bottle. All bottles fully visible with realistic shadows. No 'Inspired by' inset, competitor bottle or extra promotional text from the product reference. No website titles, CTA, watermark. Image 1 is the target FOUR-PANEL panorama. Preserve its four equal vertical panels and overall 3:1 panorama proportions: left warm dark oud/amber, second pink roses/florals, third green citrus/leaves, fourth black-and-gold gift box. Replace ALL six bottles in all panels with the same flared glass/black cap Zenisa bottle design. Use the Bin Shekh bottle from image 2 for dark/warm panels and the Jolie Flora bottle with floral label from image 3 for the pink panel and pink bottle by the gift box. The green panel's two bottles should use the same body and BLACK textured cap with simple readable ZENISA PERFUMES gold label. Preserve the gift box. The panorama will also be cropped to its SECOND panel for a women's hero, so keep that whole second-panel bottle centred and fully within that panel. No missing black caps, no rectangular original bottles."
+    },
+    {
+      "key": "gifting",
+      "refs": [
+        "zenisa-offer-v3.webp",
+        "Website/Bin Shekh/1.png"
+      ],
+      "prompt": "Use case: precise-object-edit / compositing. Keep the edit target's photographic environment, light, branding, layout and visual style. Replace every square Zenisa bottle and gold cap with the actual Zenisa product bottle silhouette from the supporting reference: broad flared heavy glass base, gently waisted body, rounded shoulders, gold neck ring and tall BLACK textured cylindrical cap. Bottle must look like the supplied product, not a rectangular gold-cap bottle. All bottles fully visible with realistic shadows. No 'Inspired by' inset, competitor bottle or extra promotional text from the product reference. No website titles, CTA, watermark. Image 1 is the ultra-wide 3:1 gift hero target. Preserve its dark emerald central empty space, LEFT bottle placement, white orchids, oud wood, golden bokeh, foliage and RIGHT black gift box with large gold ribbon. Replace only the LEFT gold-cap green bottle with the exact Bin Shekh amber product bottle and black textured cylindrical cap from image 2. Keep the entire product visible, preserve realistic luxury lighting and all composition safe areas. The centre must stay empty for existing website copy."
+    }
+  ]
+}

@@ -1,4 +1,6 @@
-import {products,priceFor} from '../src/data/products.js';
+import {offerInDateRange} from '../src/data/offerRules.js';
+import {calculateOffer} from './offers.js';
+import {priceFor} from '../src/data/products.js';
 import {HttpError} from './validation.js';
 
 export const defaultSettings=()=>({
@@ -7,7 +9,7 @@ export const defaultSettings=()=>({
   bundle20:{active:false,productIds:[],repeat:true},
   combineOffers:false,googleProfileUrl:'',googlePlaceId:''
 });
-export function validateSettings(body){
+export function validateSettings(body,catalogue=[]){
   if(!body||typeof body!=='object')throw new HttpError(400,'Invalid settings.');
   const result=defaultSettings();
   const number=String(body.whatsappNumber||'').trim();
@@ -21,7 +23,7 @@ export function validateSettings(body){
     const rule=body[key];
     if(!rule||typeof rule.active!=='boolean'||typeof rule.repeat!=='boolean'||!Array.isArray(rule.productIds))throw new HttpError(400,'Choose valid offer rules.');
     const ids=[...new Set(rule.productIds)];
-    if(ids.some(id=>!products.some(p=>p.id===id&&p.collection!=='Gift Sets')))throw new HttpError(400,'Select eligible individual perfumes only.');
+    if(ids.some(id=>!catalogue.some(p=>p.id===id&&p.collection!=='Gift Sets')))throw new HttpError(400,'Select eligible individual perfumes only.');
     if(rule.active&&!ids.length)throw new HttpError(400,'Select at least one eligible product before activating an offer.');
     result[key]={active:rule.active,repeat:rule.repeat,productIds:ids};
   }
@@ -37,17 +39,18 @@ export function validateSettings(body){
   if(result.googlePlaceId&&!/^[A-Za-z0-9_-]{10,255}$/.test(result.googlePlaceId))throw new HttpError(400,'Enter a valid Google Place ID.');
   return result;
 }
-export function quoteCart(input,settings){
+export function quoteCart(input,settings,catalogue=products){
   if(!Array.isArray(input)||input.length>60)throw new HttpError(400,'Cart must contain at most 60 product variants.');
   const merged=new Map();
   for(const item of input){
-    const p=products.find(p=>p.id===item?.productId);
+    const p=catalogue.find(p=>p.id===item?.productId);
     if(!p||!p.variants.includes(item.variant))throw new HttpError(400,'A product or size is no longer available. Remove it and select again.');
     if(!Number.isInteger(item.quantity)||item.quantity<1||item.quantity>99)throw new HttpError(400,'Quantity must be between 1 and 99.');
     const key=p.id+'|'+item.variant;
     const quantity=(merged.get(key)?.quantity||0)+item.quantity;
+    if(p.variantStock&&quantity>p.variantStock[item.variant])throw new HttpError(409,`Only ${p.variantStock[item.variant]} available for ${p.name} (${item.variant}).`);
     if(quantity>99)throw new HttpError(400,'Maximum 99 of each product and size.');
-    merged.set(key,{productId:p.id,name:p.name,variant:item.variant,quantity,unitPrice:priceFor(p,item.variant)});
+    merged.set(key,{productId:p.id,categoryIds:p.categoryIds||[],subcategoryIds:p.subcategoryIds||[],name:p.name,variant:item.variant,quantity,unitPrice:priceFor(p,item.variant)});
   }
   const lines=[...merged.values()].map(line=>({...line,lineTotal:line.unitPrice*line.quantity}));
   const subtotal=lines.reduce((sum,line)=>sum+line.lineTotal,0);
@@ -63,15 +66,17 @@ export function quoteCart(input,settings){
     const groups=Math.min(Math.floor(units.length/4),settings.bundle20.repeat?Infinity:1);
     if(groups){const value=units.slice(0,groups*4).reduce((sum,u)=>sum+u.price,0);const amount=Math.max(0,value-groups*999);if(amount)discounts.push({id:'bundle20',title:'4 × 20ml for ₹999',groups,amount,detail:`${groups} mix-and-match bundle${groups>1?'s':''}; highest-priced eligible bottles included first.`})}
   }
-  const appliedOffers=settings.combineOffers?discounts:discounts.sort((a,b)=>b.amount-a.amount).slice(0,1);
+  let appliedOffers=settings.combineOffers?discounts:discounts.sort((a,b)=>b.amount-a.amount).slice(0,1);
+  const managed=(settings.managedOffers||[]).filter(offer=>offer.is_active&&offerInDateRange(offer)).map(offer=>calculateOffer(offer,lines)).filter(Boolean).sort((a,b)=>b.amount-a.amount);
+  if(managed[0]&&managed[0].amount>appliedOffers.reduce((sum,offer)=>sum+offer.amount,0))appliedOffers=[managed[0]];
   const savings=appliedOffers.reduce((sum,o)=>sum+o.amount,0);
   const shippingFee=lines.length?settings.shippingFee:0;
   return {lines,subtotal,savings,appliedOffers,shippingFee,shippingPending:shippingFee===null,total:subtotal-savings+(shippingFee||0),currency:'INR',sampleCatalogue:true};
 }
-export function validateCustomer(body){
+export function validateCustomer(body,requireAddress=true){
   const clean=(key,max)=>{const value=typeof body?.[key]==='string'?body[key].trim():'';if(value.length>max||/[\r\n\x00-\x1f]/.test(value))throw new HttpError(400,`Invalid ${key}.`);return value};
   const data={name:clean('name',100),phone:clean('phone',20),email:clean('email',180),address:clean('address',300),city:clean('city',80),state:clean('state',80),pincode:clean('pincode',6),notes:clean('notes',500)};
-  if(data.name.length<2||!/^\+?[1-9]\d{7,14}$/.test(data.phone.replace(/[\s()-]/g,''))||data.address.length<5||!data.city||!data.state||!/^\d{6}$/.test(data.pincode))throw new HttpError(400,'Please complete your name, valid phone, address, city, state and six-digit PIN code.');
+  if(data.name.length<2||!/^\+?[1-9]\d{7,14}$/.test(data.phone.replace(/[\s()-]/g,''))||(requireAddress&&(data.address.length<5||!data.city||!data.state||!/^\d{6}$/.test(data.pincode)))||(!requireAddress&&data.pincode&&!/^\d{6}$/.test(data.pincode)))throw new HttpError(400,requireAddress?'Please complete your name, valid phone, address, city, state and six-digit PIN code.':'Enter your name and a valid mobile number. If supplied, PIN code must be six digits.');
   if(data.email&&!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(data.email))throw new HttpError(400,'Enter a valid email address.');
   return data;
 }
@@ -80,6 +85,6 @@ export function enquiryMessage(quote,customer){return [
   'Hello ZENISA PERFUMES! I would like to enquire about this selection:',
   ...quote.lines.map((line,i)=>`${i+1}. ${line.name} | ${line.variant} | Qty ${line.quantity} × ${inr(line.unitPrice)} = ${inr(line.lineTotal)}`),
   '',`Subtotal: ${inr(quote.subtotal)}`,...quote.appliedOffers.map(offer=>`${offer.title}: −${inr(offer.amount)}`),`Savings: ${inr(quote.savings)}`,`Shipping: ${quote.shippingPending?'To be confirmed':inr(quote.shippingFee)}`,`Estimated total: ${inr(quote.total)}${quote.shippingPending?' + shipping, if applicable':''}`,
-  '',`Customer: ${customer.name}`,`Phone: ${customer.phone}`,...(customer.email?[`Email: ${customer.email}`]:[]),`Address: ${customer.address}, ${customer.city}, ${customer.state} - ${customer.pincode}`,...(customer.notes?[`Note: ${customer.notes}`]:[]),
+  '',`Customer: ${customer.name}`,`Phone: ${customer.phone}`,...(customer.email?[`Email: ${customer.email}`]:[]),`Address: ${[customer.address,customer.city,customer.state,customer.pincode].filter(Boolean).join(', ')||'To be confirmed'}`,...(customer.notes?[`Note: ${customer.notes}`]:[]),
   '', 'Please confirm availability, final pricing, delivery and applicable taxes. This is an enquiry, not a confirmed or paid order. Catalogue details are currently samples.'
 ].join('\n')}

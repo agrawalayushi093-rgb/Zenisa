@@ -1,0 +1,2 @@
+import {useCatalogue} from '../context/Catalogue';
+export default function CatalogueStatus(){const {products,loading,error,refresh}=useCatalogue();if(error)return <div className="home-category-state" role="alert"><p>{error}</p><button className="l4-outline-button" onClick={refresh}>Try again</button></div>;if(loading&&!products.length)return <p className="home-category-state" role="status">Loading perfumes…</p>;if(!products.length)return <p className="home-category-state">New fragrances will be available soon.</p>;return null}

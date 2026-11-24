@@ -1,0 +1,3 @@
+import test from 'node:test';import assert from 'node:assert/strict';import {validateAnnouncement} from '../announcement-content.js';
+test('announcements preserve multilingual text and emoji',()=>{for(const text of ['नमस्ते! निःशुल्क डिलीवरी 🌸','مرحبا بكم','欢迎光临','தமிழ் வாசகம்','English offer'])assert.equal(validateAnnouncement({text,is_active:true,sort_order:2}).text,text)});
+test('announcement status and order are validated',()=>{assert.equal(validateAnnouncement({text:'Message',is_active:false}).is_active,false);for(const body of [{text:' ',is_active:true},{text:'x'.repeat(1001),is_active:true},{text:'Message',is_active:'yes'},{text:'Message',is_active:true,sort_order:-1}])assert.throws(()=>validateAnnouncement(body))});

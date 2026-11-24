@@ -23,3 +23,5 @@ import './styles/home-four-sequence.css';
 import './styles/responsive.css';
 
 
+import './styles/typography.css';
+import './styles/device-layout.css';

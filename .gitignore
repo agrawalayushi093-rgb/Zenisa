@@ -10,3 +10,8 @@ server/.mysql-data/
 
 /public/uploads/policies/
 /public/uploads/subcategories/
+/server/recovery-backups/
+
+public/uploads/products/
+
+public/uploads/offers/

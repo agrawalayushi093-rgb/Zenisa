@@ -1,0 +1,28 @@
+{
+  "tool": "built-in image_gen",
+  "jobs": [
+    {
+      "key": "him-dr-savage",
+      "refs": [
+        "zenisa-hero-him-black-cap-v1.jpg",
+        "Website/DR Savage Intense/1.png"
+      ],
+      "prompt": "Ultra-wide 3:1 landscape photographic website hero banner, approximately 2172x724. Premium realistic studio/editorial lighting, natural glass proportions, one consistent Zenisa product silhouette: broad flared glass base, waisted body, rounded shoulders, gold neck and tall BLACK textured cylindrical cap. Match the supplied PRODUCT reference's bottle label and name accurately; reference 'Inspired by' insets and competitor bottles must NEVER appear. No baked-in website heading, CTA, extra logo, collage or watermark. Keep LEFT 55 percent clean and DARK for existing white HTML text. Products belong on the RIGHT, entirely in frame with generous cap/base margins. Image 1 is the existing men's hero scene; image 2 is the new DR Savage Intense product reference. Replace Bin Shekh with DR Savage Intense, preserving its blue-and-gold label with ZENISA PERFUMES, DR Savage Intense, APPAREL PERFUME, 50 ml. Preserve the existing dark forest green backdrop, oud wood, ivory orchids and golden light; introduce only a subtle midnight-blue reflection near the bottle to complement the label. Right-hand upright bottle around 70 percent canvas height. Refined contemporary luxury, no neon."
+    },
+    {
+      "key": "gifting-royal-goodlady",
+      "refs": [
+        "Website/Royal Valley/1.png",
+        "Website/Good Lady/1.png"
+      ],
+      "prompt": "Ultra-wide 3:1 landscape photographic website hero banner, approximately 2172x724. Premium realistic studio/editorial lighting, natural glass proportions, one consistent Zenisa product silhouette: broad flared glass base, waisted body, rounded shoulders, gold neck and tall BLACK textured cylindrical cap. Match the supplied PRODUCT reference's bottle label and name accurately; reference 'Inspired by' insets and competitor bottles must NEVER appear. No baked-in website heading, CTA, extra logo, collage or watermark. Keep LEFT 55 percent clean and DARK for existing white HTML text. Products belong on the RIGHT, entirely in frame with generous cap/base margins. Create a NEW gifting campaign hero with TWO distinct 50 ml bottles: Royal Valley (green and gold label, image 1) and Good Lady (navy-blue and gold label, image 2). Place both bottles as an elegant pair on the RIGHT in front of a sophisticated matte black gift box wrapped in muted champagne-gold satin ribbon. One slightly forward, both labels clearly visible and correctly named. Main brand text ZENISA PERFUMES. No Bin Shekh or Jolie Flora. Deep emerald silk and warm bronze reflections, tiny restrained ivory orchid detail near base, plenty of clean dark negative space left. Bottle heights around 60–70 percent of frame; show caps, bases and gift box without crop. Photorealistic premium gifting composition."
+    },
+    {
+      "key": "moments-citrus",
+      "refs": [
+        "Website/Loui Citrus Swim/1.png"
+      ],
+      "prompt": "Ultra-wide 3:1 landscape photographic website hero banner, approximately 2172x724. Premium realistic studio/editorial lighting, natural glass proportions, one consistent Zenisa product silhouette: broad flared glass base, waisted body, rounded shoulders, gold neck and tall BLACK textured cylindrical cap. Match the supplied PRODUCT reference's bottle label and name accurately; reference 'Inspired by' insets and competitor bottles must NEVER appear. No baked-in website heading, CTA, extra logo, collage or watermark. Keep LEFT 55 percent clean and DARK for existing white HTML text. Products belong on the RIGHT, entirely in frame with generous cap/base margins. Create a NEW occasion/fragrance hero starring LOUI CITRUS SWIM from the product reference, accurately matching its blue-and-ivory scenic label and ZENISA PERFUMES, LOUI CITRUS SWIM, APPAREL PERFUME, 50 ML text. One upright bottle at about 80 percent across the frame on an understated pale limestone ledge, height around 70 percent of frame. Fresh sophisticated late-afternoon mood, subtle citrus leaves and one restrained citrus slice near its base, distant turquoise-water bokeh confined to far right. LEFT half deep emerald/teal shadow with smooth cinematic transition, clean enough for white overlay copy. Luxury natural sunlight on the right glass, no orange fire, no extra bottle or competitor inset. Correct tall black cap and flared glass shape."
+    }
+  ]
+}

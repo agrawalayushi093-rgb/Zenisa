@@ -10,11 +10,11 @@ body .home-three .l3-static-showcase .product-card{border:0;border-radius:0;back
 body .home-three .l3-static-showcase .product-image{aspect-ratio:4/5;border-radius:8px;overflow:hidden;background:#f4eddd;flex-shrink:0}
 body .home-three .l3-static-showcase .product-image .bottle-photo{width:100%;height:100%;background-size:500% 125%}
 body .home-three .l3-static-showcase .product-info{padding:18px 0 0;flex:1;text-align:left}
-body .home-three .l3-static-showcase .product-info h3{font-family:'Poppins',sans-serif;font-size:16px;font-weight:500;line-height:1.55;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;margin:0 0 8px;letter-spacing:.1px}
+body .home-three .l3-static-showcase .product-info h3{font-family:'Manrope',sans-serif;font-size:16px;font-weight:500;line-height:1.55;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;margin:0 0 8px;letter-spacing:.1px}
 body .home-three .l3-static-showcase .product-info>small{font-size:11px;color:#b5c6b1;line-height:1.7;min-height:22px}
 body .home-three .l3-static-showcase .product-bottom{align-items:stretch;font-size:18px;font-weight:500;gap:13px;margin-top:auto;padding-top:12px}
 body .home-three .l3-static-showcase .product-bottom>span{display:block;line-height:1.5}
-body .home-three .l3-static-showcase .product-bottom button{min-height:44px;height:auto;border-radius:4px;background:#D4AF37;border-color:#D4AF37;font-family:'Poppins',sans-serif;font-size:12px;font-weight:600;letter-spacing:.4px;text-transform:uppercase;gap:9px}
+body .home-three .l3-static-showcase .product-bottom button{min-height:44px;height:auto;border-radius:4px;background:#D4AF37;border-color:#D4AF37;font-family:'Manrope',sans-serif;font-size:12px;font-weight:600;letter-spacing:.4px;text-transform:uppercase;gap:9px}
 body .home-three .l3-static-showcase .product-bottom button:hover{background:#e6c76d}
 body .home-three .l3-static-showcase .badge{font-size:9px;padding:6px 8px;top:10px;left:10px}
 body .home-three .l3-static-showcase .wish{top:8px;right:8px}

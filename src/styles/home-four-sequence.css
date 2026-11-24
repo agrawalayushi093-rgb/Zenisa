@@ -24,8 +24,8 @@ body .l4-offer-banner-copy>p:not(.l4-kicker){font-size:14px;line-height:1.9;max-
 .l4-offer-art-ring{position:absolute;width:280px;height:280px;border:1px solid #d4af374d;border-radius:50%;inset:50% auto auto 50%;transform:translate(-50%,-50%)}
 .l4-offer-art-ring:before{content:'';position:absolute;inset:15px;border:1px solid #d4af372b;border-radius:50%}
 .l4-offer-banner-art>svg{position:absolute;top:32px;right:25%;width:40px;height:40px;color:#d4af37}
-.l4-offer-art-size{position:relative;color:#e7ce8c;font:500 clamp(85px,9vw,130px)/1 'Cormorant Garamond',serif;letter-spacing:-5px}
-.l4-offer-art-size>small{font:400 16px Poppins,sans-serif;letter-spacing:3px;margin-left:10px}
+.l4-offer-art-size{position:relative;color:#e7ce8c;font:500 clamp(85px,9vw,130px)/1 'Lora',serif;letter-spacing:-5px}
+.l4-offer-art-size>small{font:400 16px Manrope,sans-serif;letter-spacing:3px;margin-left:10px}
 .l4-offer-art-caption{position:relative;margin-top:20px;font-size:9px;letter-spacing:2px;color:#c8ba8d;text-align:center}
 .l4-discovery-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:24px}
 .l4-discovery-card{border:1px solid #8b9b7c;border-radius:140px 140px 6px 6px;overflow:hidden;background:#d4ddcc}
@@ -42,7 +42,7 @@ body .l4-discovery-copy p{font-size:10px;line-height:1.8;margin:0;color:#55634c}
 .l4-discovery-brands .l4-discovery-art{aspect-ratio:4/3.5;background:#d0dac6}
 .l4-brand-emblem{width:80%;aspect-ratio:1;max-width:210px;border:1px solid #8c9c7b;outline:1px solid #a5b197;outline-offset:-9px;display:flex;flex-direction:column;justify-content:center;align-items:center;border-radius:50%}
 .l4-brand-emblem>span{font-size:6px;letter-spacing:1.5px;color:#52623f}
-.l4-brand-emblem>strong{font:400 clamp(65px,7vw,90px)/1.3 'Cormorant Garamond',serif;color:#51633e}
+.l4-brand-emblem>strong{font:400 clamp(65px,7vw,90px)/1.3 'Lora',serif;color:#51633e}
 body .l4-discovery-note{font-size:11px;line-height:1.9;text-align:center;color:#465441;max-width:650px;margin:25px auto 0}
 .l4-discovery-more{text-align:center;margin-top:24px}
 .l4-discovery-button{display:inline-flex;align-items:center;justify-content:center;gap:20px;border:1px solid #526c47;padding:14px 25px;min-height:48px;font-size:12px;color:#173c24}
@@ -80,6 +80,6 @@ body .home-four .l4-scent-grid h3{margin-top:22px}
 
 /* Clear scent names and emerald image rings. */
 body .home-four .l4-scent-image{border:4px solid #062B1B;outline:none;box-shadow:none}
-body .home-four .l4-scent-grid h3{font-family:'Poppins',sans-serif;font-size:clamp(16px,1.45vw,24px);font-weight:700;line-height:1.45;letter-spacing:0;color:#062B1B;margin-top:22px}
+body .home-four .l4-scent-grid h3{font-family:'Manrope',sans-serif;font-size:clamp(16px,1.45vw,24px);font-weight:700;line-height:1.45;letter-spacing:0;color:#062B1B;margin-top:22px}
 body .home-four .l4-scent-grid>a:hover h3,body .home-four .l4-scent-grid>a:focus-visible h3{color:#062B1B}
 @media(max-width:540px){body .home-four .l4-scent-grid h3{font-size:16px;margin-top:16px}body .home-four .l4-scent-image{border-width:3px}}

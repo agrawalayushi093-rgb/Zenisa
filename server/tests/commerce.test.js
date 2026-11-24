@@ -1,6 +1,9 @@
+import {products as fixtures} from './fixtures/catalogue.js';
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import {defaultSettings,validateSettings,quoteCart,validateCustomer,enquiryMessage} from '../commerce.js';
+import {defaultSettings,validateSettings as validateSettingsCore,quoteCart as quoteCartCore,validateCustomer,enquiryMessage} from '../commerce.js';
+const quoteCart=(items,settings)=>quoteCartCore(items,settings,fixtures);
+const validateSettings=body=>validateSettingsCore(body,fixtures);
 const item=(productId,variant,quantity)=>({productId,variant,quantity});
 const ids=['royal-oud','bloom-essence','mystic-noir'];
 function settings(){const s=defaultSettings();for(const key of ['free50','bundle20'])s[key]={active:true,productIds:ids,repeat:true};return s}

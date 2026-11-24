@@ -2,7 +2,7 @@
 .home-four{background:#F7F3E9;color:#2D2D2D;--l4-gold:#D4AF37;--l4-forest:#062B1B;--l4-sage:#8FAE9D}
 body .home-four .container,body .l4-footer .container{width:min(1400px,calc(100% - 96px))}
 body .l4-section{padding-top:80px;padding-bottom:80px}
-body .l4-kicker{font-family:'Poppins',sans-serif;font-size:10px;font-weight:500;letter-spacing:2.8px;line-height:1.7;color:#98772e;margin:0 0 15px}
+body .l4-kicker{font-family:'Manrope',sans-serif;font-size:10px;font-weight:500;letter-spacing:2.8px;line-height:1.7;color:#98772e;margin:0 0 15px}
 .l4-heading{text-align:center;margin-bottom:40px}
 .l4-heading h2{font-size:clamp(38px,3.7vw,57px);line-height:1.05;font-weight:500;letter-spacing:-1.2px}
 body .l4-section-copy{font-size:13px;line-height:1.8;color:#78786a;margin:15px 0 0}
@@ -12,7 +12,7 @@ body .l4-section-copy{font-size:13px;line-height:1.8;color:#78786a;margin:15px 0
 .l4-gold-button:hover{background:#f0d88e;color:#092b1d;transform:translateY(-2px)}
 .l4-outline-button{border:1px solid #c5a253;color:#e3c477;background:transparent}
 .l4-outline-button:hover{background:#d4af371a;color:#f4d996}
-.l4-hero{position:relative;min-height:600px;color:#F7F3E9;background:#062B1B url('/images/zenisa-hero-v3.webp') center / cover no-repeat;overflow:hidden}
+.l4-hero{position:relative;min-height:600px;color:#F7F3E9;background:#062B1B url('/images/zenisa-hero-product-bottle-v1.jpg') center / cover no-repeat;overflow:hidden}
 .l4-hero-shade{position:absolute;inset:0;background:linear-gradient(90deg,#032317a8,transparent 75%)}
 .l4-hero-copy{position:relative;max-width:610px;padding:100px 0 45px}
 body .l4-hero .l4-kicker{color:#ddc17a;font-size:10px}
@@ -25,7 +25,7 @@ body .l4-hero-copy>p:not(.l4-kicker){font-size:15px;line-height:1.9;margin:28px 
 .l4-brand-line span:nth-child(even){color:#a38b4b;font-size:15px}
 .l4-collection-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:22px}
 .l4-collection{position:relative;aspect-ratio:3/4;overflow:hidden;border-radius:140px 140px 5px 5px;border:1px solid #c8b57c;background:#203f2a;color:white}
-.l4-collection-photo{position:absolute;inset:0;background:url('/images/zenisa-collections.webp') no-repeat;background-size:400% 100%;transition:filter .4s}
+.l4-collection-photo{position:absolute;inset:0;background:url('/images/zenisa-collections-black-cap-v1.jpg') no-repeat;background-size:400% 100%;transition:filter .4s}
 .l4-collection:after{content:'';position:absolute;inset:40% 0 0;background:linear-gradient(transparent,#061e14ed)}
 .l4-collection:hover{color:#f8e1a0}
 .l4-collection:hover .l4-collection-photo{filter:brightness(1.08)}
@@ -48,7 +48,7 @@ body .l4-dark-section .l4-kicker{color:#bfa85f}
 body .home-four .l4-slide .product-card{width:100%;display:flex;flex-direction:column;border:1px solid #cdb87580;border-radius:7px;background:#faf6ec;color:#2D2D2D;padding-bottom:12px;overflow:hidden}
 body .home-four .l4-slide .product-image{aspect-ratio:1/1.13;background:#f4eddd;flex-shrink:0}
 body .home-four .l4-slide .product-info{padding:14px 12px 0;flex:1;text-align:center}
-body .home-four .l4-slide .product-info h3{font-family:'Cormorant Garamond',serif;font-size:25px;font-weight:600;line-height:1.08;margin-bottom:7px}
+body .home-four .l4-slide .product-info h3{font-family:'Lora',serif;font-size:25px;font-weight:600;line-height:1.08;margin-bottom:7px}
 body .home-four .l4-slide .product-info>small{font-size:9px;line-height:1.7;color:#777766}
 body .home-four .l4-slide .product-bottom{font-size:16px;margin-top:10px;gap:12px}
 body .home-four .l4-slide .product-bottom button{font-size:11px;height:38px;background:linear-gradient(100deg,#e4c875,#d0a63c);border-color:#be9838;border-radius:3px}
@@ -67,7 +67,7 @@ body .home-four .l4-slide .quick{font-size:10px;padding:8px}
 .l4-scent-number{font-size:8px;letter-spacing:2px;color:#a99253;display:block;margin:20px 0 8px}
 .l4-scent-grid h3{font-size:25px;line-height:1.15;margin-bottom:10px}
 .l4-scent-link{display:inline-flex;align-items:center;gap:5px;font-size:9px;color:#79775f}
-.l4-exclusive{background:#062b1b url('/images/zenisa-offer-v3.webp') center / cover no-repeat;color:#F7F3E9;position:relative}
+.l4-exclusive{background:#062b1b url('/images/zenisa-gifting-black-cap-v1.jpg') center / cover no-repeat;color:#F7F3E9;position:relative}
 .l4-exclusive:before{content:'';position:absolute;inset:0;background:linear-gradient(90deg,#062b1b22,#062b1bb0 40%,#062b1b33)}
 .l4-exclusive>.container{position:relative;min-height:425px;display:flex;justify-content:center;align-items:center;text-align:center;padding:45px 0}
 body .l4-exclusive .l4-kicker{color:#e1c174}
@@ -110,7 +110,7 @@ body .l4-reviews .l4-section-copy{color:#9db39e}
 .l4-review-stars{display:flex;gap:5px;color:#d7b455;margin-bottom:23px}
 .l4-review-grid blockquote{font-size:28px;font-weight:400;line-height:1.3;min-height:145px;letter-spacing:-.3px}
 .l4-review-person{display:flex;align-items:center;gap:13px;border-top:1px solid #b9a76b44;padding-top:23px;margin-top:23px}
-.l4-review-person>span{width:42px;height:42px;display:grid;place-items:center;border:1px solid #a99455;border-radius:50%;font-family:'Cormorant Garamond',serif;font-size:18px;color:#dfc784;background:#37503a}
+.l4-review-person>span{width:42px;height:42px;display:grid;place-items:center;border:1px solid #a99455;border-radius:50%;font-family:'Lora',serif;font-size:18px;color:#dfc784;background:#37503a}
 .l4-review-person strong{font-size:11px;font-weight:500;display:block}
 body .l4-review-person small{font-size:8px;color:#a5b29c;display:block;margin-top:4px;line-height:1.6}
 .l4-instagram{overflow:hidden}
@@ -138,15 +138,15 @@ body .l4-footer form input{background:transparent;border:0;color:#f7f3e9;padding
 .l4-footer form button{padding:7px 5px}
 body .l4-footer form small{font-size:9px;color:#8a9e86;margin-top:13px;display:block;line-height:1.8}
 .l4-footer-links{display:grid;grid-template-columns:1.15fr .8fr 1fr 1fr;gap:50px;padding:50px 0}
-.l4-footer-brand>a{font-family:'Cormorant Garamond',serif;font-size:48px;line-height:.85;color:#dfc179;letter-spacing:1px;display:inline-block}
-.l4-footer-brand>a>span{display:block;font-family:'Poppins',sans-serif;letter-spacing:6px;font-size:8px;text-align:center;margin-top:10px}
-body .l4-footer-brand>p{font-family:'Cormorant Garamond',serif;font-size:19px;font-style:italic;color:#c0ac75;margin:25px 0}
+.l4-footer-brand>a{font-family:'Lora',serif;font-size:48px;line-height:.85;color:#dfc179;letter-spacing:1px;display:inline-block}
+.l4-footer-brand>a>span{display:block;font-family:'Manrope',sans-serif;letter-spacing:6px;font-size:8px;text-align:center;margin-top:10px}
+body .l4-footer-brand>p{font-family:'Lora',serif;font-size:19px;font-style:italic;color:#c0ac75;margin:25px 0}
 .l4-footer-brand>div{display:flex;gap:18px;color:#d5c59b}
 .l4-footer-links h4{font-size:12px;font-weight:500;color:#eee9d8;margin:0 0 20px}
 .l4-footer-links>div:not(:first-child)>a{display:block;font-size:11px;line-height:2.6;color:#aebda5}
-body .l4-footer-contact>p{font-family:'Cormorant Garamond',serif;font-size:25px;line-height:1.25;color:#c5cdb9;margin:0 0 15px}
+body .l4-footer-contact>p{font-family:'Lora',serif;font-size:25px;line-height:1.25;color:#c5cdb9;margin:0 0 15px}
 .l4-footer-links .l4-footer-contact>a{color:#ddc17e;display:flex;align-items:center;gap:10px}
-.l4-footer-wordmark{font-family:'Cormorant Garamond',serif;font-size:clamp(100px,21vw,320px);color:#e2c37612;text-align:center;line-height:.8;letter-spacing:25px;border-bottom:1px solid #ab965c33;padding-bottom:25px;user-select:none}
+.l4-footer-wordmark{font-family:'Lora',serif;font-size:clamp(100px,21vw,320px);color:#e2c37612;text-align:center;line-height:.8;letter-spacing:25px;border-bottom:1px solid #ab965c33;padding-bottom:25px;user-select:none}
 .l4-footer-bottom{display:flex;justify-content:space-between;gap:20px;padding:23px 0;font-size:9px;color:#8b9b82}
 .l4-footer-bottom span:last-child{letter-spacing:2px;color:#b29e66}
 @media(max-width:1100px){body .home-four .container,body .l4-footer .container{width:calc(100% - 56px)}.l4-slide{flex-basis:calc((100% - 54px)/4)}.l4-collection>div{left:18px;right:18px;bottom:20px}.l4-collection h3{font-size:32px}.l4-collection>div>span{font-size:9px}.l4-collection-grid{gap:17px}.l4-scent-grid{gap:22px}.l4-scent-grid h3{font-size:23px}.l4-occasion-grid{gap:17px}.l4-occasion>div{padding:20px 13px}.l4-occasion h3{font-size:27px}body .l4-occasion p{font-size:10px}.l4-experience-copy{padding:45px 35px}.l4-experience-copy h2{font-size:54px}.l4-benefit-grid{gap:20px}.l4-review-grid{gap:18px}.l4-review-grid article{padding:30px 22px}.l4-review-grid blockquote{font-size:25px}.l4-footer-links{gap:30px}.l4-hero{min-height:550px}.l4-hero-copy{padding-top:80px}}
@@ -187,11 +187,11 @@ body .home-four .l4-static-showcase .product-card{border:0;border-radius:0;backg
 body .home-four .l4-static-showcase .product-image{aspect-ratio:4/5;border-radius:8px;overflow:hidden;background:#f4eddd;flex-shrink:0}
 body .home-four .l4-static-showcase .product-image .bottle-photo{width:100%;height:100%;background-size:500% 125%}
 body .home-four .l4-static-showcase .product-info{padding:18px 0 0;flex:1;text-align:left}
-body .home-four .l4-static-showcase .product-info h3{font-family:'Poppins',sans-serif;font-size:16px;font-weight:500;line-height:1.55;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;margin:0 0 8px;letter-spacing:.1px}
+body .home-four .l4-static-showcase .product-info h3{font-family:'Manrope',sans-serif;font-size:16px;font-weight:500;line-height:1.55;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;margin:0 0 8px;letter-spacing:.1px}
 body .home-four .l4-static-showcase .product-info>small{font-size:11px;color:#b5c6b1;line-height:1.7;min-height:22px}
 body .home-four .l4-static-showcase .product-bottom{align-items:stretch;font-size:18px;font-weight:500;gap:13px;margin-top:auto;padding-top:12px}
 body .home-four .l4-static-showcase .product-bottom>span{display:block;line-height:1.5}
-body .home-four .l4-static-showcase .product-bottom button{min-height:44px;height:auto;border-radius:4px;background:#D4AF37;border-color:#D4AF37;font-family:'Poppins',sans-serif;font-size:12px;font-weight:600;letter-spacing:.4px;text-transform:uppercase;gap:9px}
+body .home-four .l4-static-showcase .product-bottom button{min-height:44px;height:auto;border-radius:4px;background:#D4AF37;border-color:#D4AF37;font-family:'Manrope',sans-serif;font-size:12px;font-weight:600;letter-spacing:.4px;text-transform:uppercase;gap:9px}
 body .home-four .l4-static-showcase .product-bottom button:hover{background:#e6c76d}
 body .home-four .l4-static-showcase .badge{font-size:9px;padding:6px 8px;top:10px;left:10px}
 body .home-four .l4-static-showcase .wish{top:8px;right:8px}
@@ -252,7 +252,7 @@ body .nav,body footer,body .reference-footer,body .l4-footer{background:#062B1B;
 .l4-for-her{background:#f3e7df}
 .l4-him-her-layout{display:grid;grid-template-columns:.9fr 2.1fr;gap:30px;align-items:stretch}
 .l4-gender-campaign{position:relative;min-height:440px;border-radius:120px 120px 6px 6px;overflow:hidden;color:#fff5d9;background:#123d2a}
-.l4-gender-photo{position:absolute;inset:0;background:url('/images/zenisa-collections.webp') no-repeat;background-size:400% 100%}
+.l4-gender-photo{position:absolute;inset:0;background:url('/images/zenisa-collections-black-cap-v1.jpg') no-repeat;background-size:400% 100%}
 .l4-gender-campaign:after{content:'';position:absolute;inset:35% 0 0;background:linear-gradient(transparent,#062b1bf5)}
 .l4-gender-caption{position:absolute;z-index:1;left:30px;right:30px;bottom:30px}
 body .l4-gender-caption>small{font-size:8px;letter-spacing:2px;color:#e6d09a}

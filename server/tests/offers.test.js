@@ -1,0 +1,10 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import {validateOffer,calculateOffer} from '../offers.js';
+import {quoteCart,defaultSettings} from '../commerce.js';
+const product={id:'product-1',name:'Perfume',price:750,variants:['50 ml'],variantPrices:{'50 ml':750}};
+const offer=extra=>validateOffer({scope:'selected',title:'Test offer',description:'',type:'percentage',is_active:true,repeat:true,productIds:[product.id],ml:50,value:10,minQuantity:1,buyQuantity:2,getQuantity:1,...extra},[product]);
+const lines=[{productId:product.id,variant:'50 ml',quantity:3,unitPrice:750,lineTotal:2250}];
+test('managed offers validate eligibility, amounts and status',()=>{assert.equal(offer().value,10);for(const extra of [{value:101},{productIds:[]},{productIds:['unknown']},{ml:-1},{type:'invalid'},{is_active:'yes'},{type:'buy_get',buyQuantity:0}])assert.throws(()=>offer(extra))});
+test('percentage, flat, free bottles and bundle use only eligible prices',()=>{assert.equal(calculateOffer(offer(),lines).amount,225);assert.equal(calculateOffer(offer({type:'fixed',value:5000}),lines).amount,2250);assert.equal(calculateOffer(offer({type:'buy_get'}),lines).amount,750);assert.equal(calculateOffer(offer({type:'bundle',minQuantity:3,value:1500}),lines).amount,750);assert.equal(calculateOffer(offer({ml:20}),lines),null);assert.equal(calculateOffer(offer({minQuantity:4}),lines),null)});
+test('inactive offers do not apply and best managed offer wins without stacking',()=>{const settings=defaultSettings();settings.managedOffers=[{...offer(),id:1},{...offer({type:'fixed',value:400}),id:2}];const items=[{productId:product.id,variant:'50 ml',quantity:3}];assert.equal(quoteCart(items,settings,[product]).savings,400);settings.managedOffers=settings.managedOffers.map(row=>({...row,is_active:false}));assert.equal(quoteCart(items,settings,[product]).savings,0)});

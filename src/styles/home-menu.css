@@ -8,10 +8,10 @@
 .nav-home-options>a,.nav-home-options>button{position:relative;display:flex;align-items:center;justify-content:space-between;width:100%;padding:12px 14px;border-radius:5px;text-align:left}
 .nav-home-options>a:hover,.nav-home-options>a[aria-current=page]{background:#e9e0c8;color:#163b28}
 .nav-home-options strong{display:block;font-size:15px;font-weight:500;line-height:1.5}
-body .nav-home-options small{display:block;font-family:'Poppins',sans-serif;font-size:11px;line-height:1.5;color:#7c7664;margin-top:2px}
+body .nav-home-options small{display:block;font-family:'Manrope',sans-serif;font-size:11px;line-height:1.5;color:#7c7664;margin-top:2px}
 .nav-home-options>button:disabled{opacity:.55;cursor:not-allowed}
 .mobile-menu .nav-home-menu{align-self:stretch;border-bottom:1px solid #d7cdb7}
-.mobile-menu .nav-home-trigger{font-family:'Cormorant Garamond',serif;font-size:30px;width:100%;justify-content:space-between;padding:10px 0;color:#243a28}
+.mobile-menu .nav-home-trigger{font-family:'Lora',serif;font-size:30px;width:100%;justify-content:space-between;padding:10px 0;color:#243a28}
 .mobile-menu .nav-home-options{position:relative;top:auto;left:auto;width:100%;box-shadow:none;margin:2px 0 15px}
 .mobile-menu .nav-home-options:before{display:none}
 body .nav nav{align-items:center}

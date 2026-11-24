@@ -1,0 +1,7 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import {defaultHeader,validateHeader,scopeHeaderCss} from '../header-settings.js';
+test('default header preserves current navigation and tabs',()=>{const h=validateHeader(defaultHeader());assert.equal(h.tabs.length,4);assert.equal(h.logoText,'ZENISA');assert.equal(h.includeCategories,true)});
+test('header styling is scoped including responsive rules',()=>{const css=scopeHeaderCss('.logo, .nav {color:red} @media(max-width:700px){.nav{height:70px}}');assert.match(css,/:where\(\.zenisa-header-shell\) \.logo/);assert.match(css,/:where\(\.zenisa-header-shell\) \.nav/)});
+test('rejects script URLs, external menu links and executable/imported CSS',()=>{for(const url of ['javascript:alert(1)','https://example.com','//example.com','/\\example.com'])assert.throws(()=>validateHeader({...defaultHeader(),links:[{label:'Bad',url}]}));for(const css of ['@import "https://example.com";','.logo{background:url(https://example.com)}','</style><script>alert(1)</script>','.logo {color:red'])assert.throws(()=>scopeHeaderCss(css))});
+test('rejects invalid settings without partially accepting them',()=>{assert.throws(()=>validateHeader({...defaultHeader(),height:0}));assert.throws(()=>validateHeader({...defaultHeader(),showCart:'yes'}));assert.throws(()=>validateHeader({...defaultHeader(),tabs:Array(17).fill({label:'Tab',url:'/',category:''})}))});

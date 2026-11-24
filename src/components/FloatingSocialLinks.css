@@ -1,0 +1,7 @@
+.zenisa-floating-socials{position:fixed;right:max(20px,env(safe-area-inset-right));bottom:calc(22px + env(safe-area-inset-bottom));display:flex;flex-direction:column;gap:13px;z-index:45}
+.zenisa-floating-socials>a,.zenisa-floating-socials>button{display:grid;place-items:center;width:57px;height:57px;padding:0;border:0;border-radius:50%;color:white;box-shadow:0 5px 18px #0003;transition:transform .2s,box-shadow .2s;text-decoration:none;cursor:pointer}
+.zenisa-floating-socials .zenisa-social-instagram{background:radial-gradient(circle at 28% 105%,#ffdf7a 0%,#ff9b40 23%,#ed366e 49%,#a432bd 72%,#4d62d5 100%)}
+.zenisa-floating-socials .zenisa-social-whatsapp{background:#20cc63}
+.zenisa-floating-socials>a:hover{transform:translateY(-3px);box-shadow:0 8px 23px #0004}.zenisa-floating-socials :focus-visible{outline:3px solid #d8b75c;outline-offset:4px}.zenisa-floating-socials [aria-disabled=true]{cursor:default}
+@media(max-width:600px){.zenisa-floating-socials{right:15px;bottom:calc(18px + env(safe-area-inset-bottom));gap:11px}.zenisa-floating-socials>a,.zenisa-floating-socials>button{width:49px;height:49px}.zenisa-floating-socials svg{width:26px;height:26px}}
+@media(prefers-reduced-motion:reduce){.zenisa-floating-socials>a{transition:none}}

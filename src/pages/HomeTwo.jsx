@@ -1,12 +1,13 @@
+import {useCatalogue} from '../context/Catalogue';
 import {useState} from 'react';
 import {Link} from 'react-router-dom';
 import {ArrowRight,ArrowUpRight,ChevronLeft,ChevronRight,Gift,Leaf,MessageCircle,Sparkles} from 'lucide-react';
-import {products,collections,occasions,scents} from '../data/products';
+import {collections,occasions,scents} from '../data/products';
 import ProductCard from '../components/ProductCard';
 import Bottle from '../components/Bottle';
 
 function SectionTitle({kicker,title,url='/shop'}){return <div className="h2-section-title"><div><p>{kicker}</p><h2>{title}</h2></div><Link to={url}>Explore all <ArrowUpRight size={18}/></Link></div>}
-export default function HomeTwo(){
+export default function HomeTwo(){const {products}=useCatalogue();
   const [tab,setTab]=useState('All'),[campaign,setCampaign]=useState(0);
   const featured=tab==='All'?products.slice(0,8):products.filter(p=>p.collection===tab).slice(0,4);
   const campaigns=[{eyebrow:'THE ZENISA SIGNATURE EDIT',title:<>Great fragrance.<br/><em>Unmistakably you.</em></>,text:'Find your everyday favourite. Discover something unexpected.',cta:'Find your fragrance',url:'/shop'}, {eyebrow:'GIVE A LITTLE LUXURY',title:<>For the ones<br/><em>you know by heart.</em></>,text:'Beautifully considered fragrance pairings, made for meaningful moments.',cta:'Explore gifting',url:'/collections/Gift%20Sets'}];

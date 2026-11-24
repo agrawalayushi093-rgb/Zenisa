@@ -1,0 +1,11 @@
+import {Router} from 'express';
+import {pool} from './db.js';
+import {id,listParams,HttpError} from './validation.js';
+import {validateAnnouncement} from './announcement-content.js';
+import {activeAnnouncements} from './announcement-storage.js';
+export const announcementAdmin=Router(),announcementPublic=Router();
+announcementPublic.get('/announcements',async(req,res)=>{res.set('Cache-Control','no-store');res.json({data:await activeAnnouncements(pool)})});
+announcementAdmin.get('/announcements',async(req,res)=>{const p=listParams(req.query);const where=p.search?' WHERE text LIKE ?':'';const args=p.search?['%'+p.search+'%']:[];const [count]=await pool.execute('SELECT COUNT(*) total FROM announcement_bar'+where,args);const [data]=await pool.execute(`SELECT * FROM announcement_bar${where} ORDER BY sort_order,id LIMIT ${p.limit} OFFSET ${p.offset}`,args);res.json({data:data.map(row=>({...row,is_active:!!row.is_active})),total:Number(count[0].total),page:p.page,limit:p.limit})});
+announcementAdmin.post('/announcements',async(req,res)=>{const row=validateAnnouncement(req.body);const [result]=await pool.execute('INSERT INTO announcement_bar (text,is_active,sort_order) VALUES (?,?,?)',[row.text,row.is_active?1:0,row.sort_order]);res.status(201).json({id:result.insertId,message:'Announcement added.'})});
+announcementAdmin.put('/announcements/:id',async(req,res)=>{const key=id(req.params.id),row=validateAnnouncement(req.body);const [found]=await pool.execute('SELECT id FROM announcement_bar WHERE id=?',[key]);if(!found.length)throw new HttpError(404,'Announcement not found.');await pool.execute('UPDATE announcement_bar SET text=?,is_active=?,sort_order=? WHERE id=?',[row.text,row.is_active?1:0,row.sort_order,key]);res.json({message:'Announcement updated.'})});
+announcementAdmin.delete('/announcements/:id',async(req,res)=>{const [result]=await pool.execute('DELETE FROM announcement_bar WHERE id=?',[id(req.params.id)]);if(!result.affectedRows)throw new HttpError(404,'Announcement not found.');res.json({message:'Announcement deleted.'})});

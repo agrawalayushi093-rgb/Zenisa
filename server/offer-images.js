@@ -1,0 +1,10 @@
+import {Router} from 'express';
+import {fileURLToPath} from 'node:url';
+import {imagePath,storeSubcategoryImage,removeSubcategoryImage} from './subcategory-images.js';
+import {HttpError} from './validation.js';
+const root=fileURLToPath(new URL('../public/uploads/offers/',import.meta.url));
+export const storeOfferImage=(name,id,input)=>storeSubcategoryImage(name,id,input,root);
+export const removeOfferImage=path=>removeSubcategoryImage(path,root);
+export const offerImageUrl=path=>path?'/api/store/offer-images/'+path:null;
+export const offerImagePublic=Router();
+offerImagePublic.get('/offer-images/:folder/:file',(req,res,next)=>{let path;try{path=imagePath(req.params.folder+'/'+req.params.file,root)}catch{return next(new HttpError(404,'Image not found.'))}res.set('X-Content-Type-Options','nosniff');res.set('Cache-Control','public,max-age=31536000,immutable');res.sendFile(path,error=>{if(error)next(new HttpError(404,'Image not found.'))})});

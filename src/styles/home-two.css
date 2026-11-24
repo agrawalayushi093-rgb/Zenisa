@@ -1,39 +1,39 @@
 .home-two{--primary:#0F5C5C;--forest:#062B1B;--gold:#D4AF37;--cream:#F7F3E9;--charcoal:#2D2D2D;--sage:#8FAE9D;--white:#FFFFFF;background:var(--cream);color:var(--charcoal)}
 .home-two .h2-discovery-nav{display:flex;justify-content:center;gap:48px;padding-top:25px;padding-bottom:25px}
 .h2-discovery-nav>a{display:flex;flex-direction:column;align-items:center;gap:10px;min-width:95px}
-.h2-category-visual,.h2-category-icon{width:78px;height:78px;border-radius:50%;border:1px solid #cabb90;display:grid;place-items:center;background-image:url('/images/zenisa-collections.webp');background-size:400% 100%;transition:transform .25s}
+.h2-category-visual,.h2-category-icon{width:78px;height:78px;border-radius:50%;border:1px solid #cabb90;display:grid;place-items:center;background-image:url('/images/zenisa-collections-black-cap-v1.jpg');background-size:400% 100%;transition:transform .25s}
 .h2-category-icon{background:var(--forest);color:var(--gold)}
 .h2-category-icon svg{width:29px;height:29px;stroke-width:1.4}
 .h2-discovery-nav>a:hover>span{transform:translateY(-4px)}
 .h2-discovery-nav strong{font-size:13px;font-weight:500}
-.h2-campaign{position:relative;background:var(--forest) url('/images/zenisa-hero-v3.webp') right center / cover no-repeat;color:var(--cream);overflow:hidden}
+.h2-campaign{position:relative;background:var(--forest) url('/images/zenisa-hero-product-bottle-v1.jpg') right center / cover no-repeat;color:var(--cream);overflow:hidden}
 .h2-campaign:before{content:'';position:absolute;inset:0;background:linear-gradient(90deg,#062b1bc9,transparent 80%)}
-.h2-campaign.campaign-1{background-image:url('/images/zenisa-offer-v3.webp')}
+.h2-campaign.campaign-1{background-image:url('/images/zenisa-gifting-black-cap-v1.jpg')}
 .h2-campaign-content{min-height:460px;display:flex;align-items:center;position:relative;padding-top:50px;padding-bottom:32px}
 .h2-campaign-content>div{max-width:670px}
 body .home-two .h2-kicker{font-size:11px;letter-spacing:2.5px;font-weight:500;margin:0 0 18px;color:var(--gold);line-height:1.6}
-.h2-campaign h1{font-family:'Poppins',sans-serif;font-size:clamp(38px,4vw,62px);font-weight:500;letter-spacing:-2px;line-height:1.13}
-.h2-campaign h1 em{font-family:'Cormorant Garamond',serif;font-size:1.18em;font-weight:500;color:#e6ca7b}
+.h2-campaign h1{font-family:'Manrope',sans-serif;font-size:clamp(38px,4vw,62px);font-weight:500;letter-spacing:-2px;line-height:1.13}
+.h2-campaign h1 em{font-family:'Lora',serif;font-size:1.18em;font-weight:500;color:#e6ca7b}
 body .h2-campaign-content>div>p:not(.h2-kicker){font-size:14px;max-width:370px;line-height:1.8;margin:24px 0}
 body .home-two .button{border-radius:3px;background:var(--gold);font-weight:500;gap:24px;box-shadow:none}
 body .home-two .button:hover{background:#e1bf57}
 .h2-campaign-controls{display:flex;align-items:center;gap:22px;margin-top:30px;font-size:13px}
 .h2-campaign-controls button{border:1px solid #d4af3755;border-radius:50%;width:32px;height:32px;display:grid;place-items:center;color:var(--gold)}
 .h2-campaign-controls>span>span{color:var(--sage);padding-left:10px}
-.h2-campaign-stamp{position:absolute;right:40px;bottom:30px;font-family:'Cormorant Garamond',serif;font-size:25px;color:#e3c879;text-align:right;letter-spacing:2px}
-body .h2-campaign-stamp small{font-family:'Poppins',sans-serif;font-size:8px;letter-spacing:1.5px}
+.h2-campaign-stamp{position:absolute;right:40px;bottom:30px;font-family:'Lora',serif;font-size:25px;color:#e3c879;text-align:right;letter-spacing:2px}
+body .h2-campaign-stamp small{font-family:'Manrope',sans-serif;font-size:8px;letter-spacing:1.5px}
 .h2-value-strip{display:flex;justify-content:center;gap:70px;background:var(--primary);padding:17px 25px;color:var(--cream)}
 .h2-value-strip span{display:flex;align-items:center;gap:12px;font-size:10px;letter-spacing:1px}
 .h2-value-strip svg{color:var(--gold)}
 body .h2-section{padding-top:55px;padding-bottom:20px}
 .h2-section-title{display:flex;align-items:flex-end;justify-content:space-between;gap:25px;margin-bottom:28px}
 body .h2-section-title p{font-size:10px;letter-spacing:2px;color:var(--primary);font-weight:500;margin:0 0 10px}
-.h2-section-title h2{font-family:'Poppins',sans-serif;font-size:clamp(26px,2.6vw,38px);font-weight:500;letter-spacing:-1.2px;line-height:1.2}
+.h2-section-title h2{font-family:'Manrope',sans-serif;font-size:clamp(26px,2.6vw,38px);font-weight:500;letter-spacing:-1.2px;line-height:1.2}
 .h2-section-title>a{display:flex;align-items:center;gap:10px;font-size:13px;white-space:nowrap;border-bottom:1px solid #b5aa86;padding-bottom:6px}
 .h2-ranking-strip{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));border:1px solid #d4c9b0;border-radius:5px;overflow:hidden}
 .h2-ranking-strip>a{display:flex;align-items:center;gap:9px;padding:15px 12px;border-right:1px solid #d4c9b0;position:relative;background:#fffaf0;min-width:0}
 .h2-ranking-strip>a:last-child{border:0}
-.h2-ranking-strip .h2-rank{font-family:'Cormorant Garamond',serif;font-size:32px;color:#b7a56c;align-self:flex-start;line-height:1}
+.h2-ranking-strip .h2-rank{font-family:'Lora',serif;font-size:32px;color:#b7a56c;align-self:flex-start;line-height:1}
 .h2-ranking-strip .bottle{height:85px;flex-shrink:0}
 .h2-ranking-strip strong{font-size:11px;font-weight:500;display:block;line-height:1.5}
 body .h2-ranking-strip small{font-size:9px;color:#787b68;display:block;margin-top:4px}
@@ -60,7 +60,7 @@ body .home-two .badge{background:var(--primary);color:var(--cream);font-weight:4
 .h2-occasion-caption{display:flex;align-items:center;justify-content:space-between;padding-top:13px;gap:10px}
 .h2-occasion-caption strong{font-size:14px;font-weight:500}
 .h2-occasion-caption svg{color:var(--primary)}
-.h2-gift-banner{background:var(--forest) url('/images/zenisa-offer-v3.webp') center / cover no-repeat;position:relative;min-height:340px;display:grid;place-items:center;text-align:center;color:var(--cream);border-radius:5px;overflow:hidden}
+.h2-gift-banner{background:var(--forest) url('/images/zenisa-gifting-black-cap-v1.jpg') center / cover no-repeat;position:relative;min-height:340px;display:grid;place-items:center;text-align:center;color:var(--cream);border-radius:5px;overflow:hidden}
 .h2-gift-banner:before{content:'';position:absolute;inset:0;background:linear-gradient(90deg,transparent,#062b1b70 35%,#062b1b70 65%,transparent)}
 .h2-gift-banner>div{position:relative;padding:35px 20px}
 .h2-gift-banner h2{font-size:60px;font-weight:500}
@@ -72,7 +72,7 @@ body .h2-gift-banner small{display:block;font-size:10px;margin-top:15px;color:#d
 .h2-scent-grid strong{font-size:13px;display:block;font-weight:500;margin-top:14px}
 .h2-story-section{margin-top:50px;background:var(--forest);color:var(--cream)}
 .h2-story{display:grid;grid-template-columns:1fr 1fr;gap:70px;align-items:center;padding-top:50px;padding-bottom:50px}
-.h2-story-art{min-height:390px;background:url('/images/zenisa-hero.webp') right center / cover;border-radius:4px}
+.h2-story-art{min-height:390px;background:url('/images/zenisa-hero-him-black-cap-v1.jpg') right center / cover;border-radius:4px}
 .h2-story h2{font-size:54px;line-height:1.05}
 body .h2-story p:not(.h2-kicker){font-size:15px;color:#c5d0bf;max-width:450px;margin:25px 0}
 .h2-help-grid{display:grid;grid-template-columns:1fr 1.2fr;gap:80px}

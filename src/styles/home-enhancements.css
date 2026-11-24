@@ -29,7 +29,7 @@ body .nav,body footer,body .reference-footer,body .l3-footer{background:#062B1B;
 .l3-for-her{background:#f3e7df}
 .l3-him-her-layout{display:grid;grid-template-columns:.9fr 2.1fr;gap:30px;align-items:stretch}
 .l3-gender-campaign{position:relative;min-height:440px;border-radius:120px 120px 6px 6px;overflow:hidden;color:#fff5d9;background:#123d2a}
-.l3-gender-photo{position:absolute;inset:0;background:url('/images/zenisa-collections.webp') no-repeat;background-size:400% 100%}
+.l3-gender-photo{position:absolute;inset:0;background:url('/images/zenisa-collections-black-cap-v1.jpg') no-repeat;background-size:400% 100%}
 .l3-gender-campaign:after{content:'';position:absolute;inset:35% 0 0;background:linear-gradient(transparent,#062b1bf5)}
 .l3-gender-caption{position:absolute;z-index:1;left:30px;right:30px;bottom:30px}
 body .l3-gender-caption>small{font-size:8px;letter-spacing:2px;color:#e6d09a}
