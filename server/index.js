@@ -1,3 +1,4 @@
+import {instagramAdmin,instagramPublic} from './instagram-routes.js';
 import {announcementAdmin,announcementPublic} from './announcement-routes.js';
 import {headerAdmin,headerPublic} from './header-routes.js';
 import {offerSelectionPublic} from './offer-selection.js';
@@ -39,8 +40,8 @@ app.get('/api/health',async(req,res)=>{try{await pool.execute('SELECT 1');res.js
 app.get('/api/admin/session',(req,res)=>res.json({user:session(req),configured:configured()}));
 app.post('/api/admin/login',loginRateLimit,(req,res)=>{if(!configured())throw new HttpError(503,'Admin login is not configured. Run npm run admin:setup first.');const email=typeof req.body.email==='string'?req.body.email.toLowerCase().trim():'';const password=typeof req.body.password==='string'?req.body.password:'';if(password.length>512)throw new HttpError(400,'Invalid credentials.');const valid=verifyPassword(password,config.adminPasswordHash);if(!valid||email!==config.adminEmail)throw new HttpError(401,'Email or password is incorrect.');setSession(res);res.json({user:{email:config.adminEmail}})});
 app.post('/api/admin/logout',(req,res)=>{clearSession(res);res.json({message:'Signed out.'})});
-app.use('/api/store',announcementPublic,headerPublic,offerSelectionPublic,offerImagePublic,orderPublic,contactPublic,productImagePublic,cataloguePublic,subcategoryImagePublic,faqPublic,policyImagePublic,policyPublic,commercePublic);
-app.use('/api/admin',requireAdmin,announcementAdmin,headerAdmin,offerAdmin,orderAdmin,contactAdmin,productAdmin,subcategoryAdmin,faqAdmin,policyImageAdmin,policyAdmin,commerceAdmin,adminRoutes);
+app.use('/api/store',instagramPublic,announcementPublic,headerPublic,offerSelectionPublic,offerImagePublic,orderPublic,contactPublic,productImagePublic,cataloguePublic,subcategoryImagePublic,faqPublic,policyImagePublic,policyPublic,commercePublic);
+app.use('/api/admin',requireAdmin,instagramAdmin,announcementAdmin,headerAdmin,offerAdmin,orderAdmin,contactAdmin,productAdmin,subcategoryAdmin,faqAdmin,policyImageAdmin,policyAdmin,commerceAdmin,adminRoutes);
 app.use('/api',(req,res)=>res.status(404).json({message:'API endpoint not found.'}));
 const distDir=fileURLToPath(new URL('../dist',import.meta.url));
 if(fs.existsSync(distDir)){

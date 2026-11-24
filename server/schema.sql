@@ -180,3 +180,15 @@ CREATE TABLE IF NOT EXISTS announcement_bar (
  updated_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
  INDEX idx_announcements_active_order (is_active,sort_order,id)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+CREATE TABLE IF NOT EXISTS instagram_reels (
+ id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+ title VARCHAR(150) NOT NULL DEFAULT '',
+ url VARCHAR(500) NOT NULL,
+ shortcode VARCHAR(80) CHARACTER SET ascii COLLATE ascii_bin NOT NULL,
+ is_active TINYINT(1) NOT NULL DEFAULT 1,
+ sort_order INT UNSIGNED NOT NULL DEFAULT 0,
+ created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+ updated_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+ UNIQUE KEY uq_instagram_shortcode (shortcode),
+ INDEX idx_reels_active_order (is_active,sort_order,id)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
