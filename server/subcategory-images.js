@@ -1,4 +1,6 @@
 import {mkdir,writeFile,readFile,unlink,rmdir} from 'node:fs/promises';
+import fs from 'node:fs';
+import path from 'node:path';
 import {resolve,sep} from 'node:path';
 import {fileURLToPath} from 'node:url';
 import {randomUUID} from 'node:crypto';
@@ -6,6 +8,9 @@ import {Router} from 'express';
 import {decodePolicyImage} from './policy-images.js';
 import {HttpError} from './validation.js';
 export const subcategoryImageRoot=fileURLToPath(new URL('../public/uploads/subcategories/',import.meta.url));
+const imagesRoot=fileURLToPath(new URL('../public/images/',import.meta.url));
+const distImagesRoot=fileURLToPath(new URL('../dist/images/',import.meta.url));
+
 export const imageName=name=>name.normalize('NFKD').replace(/[\u0300-\u036f]/g,'').toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'').slice(0,80)||'subcategory';
 export function imagePath(relative,root=subcategoryImageRoot){if(typeof relative!=='string'||!/^([a-z0-9-]+)-([1-9][0-9]*)\/[a-z0-9-]+\.(png|jpg|webp|gif)$/.test(relative))throw new HttpError(400,'Invalid subcategory image path.');const base=resolve(root),target=resolve(base,relative);if(!target.startsWith(base+sep))throw new HttpError(400,'Invalid image path.');return target}
 export async function storeSubcategoryImage(name,id,input,root=subcategoryImageRoot){const {bytes,extension}=decodePolicyImage(input);return writeImage(name,id,bytes,extension,root)}
@@ -14,4 +19,43 @@ export async function renameSubcategoryImage(name,id,previous,root=subcategoryIm
 export async function removeSubcategoryImage(relative,root=subcategoryImageRoot){if(!relative)return;const target=imagePath(relative,root);try{await unlink(target)}catch(error){if(error.code!=='ENOENT')throw error}try{await rmdir(resolve(root,relative.split('/')[0]))}catch(error){if(!['ENOENT','ENOTEMPTY'].includes(error.code))throw error}}
 export const imageUrl=relative=>relative?`/api/store/subcategory-images/${relative}`:null;
 export const subcategoryImagePublic=Router();
-subcategoryImagePublic.get('/subcategory-images/:folder/:file',(req,res,next)=>{let target;try{target=imagePath(`${req.params.folder}/${req.params.file}`)}catch{return next(new HttpError(404,'Image not found.'))}res.set('X-Content-Type-Options','nosniff');res.set('Cache-Control','public, max-age=31536000, immutable');res.sendFile(target,error=>{if(error)next(new HttpError(error.status===404?404:500,'Image unavailable.'))})});
+subcategoryImagePublic.get('/subcategory-images/:folder/:file',(req,res,next)=>{
+  try{
+    const target=imagePath(`${req.params.folder}/${req.params.file}`);
+    if(fs.existsSync(target)){
+      res.set('X-Content-Type-Options','nosniff');
+      res.set('Cache-Control','public, max-age=604800');
+      return res.sendFile(target);
+    }
+  }catch{}
+
+  const slug=req.params.folder.toLowerCase();
+  let candidate='zenisa-hero-product-bottle-v1.jpg';
+  if(slug.includes('men')&&!slug.includes('women')){
+    candidate='zenisa-hero-him-black-cap-v1.jpg';
+  }else if(slug.includes('women')){
+    candidate='zenisa-hero-her-black-cap-v2.jpg';
+  }else if(slug.includes('citrus')||slug.includes('fresh')){
+    candidate='zenisa-hero-citrus-swim-v2.jpg';
+  }else if(slug.includes('wear')||slug.includes('date')||slug.includes('party')||slug.includes('wedding')||slug.includes('gym')||slug.includes('office')){
+    candidate='zenisa-occasions.webp';
+  }else if(slug.includes('floral')||slug.includes('wood')||slug.includes('amber')||slug.includes('vanilla')||slug.includes('aqua')||slug.includes('spicy')){
+    candidate='zenisa-scents.webp';
+  }
+
+  for(const dir of [imagesRoot,distImagesRoot]){
+    const candPath=path.join(dir,candidate);
+    if(fs.existsSync(candPath)){
+      res.set('X-Content-Type-Options','nosniff');
+      res.set('Cache-Control','public, max-age=86400');
+      return res.sendFile(candPath);
+    }
+  }
+
+  const placeholder=path.join(imagesRoot,'placeholders','category.svg');
+  if(fs.existsSync(placeholder)){
+    res.set('Content-Type','image/svg+xml');
+    return res.sendFile(placeholder);
+  }
+  return next(new HttpError(404,'Image unavailable.'));
+});
