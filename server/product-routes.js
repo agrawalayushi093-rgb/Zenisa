@@ -43,11 +43,13 @@ export const productAdmin=Router(),productImagePublic=Router();
 productImagePublic.get('/products',async(req,res)=>{res.set('Cache-Control','no-store');const [subcategories]=await pool.execute('SELECT s.id,s.name,s.slug,c.slug AS category_slug,c.name AS category_name FROM subcategories s JOIN categories c ON c.id=s.category_id WHERE s.is_active=1 AND c.is_active=1');const [categories]=await pool.execute('SELECT id,name,slug FROM categories WHERE is_active=1');res.json({data:await commerceCatalogue(),subcategories,categories})});
 productImagePublic.get('/products/:id',async(req,res)=>{const [rows]=await pool.execute('SELECT p.*,s.name AS subcategory_name,c.name AS category_name FROM products p JOIN subcategories s ON s.id=p.subcategory_id JOIN categories c ON c.id=s.category_id WHERE p.id=? AND p.is_active=1 AND EXISTS (SELECT 1 FROM product_category_assignments a JOIN categories ac ON ac.id=a.category_id JOIN subcategories sc ON sc.id=a.subcategory_id WHERE a.product_id=p.id AND ac.is_active=1 AND sc.is_active=1)',[id(req.params.id)]);if(!rows.length)throw new HttpError(404,'Product not found.');res.set('Cache-Control','no-store');res.json({product:{...rows[0],assignments:await readAssignments(pool,rows[0].id),variants:await readVariants(pool,rows[0].id),content:Object.fromEntries(contentFields.map(key=>[key,rows[0][key]||'']))}})});
 productImagePublic.get('/product-images/:folder/:file',(req,res,next)=>{
+  res.set('X-Content-Type-Options','nosniff');
+  res.set('Cache-Control','no-cache, must-revalidate, max-age=0');
+  res.set('Pragma','no-cache');
+
   try{
     const target=imagePath(req.params.folder+'/'+req.params.file,photoRoot);
     if(fs.existsSync(target)){
-      res.set('X-Content-Type-Options','nosniff');
-      res.set('Cache-Control','public, max-age=604800');
       return res.sendFile(target);
     }
   }catch{}
@@ -58,8 +60,6 @@ productImagePublic.get('/product-images/:folder/:file',(req,res,next)=>{
     for(const root of [websiteRoot,distWebsiteRoot]){
       const candidate=path.join(root,websiteFolder,'1.png');
       if(fs.existsSync(candidate)){
-        res.set('X-Content-Type-Options','nosniff');
-        res.set('Cache-Control','public, max-age=604800');
         return res.sendFile(candidate);
       }
     }
@@ -68,15 +68,11 @@ productImagePublic.get('/product-images/:folder/:file',(req,res,next)=>{
   for(const root of [websiteRoot,distWebsiteRoot]){
     const candidate=path.join(root,'Azz the most Loved','1.png');
     if(fs.existsSync(candidate)){
-      res.set('X-Content-Type-Options','nosniff');
-      res.set('Cache-Control','public, max-age=604800');
       return res.sendFile(candidate);
     }
   }
 
   if(fs.existsSync(fallbackHero)){
-    res.set('X-Content-Type-Options','nosniff');
-    res.set('Cache-Control','public, max-age=604800');
     return res.sendFile(fallbackHero);
   }
 

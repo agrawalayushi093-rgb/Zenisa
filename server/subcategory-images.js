@@ -17,14 +17,16 @@ export async function storeSubcategoryImage(name,id,input,root=subcategoryImageR
 async function writeImage(name,id,bytes,extension,root){const slug=imageName(name),relative=`${slug}-${id}/${slug}-${randomUUID()}.${extension}`,target=imagePath(relative,root);await mkdir(resolve(root,`${slug}-${id}`),{recursive:true});await writeFile(target,bytes,{flag:'wx'});return relative}
 export async function renameSubcategoryImage(name,id,previous,root=subcategoryImageRoot){if(!previous)return null;const desired=`${imageName(name)}-${id}/`;if(previous.startsWith(desired))return previous;const bytes=await readFile(imagePath(previous,root));return writeImage(name,id,bytes,previous.split('.').at(-1),root)}
 export async function removeSubcategoryImage(relative,root=subcategoryImageRoot){if(!relative)return;const target=imagePath(relative,root);try{await unlink(target)}catch(error){if(error.code!=='ENOENT')throw error}try{await rmdir(resolve(root,relative.split('/')[0]))}catch(error){if(!['ENOENT','ENOTEMPTY'].includes(error.code))throw error}}
-export const imageUrl=relative=>relative?`/api/store/subcategory-images/${relative}`:null;
+export const imageUrl=relative=>relative?`/api/store/subcategory-images/${relative}?v=2`:null;
 export const subcategoryImagePublic=Router();
 subcategoryImagePublic.get('/subcategory-images/:folder/:file',(req,res,next)=>{
+  res.set('X-Content-Type-Options','nosniff');
+  res.set('Cache-Control','no-cache, must-revalidate, max-age=0');
+  res.set('Pragma','no-cache');
+
   try{
     const target=imagePath(`${req.params.folder}/${req.params.file}`);
     if(fs.existsSync(target)){
-      res.set('X-Content-Type-Options','nosniff');
-      res.set('Cache-Control','public, max-age=604800');
       return res.sendFile(target);
     }
   }catch{}
@@ -46,8 +48,6 @@ subcategoryImagePublic.get('/subcategory-images/:folder/:file',(req,res,next)=>{
   for(const dir of [imagesRoot,distImagesRoot]){
     const candPath=path.join(dir,candidate);
     if(fs.existsSync(candPath)){
-      res.set('X-Content-Type-Options','nosniff');
-      res.set('Cache-Control','public, max-age=86400');
       return res.sendFile(candPath);
     }
   }

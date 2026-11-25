@@ -1,23 +1,30 @@
+# Zenisa private application files
+Options -Indexes
 <IfModule mod_rewrite.c>
-  RewriteEngine On
-  RewriteBase /
-
-  # Proxy /api requests to Express server if running as standalone Node process on port 3001
-  # If using Apache reverse proxy, uncomment lines below:
-  # RewriteRule ^api/(.*)$ http://127.0.0.1:3001/api/$1 [P,L]
-
-  # Direct all SPA routes to index.html for React Router
-  RewriteRule ^index\.html$ - [L]
-  RewriteCond %{REQUEST_FILENAME} !-f
-  RewriteCond %{REQUEST_FILENAME} !-d
-  RewriteRule . /index.html [L]
+RewriteEngine On
+RewriteRule ^(?:server|src|node_modules|[.]git)(?:/|$) - [F,L]
+RewriteRule ^(?:app|server|vite[.]config)[.]js$ - [F,L]
+RewriteRule ^package(?:-lock)?[.]json$ - [F,L]
 </IfModule>
+<FilesMatch "(?i)(^[.]env|[.]sql(?:[.]zip|[.]gz)?$|[.]log$|ADMIN-ACCESS[.]txt$)">
+Require all denied
+</FilesMatch>
 
 <IfModule mod_headers.c>
   Header set X-Content-Type-Options "nosniff"
   Header set X-Frame-Options "SAMEORIGIN"
+
+  # Prevent stale browser caching on dynamic image files
+  <FilesMatch "\.(png|jpe?g|webp|gif|svg)$">
+    Header set Cache-Control "no-cache, must-revalidate, max-age=0"
+    Header set Pragma "no-cache"
+  </FilesMatch>
 </IfModule>
 
-<IfModule mod_deflate.c>
-  AddOutputFilterByType DEFLATE text/html text/plain text/xml text/css text/javascript application/javascript application/json image/svg+xml
-</IfModule>
+# DO NOT REMOVE. CLOUDLINUX PASSENGER CONFIGURATION BEGIN
+PassengerAppRoot "/home/wiselywe/zenisaperfumes.in"
+PassengerBaseURI "/"
+PassengerNodejs "/home/wiselywe/nodevenv/zenisaperfumes.in/22/bin/node"
+PassengerAppType node
+PassengerStartupFile app.js 
+# DO NOT REMOVE. CLOUDLINUX PASSENGER CONFIGURATION END

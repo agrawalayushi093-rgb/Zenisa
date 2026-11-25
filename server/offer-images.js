@@ -11,15 +11,17 @@ const distImagesRoot=fileURLToPath(new URL('../dist/images/',import.meta.url));
 
 export const storeOfferImage=(name,id,input)=>storeSubcategoryImage(name,id,input,root);
 export const removeOfferImage=path=>removeSubcategoryImage(path,root);
-export const offerImageUrl=path=>path?'/api/store/offer-images/'+path:null;
+export const offerImageUrl=path=>path?'/api/store/offer-images/'+path+'?v=2':null;
 export const offerImagePublic=Router();
 
 offerImagePublic.get('/offer-images/:folder/:file',(req,res,next)=>{
+  res.set('X-Content-Type-Options','nosniff');
+  res.set('Cache-Control','no-cache, must-revalidate, max-age=0');
+  res.set('Pragma','no-cache');
+
   try{
     const target=imagePath(req.params.folder+'/'+req.params.file,root);
     if(fs.existsSync(target)){
-      res.set('X-Content-Type-Options','nosniff');
-      res.set('Cache-Control','public,max-age=604800');
       return res.sendFile(target);
     }
   }catch{}
@@ -37,14 +39,10 @@ offerImagePublic.get('/offer-images/:folder/:file',(req,res,next)=>{
   for(const dir of [imagesRoot,distImagesRoot]){
     const candPath=path.join(dir,candidateName);
     if(fs.existsSync(candPath)){
-      res.set('X-Content-Type-Options','nosniff');
-      res.set('Cache-Control','public,max-age=86400');
       return res.sendFile(candPath);
     }
     const candPng=candPath.replace(/\.jpg$/,'.png');
     if(fs.existsSync(candPng)){
-      res.set('X-Content-Type-Options','nosniff');
-      res.set('Cache-Control','public,max-age=86400');
       return res.sendFile(candPng);
     }
   }
